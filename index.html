@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richiamo di Vacuna — Il Bosco Parlante</title>
+<meta name="description" content="Tre foglie. Sette giorni. Tre minuti al giorno per rallentare davvero — non domani, ora.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 18px; }
+
+body {
+  font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  color: #111;
+  background: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  background: #1A3A15;
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+  padding: 0.6em 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 1.1rem 6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 100;
+}
+.navbar-brand {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #1A3A15;
+  text-decoration: none;
+}
+.navbar-brand span {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: 400;
+  margin-top: 1px;
+}
+.navbar-cta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1A3A15;
+  text-decoration: none;
+  padding: 0.65em 1.4em;
+  transition: background 0.2s;
+}
+.navbar-cta:hover { background: #2D5A27; }
+
+/* ── SEZIONI BASE ── */
+.s { padding: 5rem 6vw; }
+.s-alt { background: #f9f8f5; }
+.s-scura { background: #111; color: #fff; }
+.inner { max-width: 660px; margin: 0 auto; }
+.inner-wide { max-width: 860px; margin: 0 auto; }
+
+/* ── TIPOGRAFIA ── */
+.occhiello {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #2D5A27;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  border-left: 2px solid #2D5A27;
+  padding-left: 0.7em;
+}
+.occhiello-chiaro { color: rgba(255,255,255,0.4); border-left-color: rgba(255,255,255,0.2); }
+
+h1, h2, h3 {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+h3 { font-size: 1.15rem; }
+
+.corpo {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #444;
+  margin-bottom: 1.1em;
+}
+.corpo-chiaro { color: rgba(255,255,255,0.55); }
+
+/* ── HERO ── */
+.hero {
+  padding: 6rem 6vw 4rem;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+
+.hero-num {
+  position: absolute;
+  top: 3rem;
+  right: 6vw;
+  font-family: 'Lora', serif;
+  font-size: clamp(5rem, 15vw, 12rem);
+  color: rgba(0,0,0,0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-inner { max-width: 660px; }
+
+.hero h1 {
+  margin-bottom: 0.5em;
+}
+.hero h1 em {
+  font-style: italic;
+  color: #2D5A27;
+}
+
+.hero-claim {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-style: italic;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: #f0f5ee;
+  border: 1px solid #d8e4d4;
+  padding: 0.5em 1em;
+  font-size: 0.8rem;
+  color: #2D5A27;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.hero-cta-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.btn-primario {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1A3A15;
+  text-decoration: none;
+  padding: 1em 2.2em;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+}
+.btn-primario:hover { background: #2D5A27; transform: translateY(-1px); }
+
+.btn-scroll {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #888;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-scroll:hover { color: #1A3A15; border-color: #1A3A15; }
+
+/* ── PROBLEMA ── */
+.problema-testo {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.2rem, 2.8vw, 1.7rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #111;
+  margin-bottom: 1.4rem;
+}
+.problema-testo em { font-style: italic; color: #2D5A27; }
+
+/* ── SOLUZIONE ── */
+.soluzione-wrap {
+  border-left: 3px solid #1A3A15;
+  padding-left: 1.5rem;
+  margin: 2.5rem 0;
+}
+.soluzione-wrap p {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  font-style: italic;
+  line-height: 1.65;
+  color: #222;
+}
+
+/* ── COME FUNZIONA ── */
+.fasi-lista { margin-top: 1.5rem; }
+.fase {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1.2rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid #ebebeb;
+  align-items: start;
+}
+.fase:first-child { border-top: 1px solid #ebebeb; }
+.fase-min {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #2D5A27;
+  line-height: 1;
+  padding-top: 2px;
+}
+.fase-nome {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2D5A27;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 0.4em;
+}
+.fase-desc {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.65;
+}
+
+/* ── VACUNA STORIA ── */
+.vacuna-citazione {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  line-height: 1.7;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.vacuna-citazione strong {
+  font-style: normal;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ── LE TRE FOGLIE ── */
+.foglie-lista { margin-top: 1.5rem; }
+.foglia {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 1.2rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid #ebebeb;
+  align-items: start;
+}
+.foglia:first-child { border-top: 1px solid #ebebeb; }
+.foglia-num {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #ccc;
+  font-weight: 400;
+  padding-top: 4px;
+}
+.foglia-nome {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #111;
+  display: block;
+  margin-bottom: 0.15em;
+}
+.foglia-qual {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #2D5A27;
+  display: block;
+  margin-bottom: 0.5em;
+}
+.foglia-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ── PERCORSO ── */
+.giorni-lista { margin-top: 1.5rem; }
+.giorno {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #ebebeb;
+  align-items: baseline;
+}
+.giorno:first-child { border-top: 1px solid #ebebeb; }
+.giorno-num {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2D5A27;
+  font-weight: 400;
+}
+.giorno-testo {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+.giorno-testo em {
+  display: block;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: #888;
+  font-size: 0.88rem;
+  margin-top: 0.2em;
+}
+
+/* ── CONFEZIONE ── */
+.conf-lista { margin-top: 1.2rem; }
+.conf-lista li {
+  list-style: none;
+  display: flex;
+  gap: 0.8em;
+  padding: 0.8em 0;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 0.95rem;
+  color: #333;
+  align-items: baseline;
+}
+.conf-lista li:first-child { border-top: 1px solid #ebebeb; }
+.conf-lista li::before {
+  content: "·";
+  color: #2D5A27;
+  font-size: 1.3em;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.conf-lista li em {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: #999;
+  font-size: 0.88em;
+  margin-left: 0.2em;
+}
+
+/* ── GARANZIA ── */
+.garanzia {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  border: 1px solid #e8e8e8;
+  padding: 1.3rem 1.5rem;
+  margin-top: 2rem;
+}
+.garanzia-ico { font-size: 1.3rem; flex-shrink: 0; line-height: 1.3; }
+.garanzia-testo strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #1A3A15;
+  margin-bottom: 0.3em;
+}
+.garanzia-testo span {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* ── CTA FINALE ── */
+.cta-finale {
+  padding: 6rem 6vw;
+  border-top: 3px solid #1A3A15;
+  text-align: center;
+}
+.cta-frase {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: #111;
+  max-width: 520px;
+  margin: 0 auto 0.5em;
+}
+.cta-attrib {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #aaa;
+  display: block;
+  margin-bottom: 2.5rem;
+}
+.cta-prezzo {
+  font-family: 'Lora', serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #111;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.15em;
+}
+.cta-inc {
+  font-size: 0.78rem;
+  color: #aaa;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 2rem;
+}
+.btn-cta-grande {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1A3A15;
+  text-decoration: none;
+  padding: 1.2em 3em;
+  display: inline-block;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-cta-grande:hover { background: #2D5A27; transform: translateY(-2px); }
+.cta-nota {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #bbb;
+  display: block;
+  margin-top: 1.2rem;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: #f9f8f5;
+  border-top: 1px solid #e8e8e8;
+  padding: 2rem 6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #aaa;
+}
+.footer a {
+  color: #aaa;
+  text-decoration: none;
+}
+.footer a:hover { color: #1A3A15; }
+
+/* ── DIVISORE ── */
+hr.div-verde {
+  border: none;
+  border-top: 1px solid #d8e4d4;
+  margin: 2rem 0;
+}
+
+/* ── ANIMAZIONI ── */
+.r {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.r.vis { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  html { font-size: 16px; }
+  .s { padding: 3.5rem 5vw; }
+  .hero { padding: 3.5rem 5vw 3rem; }
+  .hero-num { display: none; }
+  .cta-finale { padding: 4rem 5vw; }
+  .footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .giorno { grid-template-columns: 75px 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">Spedizione gratuita sopra 49€ · Foglie raccolte a mano a Montasola, Sabina</div>
+
+<nav class="navbar">
+  <a href="/" class="navbar-brand">
+    Il Bosco Parlante
+    <span>Montasola · Sabina</span>
+  </a>
+  <a href="#acquista" class="navbar-cta">Acquista — 34,90€</a>
+</nav>
+
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-num" aria-hidden="true">34</div>
+  <div class="hero-inner">
+    <span class="occhiello">Richiamo di Vacuna</span>
+    <h1>
+      Tre minuti.<br>
+      <em>Una foglia.</em><br>
+      Nient'altro.
+    </h1>
+    <p class="hero-claim">
+      Non serve un viaggio. Non serve del tempo libero.<br>
+      Serve solo smettere di correre per tre minuti — e ricordare che sei ancora qui.
+    </p>
+    <div class="hero-badge">
+      &#9675;&nbsp; Tre foglie · Sette giorni · 34,90€
+    </div>
+    <div class="hero-cta-wrap">
+      <a href="#acquista" class="btn-primario">Porta Vacuna a casa</a>
+      <a href="#come-funziona" class="btn-scroll">Come funziona ↓</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PROBLEMA ── -->
+<section class="s r" id="problema">
+  <div class="inner">
+    <p class="problema-testo r">
+      Senti che la vita ti scappa tra le mani.<br>
+      Non per qualcosa di grave —<br>
+      ma per <em>il ritmo</em>.
+    </p>
+    <p class="corpo r">Le giornate si riempiono da sole. Le notifiche, le scadenze, i ruoli — figlia, madre, professionista, persona che dovrebbe stare bene. Guardi il telefono cercando qualcosa, senza sapere bene cosa. Un appiglio. Un momento che sia davvero tuo.</p>
+    <p class="corpo r">Non ti manca niente di grande. Ti manca qualcosa di piccolo e concreto: un gesto quotidiano che ti riporti a te stessa. Non un corso, non un weekend in ritiro, non un impegno in più.</p>
+    <div class="soluzione-wrap r">
+      <p>Tre minuti al giorno. Una foglia tra le mani. Il bosco — quello vero, quello di Montasola — che arriva fino a te.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── COME FUNZIONA ── -->
+<section class="s s-alt r" id="come-funziona">
+  <div class="inner">
+    <span class="occhiello r">Come funziona</span>
+    <h2 class="r">Non si impara.<br>Si lascia accadere.</h2>
+    <p class="corpo r">Il corpo sa già come rallentare. Ha solo bisogno di uno spazio per farlo. Ogni rituale dura tre minuti e segue la stessa struttura semplice.</p>
+
+    <div class="fasi-lista">
+      <div class="fase r">
+        <div>
+          <div class="fase-min">1'</div>
+        </div>
+        <div>
+          <span class="fase-nome">Attenzione</span>
+          <p class="fase-desc">Tieni la foglia tra le mani. Chiudi gli occhi. Aspetta che il corpo parli per primo — senza scegliere, senza cercare. Lascia emergere.</p>
+        </div>
+      </div>
+      <div class="fase r">
+        <div>
+          <div class="fase-min">1'</div>
+        </div>
+        <div>
+          <span class="fase-nome">Qualità</span>
+          <p class="fase-desc">Avvicina la foglia al naso. Respira lentamente. La qualità del giorno — radicamento, pace, chiarezza — arriva da sola, senza che tu la cerchi.</p>
+        </div>
+      </div>
+      <div class="fase r">
+        <div>
+          <div class="fase-min">1'</div>
+        </div>
+        <div>
+          <span class="fase-nome">Espansione</span>
+          <p class="fase-desc">Aggiungi un secondo punto di attenzione, poi un terzo — senza perdere i precedenti. Come se la presenza si allargasse. Come se ci fosse più spazio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── STORIA VACUNA ── -->
+<section class="s s-scura r">
+  <div class="inner">
+    <span class="occhiello occhiello-chiaro r">L'origine</span>
+    <p class="vacuna-citazione r">
+      Gli antichi Sabini avevano una dea per la pausa.<br>
+      Si chiamava <strong>Vacuna</strong>.
+    </p>
+    <p class="corpo corpo-chiaro r">Il suo nome viene da <em>vacare</em> — essere liberi, disponibili, vuoti nel senso buono della parola. Rivolgersi a lei significava fermarsi davvero, dopo il troppo di ogni giorno, e ricordare chi si è.</p>
+    <p class="corpo corpo-chiaro r">Noi abbiamo dimenticato quella dea. Ma il bisogno che rappresentava non è scomparso.</p>
+    <p class="corpo corpo-chiaro r">Il Richiamo di Vacuna nasce a Montasola, in Sabina, a pochi passi dai luoghi dove Vacuna era venerata. Raffaele e Vivien — che hanno lasciato lavori sicuri per scegliere una vita diversa — lo hanno costruito qui, con le foglie del loro bosco, per portare questo spazio anche a chi non può venire.</p>
+  </div>
+</section>
+
+
+<!-- ── TRE FOGLIE ── -->
+<section class="s r">
+  <div class="inner">
+    <span class="occhiello r">Le tre foglie</span>
+    <h2 class="r">Tre porte.<br>Ognuna apre qualcosa di diverso.</h2>
+    <p class="corpo r">Non si usano tutte insieme — si segue il percorso di sette giorni, una qualità alla volta. O si sceglie quella di cui si ha bisogno quel giorno.</p>
+
+    <div class="foglie-lista">
+      <div class="foglia r">
+        <span class="foglia-num">01</span>
+        <div>
+          <span class="foglia-nome">Mora</span>
+          <span class="foglia-qual">Radicamento</span>
+          <p class="foglia-desc">Cresce ai margini del bosco, dove la terra è più densa. Riporta nel corpo — nel peso, nella presenza, nel contatto con il basso. Per i giorni in cui sei ovunque tranne che qui.</p>
+        </div>
+      </div>
+      <div class="foglia r">
+        <span class="foglia-num">02</span>
+        <div>
+          <span class="foglia-nome">Olivo</span>
+          <span class="foglia-qual">Pace</span>
+          <p class="foglia-desc">Cresce lento, per secoli, su terreni difficili. Porta lo spazio per stare dentro le cose senza indurirsi. Per i giorni in cui il petto è stretto senza sapere perché.</p>
+        </div>
+      </div>
+      <div class="foglia r">
+        <span class="foglia-num">03</span>
+        <div>
+          <span class="foglia-nome">Alloro</span>
+          <span class="foglia-qual">Chiarezza</span>
+          <p class="foglia-desc">Dritto, persistente, con profumo netto. Fa spazio a quello che sai già — quando il rumore smette di coprirlo. Per i giorni in cui la mente gira senza trovare direzione.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PERCORSO 7 GIORNI ── -->
+<section class="s s-alt r">
+  <div class="inner">
+    <span class="occhiello r">Il percorso</span>
+    <h2 class="r">Sette giorni.<br>Un giorno alla volta.</h2>
+    <p class="corpo r">Non è un programma da completare. Puoi iniziare quando vuoi. Puoi fermarti. Puoi riprendere. È tuo.</p>
+
+    <div class="giorni-lista">
+      <div class="giorno r">
+        <span class="giorno-num">Giorni 1–2</span>
+        <span class="giorno-testo">
+          Fermarsi e ascoltare
+          <em>Niente foglie ancora. Solo imparare a sentire dove il corpo parla.</em>
+        </span>
+      </div>
+      <div class="giorno r">
+        <span class="giorno-num">Giorni 3–4</span>
+        <span class="giorno-testo">
+          Tornare a terra · Mora
+          <em>Il radicamento non è uno sforzo. È un ricordo.</em>
+        </span>
+      </div>
+      <div class="giorno r">
+        <span class="giorno-num">Giorno 5</span>
+        <span class="giorno-testo">
+          Ammorbidirsi · Olivo
+          <em>La pace non si raggiunge — si lascia spazio perché arrivi.</em>
+        </span>
+      </div>
+      <div class="giorno r">
+        <span class="giorno-num">Giorno 6</span>
+        <span class="giorno-testo">
+          Vedere chiaro · Alloro
+          <em>Lasciare emergere quello che c'è già sotto il rumore.</em>
+        </span>
+      </div>
+      <div class="giorno r">
+        <span class="giorno-num">Giorno 7</span>
+        <span class="giorno-testo">
+          Vacuna
+          <em>Integrare. Scegliere il proprio ritmo. Diventare tuo.</em>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CONFEZIONE ── -->
+<section class="s r" id="acquista">
+  <div class="inner">
+    <span class="occhiello r">Cosa ricevi</span>
+    <h2 class="r">Tre sacchettini.<br>Un percorso di sette giorni.</h2>
+    <p class="corpo r">Foglie raccolte a mano nel bosco di Montasola, essiccate lentamente senza additivi. Il percorso è accessibile via QR e inviato anche via email — leggibile da mobile, senza account, senza notifiche.</p>
+
+    <ul class="conf-lista r">
+      <li>Mora 15g <em>· Radicamento</em></li>
+      <li>Olivo 15g <em>· Pace</em></li>
+      <li>Alloro 15g <em>· Chiarezza</em></li>
+      <li>Foglio con QR — accesso al percorso 7 giorni</li>
+      <li>Contenuti digitali via email</li>
+    </ul>
+
+    <div class="garanzia r">
+      <span class="garanzia-ico">🍃</span>
+      <div class="garanzia-testo">
+        <strong>30 giorni — soddisfatto o rimborsato</strong>
+        <span>Se qualcosa non va, rimborso completo senza storie. Nel Bosco Parlante, la fiducia è fertile come la terra buona.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CTA FINALE ── -->
+<div class="cta-finale">
+  <p class="cta-frase r">"Vacuna non è qualcosa che fai.<br>È qualcosa che ricordi."</p>
+  <span class="cta-attrib r">— Raffaele e Vivien, Il Bosco Parlante</span>
+  <span class="cta-prezzo r">34,90€</span>
+  <span class="cta-inc r">Tre Richiami + percorso 7 giorni · Foglie da Montasola, Sabina</span>
+  <a href="https://lombricaiomatto.com/products/il-bosco-parlante-richiami-del-bosco-alloro-mora-olivo" class="btn-cta-grande r">Porta Vacuna a casa</a>
+  <span class="cta-nota r">Spedizione in 3–5 giorni · Produzione propria del Bosco Parlante</span>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <span>Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://lombricaiomatto.com">lombricaiomatto.com</a>
+</footer>
+
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 60);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
