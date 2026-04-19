@@ -122,6 +122,8 @@ h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
 .cta-finale{padding:6rem 6vw;border-top:3px solid #1A3A15;text-align:center;}
 .cta-frase{font-family:'Lora',serif;font-size:clamp(1.3rem,3vw,2rem);font-style:italic;line-height:1.6;color:#111;max-width:520px;margin:0 auto 0.5em;}
 .cta-attrib{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:2.5rem;}
+.cta-prezzo{font-family:'Lora',serif;font-size:2.8rem;font-weight:400;color:#111;display:block;line-height:1;margin-bottom:0.15em;}
+.cta-inc{font-size:0.78rem;color:#aaa;letter-spacing:0.08em;display:block;margin-bottom:2rem;}
 .btn-cta-grande{font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:#fff;background:#1A3A15;text-decoration:none;padding:1.2em 3em;display:inline-block;transition:background 0.2s,transform 0.15s;}
 .btn-cta-grande:hover{background:#2D5A27;transform:translateY(-2px);}
 .cta-nota{font-family:'Lora',serif;font-style:italic;font-size:0.85rem;color:#bbb;display:block;margin-top:1.2rem;}
@@ -390,6 +392,8 @@ h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
 <div class="cta-finale">
   <p class="cta-frase r">"Vacuna non è qualcosa che fai.<br>È qualcosa che ricordi."</p>
   <span class="cta-attrib r">— Raffaele e Vivien, Il Bosco Parlante</span>
+  <span class="cta-prezzo r">34,90€</span>
+  <span class="cta-inc r">Tre Richiami + percorso 7 giorni · Foglie da Montasola, Sabina</span>
   <a href="https://lombricaiomatto.com/pages/il-richiamo-di-vacuna" class="btn-cta-grande r">Porta Vacuna a casa</a>
   <span class="cta-nota r">Spedizione in 3–5 giorni · Produzione propria del Bosco Parlante</span>
 </div>
@@ -419,6 +423,12 @@ const obs = new IntersectionObserver((entries) => {
       obs.unobserve(e.target);
     }
   });
+}, { threshold: 0.08 });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
 }, { threshold: 0.08 });
 document.querySelectorAll('.r').forEach(el => obs.observe(el));
 </script>
