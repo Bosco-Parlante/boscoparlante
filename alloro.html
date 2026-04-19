@@ -81,6 +81,22 @@ h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
   .cta-finale{padding:4rem 5vw;}
   .footer{flex-direction:column;gap:0.5rem;text-align:center;}
 }
+  /* ── GALLERIA PRODOTTO ── */
+.galleria{width:100%;background:#f9f8f5;border-bottom:1px solid #e8e8e8;}
+.galleria-inner{display:grid;grid-template-columns:1fr;gap:0;}
+.galleria-hero{width:100%;aspect-ratio:4/5;overflow:hidden;background:#ede8dc;position:relative;}
+.galleria-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.galleria-thumb{display:flex;gap:4px;padding:4px;background:#fff;}
+.galleria-thumb img{width:calc(25% - 3px);aspect-ratio:1/1;object-fit:cover;cursor:pointer;opacity:0.65;transition:opacity 0.2s;border:1.5px solid transparent;}
+.galleria-thumb img.attiva{opacity:1;border-color:#1A3A15;}
+.galleria-placeholder{width:100%;aspect-ratio:4/5;background:#ede8dc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;}
+.galleria-placeholder span{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.9rem;color:#a89880;text-align:center;padding:0 2rem;}
+@media(min-width:900px){
+  .galleria-inner{grid-template-columns:1fr 1fr;max-width:1100px;margin:0 auto;}
+  .galleria-hero{aspect-ratio:unset;min-height:600px;}
+  .galleria-thumb{flex-direction:column;padding:4px;gap:4px;}
+  .galleria-thumb img{width:100%;aspect-ratio:1/1;}
+}
 </style>
 </head>
 <body>
@@ -98,7 +114,48 @@ h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
   <a href="#acquista" class="navbar-cta">Acquista — 14,90€</a>
 </nav>
 
+<!-- GALLERIA PRODOTTO
+     Quando hai le foto da ChatGPT:
+     1. Carica i file nella repo GitHub (cartella /images)
+     2. Sostituisci ogni src="..." con il percorso reale
+     3. Rimuovi il div .galleria-placeholder e decommenta il div con le img
+-->
+<div class="galleria">
+  <div class="galleria-inner">
 
+    <!-- Immagine principale — SOSTITUISCI src con la tua foto -->
+    <div class="galleria-hero" id="imgHero">
+      <!-- QUANDO HAI LE FOTO: rimuovi .galleria-placeholder e inserisci qui:
+      <img src="images/alloro-hero.jpg" alt="Richiamo del Bosco — Alloro · Chiarezza">
+      -->
+      <div class="galleria-placeholder">
+        <span>Alloro · Chiarezza</span>
+        <span style="font-size:0.75rem;color:#c4b8a8;">Foto prodotto in arrivo</span>
+      </div>
+    </div>
+
+    <!-- Miniature — SOSTITUISCI con le tue 3-4 foto aggiuntive -->
+    <!--
+    <div class="galleria-thumb">
+      <img src="images/alloro-1.jpg" alt="Alloro" class="attiva" onclick="cambia(this)">
+      <img src="images/alloro-2.jpg" alt="Alloro rituale" onclick="cambia(this)">
+      <img src="images/alloro-3.jpg" alt="Alloro bosco" onclick="cambia(this)">
+      <img src="images/alloro-4.jpg" alt="Alloro scrivania" onclick="cambia(this)">
+    </div>
+    -->
+
+  </div>
+</div>
+
+<script>
+function cambia(thumb) {
+  const hero = document.getElementById('imgHero');
+  hero.innerHTML = '<img src="' + thumb.src + '" alt="' + thumb.alt + '">';
+  document.querySelectorAll('.galleria-thumb img').forEach(i => i.classList.remove('attiva'));
+  thumb.classList.add('attiva');
+}
+</script>
+  
 <section class="hero">
   <div class="hero-num" aria-hidden="true">14</div>
   <div class="hero-inner">
