@@ -81,21 +81,20 @@ h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
   .cta-finale{padding:4rem 5vw;}
   .footer{flex-direction:column;gap:0.5rem;text-align:center;}
 }
-  /* ── GALLERIA PRODOTTO ── */
-.galleria{width:100%;background:#f9f8f5;border-bottom:1px solid #e8e8e8;}
-.galleria-inner{display:grid;grid-template-columns:1fr;gap:0;}
-.galleria-hero{width:100%;aspect-ratio:4/5;overflow:hidden;background:#ede8dc;position:relative;}
+/* ── LAYOUT PRODOTTO (immagine + testo affiancati su desktop) ── */
+.prodotto-wrap{display:block;}
+.galleria{width:100%;background:#f9f8f5;}
+.galleria-hero{width:100%;aspect-ratio:4/5;overflow:hidden;background:#ede8dc;}
 .galleria-hero img{width:100%;height:100%;object-fit:cover;display:block;}
 .galleria-thumb{display:flex;gap:4px;padding:4px;background:#fff;}
 .galleria-thumb img{width:calc(25% - 3px);aspect-ratio:1/1;object-fit:cover;cursor:pointer;opacity:0.65;transition:opacity 0.2s;border:1.5px solid transparent;}
 .galleria-thumb img.attiva{opacity:1;border-color:#1A3A15;}
-.galleria-placeholder{width:100%;aspect-ratio:4/5;background:#ede8dc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;}
-.galleria-placeholder span{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.9rem;color:#a89880;text-align:center;padding:0 2rem;}
+
 @media(min-width:900px){
-  .galleria-inner{grid-template-columns:1fr 1fr;max-width:1100px;margin:0 auto;}
-  .galleria-hero{aspect-ratio:unset;min-height:600px;}
-  .galleria-thumb{flex-direction:column;padding:4px;gap:4px;}
-  .galleria-thumb img{width:100%;aspect-ratio:1/1;}
+  .prodotto-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:90vh;align-items:start;}
+  .galleria{position:sticky;top:60px;}
+  .galleria-hero{aspect-ratio:unset;min-height:70vh;}
+  .hero{border-bottom:none;border-left:1px solid #e8e8e8;}
 }
 </style>
 </head>
@@ -120,6 +119,7 @@ h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
      2. Sostituisci ogni src="..." con il percorso reale
      3. Rimuovi il div .galleria-placeholder e decommenta il div con le img
 -->
+  <div class="prodotto-wrap">
 <div class="galleria">
   <div class="galleria-inner">
 
@@ -173,6 +173,7 @@ function cambia(thumb) {
     </div>
   </div>
 </section>
+    <div class="prodotto-wrap">
 
 
 <section class="s r">
