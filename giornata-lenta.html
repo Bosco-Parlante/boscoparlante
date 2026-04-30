@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giornata Lenta al Bosco — Il Bosco Parlante · Montasola, Sabina</title>
+<meta name="description" content="Una giornata a Montasola con pratiche guidate, camminate nel bosco, pranzo condiviso. Sabato 13 giugno 2026 · 12 persone · 49,99€.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:18px;}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#111;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* ── TOPBAR ── */
+.topbar{background:#3D1F0A;color:rgba(255,255,255,0.75);text-align:center;padding:0.6em 1rem;font-size:0.72rem;letter-spacing:0.1em;font-weight:400;}
+
+/* ── NAVBAR ── */
+.navbar{border-bottom:1px solid #e8e8e8;padding:1.1rem 6vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:100;}
+.navbar-wa{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:400;letter-spacing:0.1em;color:#3D1F0A;text-decoration:none;display:flex;align-items:center;gap:0.4em;border:1px solid #e0cfc4;padding:0.55em 1.1em;transition:background 0.2s,border-color 0.2s;}
+.navbar-wa:hover{background:#fdf6f0;border-color:#3D1F0A;}
+
+/* ── LAYOUT BASE ── */
+.s{padding:5rem 6vw;}
+.s-alt{background:#f9f6f2;}
+.s-scura{background:#1A1008;color:#fff;}
+.inner{max-width:660px;margin:0 auto;}
+.inner-wide{max-width:840px;margin:0 auto;}
+
+/* ── TIPOGRAFIA ── */
+h1,h2,h3{font-family:'Lora','Georgia','Times New Roman',serif;font-weight:400;line-height:1.2;}
+h1{font-size:clamp(2.2rem,5.5vw,3.8rem);}
+h2{font-size:clamp(1.5rem,3.2vw,2.2rem);}
+h3{font-size:clamp(1.1rem,2.2vw,1.4rem);}
+.occhiello{display:block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#8B4513;font-weight:400;margin-bottom:1rem;border-left:2px solid #8B4513;padding-left:0.7em;}
+.occhiello-chiaro{color:rgba(255,255,255,0.4);border-left-color:rgba(255,255,255,0.25);}
+.corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+.corpo-chiaro{color:rgba(255,255,255,0.58);}
+.nota{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.9rem;color:#888;line-height:1.7;}
+
+/* ── BOTTONI ── */
+.btn-cta{font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:#fff;background:#8B4513;text-decoration:none;padding:1em 2.4em;transition:background 0.2s,transform 0.15s;display:inline-block;border:none;cursor:pointer;}
+.btn-cta:hover{background:#6B3410;transform:translateY(-1px);}
+.btn-cta-grande{padding:1.25em 3.2em;font-size:0.88rem;}
+.btn-scroll{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:#888;text-decoration:none;border-bottom:1px solid #ddd;padding-bottom:1px;transition:color 0.2s,border-color 0.2s;}
+.btn-scroll:hover{color:#8B4513;border-color:#8B4513;}
+
+/* ── HERO ── */
+.hero{padding:6.5rem 6vw 5rem;background:#f9f6f2;}
+.hero-inner{max-width:720px;}
+.hero h1{margin-bottom:0.7em;line-height:1.18;}
+.hero h1 em{font-style:italic;color:#8B4513;}
+.hero-claim{font-family:'Lora',Georgia,serif;font-size:clamp(1rem,2.2vw,1.2rem);font-style:italic;color:#666;line-height:1.7;margin-bottom:2rem;max-width:540px;}
+.hero-dettagli{display:flex;flex-wrap:wrap;gap:0.5rem 1.4rem;margin-bottom:2.5rem;}
+.hero-dettagli span{font-size:0.78rem;letter-spacing:0.06em;color:#555;display:flex;align-items:center;gap:0.35em;}
+.hero-cta-wrap{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;}
+.posti-badge{display:inline-flex;align-items:center;gap:0.5em;background:#fff;border:1px solid #ddd3c9;padding:0.45em 1em;font-size:0.78rem;color:#555;letter-spacing:0.04em;margin-bottom:0.5rem;}
+.posti-badge strong{color:#8B4513;font-weight:400;}
+
+/* ── SEZIONE 2 — COSA SUCCEDE ── */
+.programma-lista{margin-top:2rem;display:flex;flex-direction:column;gap:0;}
+.programma-item{display:grid;grid-template-columns:3rem 1fr;gap:1rem;padding:1.5rem 0;border-bottom:1px solid #ebebeb;align-items:start;}
+.programma-item:first-child{border-top:1px solid #ebebeb;}
+.programma-icona{font-size:1.5rem;line-height:1.4;padding-top:2px;}
+.programma-titolo{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#8B4513;font-weight:400;display:block;margin-bottom:0.4em;}
+.programma-testo{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.98rem;color:#444;line-height:1.7;}
+.nota-programma{margin-top:2rem;padding:1.4rem 1.6rem;border-left:3px solid #8B4513;background:#fdf6f0;}
+.nota-programma p{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;line-height:1.7;color:#555;}
+
+/* ── SEZIONE 3 — VIDEO + FONDATORI ── */
+.video-placeholder{width:100%;aspect-ratio:16/9;background:#ede8dc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;margin-bottom:2.5rem;}
+.video-placeholder span:first-child{font-size:2.5rem;opacity:0.4;}
+.video-placeholder span:last-child{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.85rem;color:#bbb;letter-spacing:0.04em;}
+.fondatori-testo p{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+.fondatori-cta{margin-top:2.5rem;}
+
+/* ── SEZIONE 4 — LOGISTICA ── */
+.logistica-griglia{display:grid;grid-template-columns:1fr;gap:0;margin-top:1.5rem;}
+.logistica-riga{display:grid;grid-template-columns:1.8rem 1fr 2fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid #e8e8e8;align-items:start;}
+.logistica-riga:first-child{border-top:1px solid #e8e8e8;}
+.logistica-icona{font-size:1rem;padding-top:2px;}
+.logistica-label{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8B4513;font-weight:400;line-height:1.5;padding-top:1px;}
+.logistica-valore{font-size:0.9rem;line-height:1.6;color:#333;}
+.logistica-valore em{font-family:'Lora',Georgia,serif;font-style:italic;color:#888;font-size:0.88em;}
+.nota-wa{display:flex;align-items:center;gap:0.6em;margin-top:2rem;padding:1.2rem 1.4rem;border:1px solid #e0cfc4;background:#fdf6f0;font-size:0.88rem;color:#555;}
+.nota-wa a{color:#8B4513;text-decoration:none;font-weight:400;}
+.nota-wa a:hover{text-decoration:underline;}
+
+/* ── SEZIONE 5 — CHI SIETE ── */
+.fondatori-griglia{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2rem;}
+.fondatore h3{font-family:'Lora',Georgia,serif;font-weight:400;font-size:1.1rem;margin-bottom:0.2em;}
+.fondatore h3 em{font-style:italic;color:#8B4513;}
+.fondatore-ruolo{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:1rem;}
+.fondatore p{font-size:0.95rem;line-height:1.8;color:#444;}
+.fondatori-unione{margin-top:2.5rem;padding:1.4rem 1.6rem;border-left:3px solid #8B4513;}
+.fondatori-unione p{font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;line-height:1.7;color:#333;}
+
+/* ── SEZIONE 6 — CTA FINALE ── */
+.cta-finale{padding:6rem 6vw;border-top:3px solid #8B4513;text-align:center;}
+.cta-frase{font-family:'Lora',Georgia,serif;font-size:clamp(1.2rem,2.8vw,1.8rem);font-style:italic;line-height:1.65;color:#111;max-width:560px;margin:0 auto 1rem;}
+.cta-attrib{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:2.5rem;}
+.incluso-lista{display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.8rem;margin-bottom:2.5rem;}
+.incluso-lista span{font-size:0.82rem;color:#666;display:flex;align-items:center;gap:0.3em;}
+.incluso-lista span::before{content:"·";color:#8B4513;font-size:1.2em;}
+.cta-prezzo{font-family:'Lora',Georgia,serif;font-size:2.8rem;font-weight:400;color:#111;display:block;line-height:1;margin-bottom:0.3em;}
+.cta-inc{font-size:0.78rem;color:#aaa;letter-spacing:0.07em;display:block;margin-bottom:2rem;}
+.cta-note{margin-top:1.5rem;}
+.cta-note p{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.85rem;color:#bbb;line-height:1.6;}
+.cta-note p + p{margin-top:0.4rem;}
+
+/* ── FOOTER ── */
+.footer{background:#f9f6f2;border-top:1px solid #e8e8e8;padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+.footer a{color:#aaa;text-decoration:none;}
+.footer a:hover{color:#8B4513;}
+
+/* ── ANIMAZIONI ── */
+.r{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.r.vis{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  html{font-size:16px;}
+  .s{padding:3.5rem 5vw;}
+  .hero{padding:4rem 5vw 3rem;}
+  .cta-finale{padding:4rem 5vw;}
+  .footer{flex-direction:column;gap:0.5rem;text-align:center;}
+  .fondatori-griglia{grid-template-columns:1fr;gap:2rem;}
+  .logistica-riga{grid-template-columns:1.6rem 1fr;grid-template-rows:auto auto;}
+  .logistica-valore{grid-column:2;}
+}
+@media(max-width:500px){
+  .hero-dettagli{gap:0.4rem 1rem;}
+  .incluso-lista{gap:0.4rem 1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">Sabato 13 giugno 2026 · Montasola, Sabina · 12 posti · 49,99€</div>
+
+<nav class="navbar">
+  <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <span style="display:flex;flex-direction:column;">
+      <span style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#1A3A15;line-height:1.2;">Il Bosco Parlante</span>
+      <span style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#888;font-weight:400;">Montasola · Sabina</span>
+    </span>
+  </a>
+  <a href="https://wa.me/[WHATSAPP_NUMBER]" class="navbar-wa" target="_blank" rel="noopener">
+    📲 Scrivi su WhatsApp
+  </a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     SEZIONE 1 — HERO
+════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="occhiello r">Giornata Lenta al Bosco · Evento pilota</span>
+
+    <h1 class="r">
+      Una giornata al bosco<br>
+      a Montasola.<br>
+      <em>Pratiche, silenzio,<br>ascolto.</em>
+    </h1>
+
+    <p class="hero-claim r">Senza dover essere pronti per niente.</p>
+
+    <div class="hero-dettagli r">
+      <span>📅 Sabato 13 giugno 2026</span>
+      <span>⏰ 10:00–17:00</span>
+      <span>📍 Montasola, Sabina</span>
+      <span>🍽️ Pranzo condiviso incluso</span>
+    </div>
+
+    <div class="posti-badge r">
+      👥 Massimo <strong>12 persone</strong> — posti limitati
+    </div>
+
+    <div class="hero-cta-wrap r">
+      <a href="[SHOPIFY_URL]" class="btn-cta">Prenota il tuo posto — 49,99€</a>
+      <a href="#cosa-succede" class="btn-scroll">Cosa succede, concretamente ↓</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SEZIONE 2 — COSA SUCCEDE
+════════════════════════════════════════ -->
+<section class="s" id="cosa-succede">
+  <div class="inner-wide">
+    <span class="occhiello r">Il programma</span>
+    <h2 class="r">Cosa succede,<br>concretamente.</h2>
+
+    <div class="programma-lista r">
+
+      <div class="programma-item">
+        <div class="programma-icona">🌲</div>
+        <div>
+          <span class="programma-titolo">Cerchio di accoglienza</span>
+          <p class="programma-testo">Ci si siede. Ognuno dice da dove viene — non il lavoro, il posto da cui viene in quel momento. Bastano tre minuti per capire che non sei l'unico.</p>
+        </div>
+      </div>
+
+      <div class="programma-item">
+        <div class="programma-icona">👣</div>
+        <div>
+          <span class="programma-titolo">Pratiche di propriocezione</span>
+          <p class="programma-testo">Guidate da Raffaele. Non serve esperienza. Non serve credere in niente. Serve stare fermi e sentire il corpo che risponde. Lo fa sempre — aspetta solo che tu smetta di parlargli sopra.</p>
+        </div>
+      </div>
+
+      <div class="programma-item">
+        <div class="programma-icona">🌿</div>
+        <div>
+          <span class="programma-titolo">Passeggiate nel bosco e microrituali</span>
+          <p class="programma-testo">Non guided tour. Camminare, fermarsi, ascoltare. Imparare a stare in un posto senza doverlo attraversare in fretta.</p>
+        </div>
+      </div>
+
+      <div class="programma-item">
+        <div class="programma-icona">👐</div>
+        <div>
+          <span class="programma-titolo">Pratiche di coppia e di gruppo sull'ascolto</span>
+          <p class="programma-testo">Le più difficili. Non si tratta di dire le cose giuste. Si tratta di stare in ascolto quando vorresti già rispondere.</p>
+        </div>
+      </div>
+
+      <div class="programma-item">
+        <div class="programma-icona">🔥</div>
+        <div>
+          <span class="programma-titolo">Cerchio di chiusura</span>
+          <p class="programma-testo">Si porta fuori quello che è emerso. Non per risolverlo — per non perderlo appena si rientra in macchina.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="nota-programma r">
+      <p>Nessun programma da completare. Nessun risultato garantito. Una giornata intera. Con un tavolo nel bosco in mezzo — ognuno porta qualcosa, ognuno riparte con qualcosa di diverso.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SEZIONE 3 — RAFFAELE E VIVIEN (video)
+════════════════════════════════════════ -->
+<section class="s s-alt">
+  <div class="inner">
+    <span class="occhiello r">Chi conduce la giornata</span>
+
+    <!-- Placeholder video/foto — sostituire con <video> o <img> quando disponibile -->
+    <div class="video-placeholder r" aria-label="Video o foto di Raffaele e Vivien nel bosco">
+      <span>▷</span>
+      <span>Video · Raffaele e Vivien a Montasola</span>
+    </div>
+
+    <div class="fondatori-testo r">
+      <p>Siamo Raffaele e Vivien. Abbiamo lasciato lavori che funzionavano, vissuto in ecovillaggi per un anno, investito tutto in sei ettari di bosco in Sabina.</p>
+      <p>Non perché avessimo un piano. Perché avevamo smesso di fingere di non sentire quello che sentivamo da anni.</p>
+      <p>Questa giornata non è un corso. Non insegniamo niente che tu non sappia già. Creiamo lo spazio perché tu possa sentirlo — senza scuse, senza aspettative, senza dover essere all'altezza di niente.</p>
+    </div>
+
+    <div class="fondatori-cta r">
+      <a href="[SHOPIFY_URL]" class="btn-cta">Prenota il tuo posto — 49,99€</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SEZIONE 4 — LOGISTICA
+════════════════════════════════════════ -->
+<section class="s" id="logistica">
+  <div class="inner">
+    <span class="occhiello r">Informazioni pratiche</span>
+    <h2 class="r">Dove, quando,<br>come arrivare.</h2>
+
+    <div class="logistica-griglia r">
+
+      <div class="logistica-riga">
+        <span class="logistica-icona">📅</span>
+        <span class="logistica-label">Quando</span>
+        <span class="logistica-valore">Sabato 13 giugno 2026</span>
+      </div>
+
+      <div class="logistica-riga">
+        <span class="logistica-icona">⏰</span>
+        <span class="logistica-label">Orario</span>
+        <span class="logistica-valore">10:00 – 17:00 <em>· pranzo condiviso ~13:00–14:30, nel bosco se il tempo lo permette, nel casale se no</em></span>
+      </div>
+
+      <div class="logistica-riga">
+        <span class="logistica-icona">📍</span>
+        <span class="logistica-label">Dove</span>
+        <span class="logistica-valore">Il Bosco Parlante · Montasola, Sabina (Rieti)</span>
+      </div>
+
+      <div class="logistica-riga">
+        <span class="logistica-icona">🚗</span>
+        <span class="logistica-label">Da Roma</span>
+        <span class="logistica-valore">~70 km · ~1 ora di auto <em>· indicazioni complete nella mail di conferma</em></span>
+      </div>
+
+      <div class="logistica-riga">
+        <span class="logistica-icona">🅿️</span>
+        <span class="logistica-label">Parcheggio</span>
+        <span class="logistica-valore">Disponibile direttamente al casale</span>
+      </div>
+
+      <div class="logistica-riga">
+        <span class="logistica-icona">👟</span>
+        <span class="logistica-label">Cosa portare</span>
+        <span class="logistica-valore">Scarpe comode per il bosco · abbigliamento a strati · acqua · qualcosa da portare a tavola <em>(cibo o bevanda — quello che senti)</em></span>
+      </div>
+
+      <div class="logistica-riga">
+        <span class="logistica-icona">💳</span>
+        <span class="logistica-label">Incluso</span>
+        <span class="logistica-valore">Giornata intera + pranzo nel bosco + 1 Lombrisacco + Richiamo di Vacuna</span>
+      </div>
+
+      <div class="logistica-riga">
+        <span class="logistica-icona">👥</span>
+        <span class="logistica-label">Posti</span>
+        <span class="logistica-valore">Massimo 12 persone</span>
+      </div>
+
+    </div>
+
+    <p class="nota r" style="margin-top:1.8rem;">Montasola non si trova facilmente sul navigatore con l'indirizzo del casale. Nella mail di conferma trovi le indicazioni esatte e il link Google Maps per arrivare senza perderti.</p>
+
+    <div class="nota-wa r">
+      <span>📲</span>
+      <span>Se hai dubbi prima di prenotare, scrivici su WhatsApp: <a href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener">[WHATSAPP_NUMBER]</a></span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SEZIONE 5 — CHI SIETE
+════════════════════════════════════════ -->
+<section class="s s-scura">
+  <div class="inner">
+    <span class="occhiello occhiello-chiaro r">Raffaele e Vivien</span>
+    <h2 class="r" style="color:#fff;margin-bottom:2.5rem;">Due persone.<br>Un sistema.</h2>
+
+    <div class="fondatori-griglia r">
+
+      <div class="fondatore">
+        <h3><em>Raffaele</em></h3>
+        <span class="fondatore-ruolo">Dà la struttura</span>
+        <p style="color:rgba(255,255,255,0.6);">Vent'anni di pratica somatica — Yoga Tantrico Kashmir, Qi Gong, Coerenza RQI, Yoga Nidra. Non li insegna uno per uno. Li ha distillati in qualcosa che chiunque può fare in tre minuti, e che non richiede di credere in niente di particolare. Solo di stare fermi abbastanza a lungo da sentire cosa c'è già.</p>
+      </div>
+
+      <div class="fondatore">
+        <h3><em>Vivien</em></h3>
+        <span class="fondatore-ruolo">Dà il permesso</span>
+        <p style="color:rgba(255,255,255,0.6);">Scenografa cinematografica. Ha costruito spazi per anni — su set che finivano e iniziavano, per storie che non erano sue. A un certo punto ha smesso. Non per stanchezza. Perché aveva capito che lo spazio più difficile da costruire era quello in cui lei poteva finalmente stare.</p>
+      </div>
+
+    </div>
+
+    <div class="fondatori-unione r" style="border-left-color:#8B4513;margin-top:2.5rem;">
+      <p style="color:rgba(255,255,255,0.75);">Lui dà la struttura — mostra come fermarsi. Lei dà il permesso — mostra che vale la pena farlo.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SEZIONE 6 — CTA FINALE
+════════════════════════════════════════ -->
+<div class="cta-finale">
+
+  <p class="cta-frase r">Fermarsi. Sentire. Stare in un posto senza doverlo attraversare in fretta.</p>
+  <span class="cta-attrib r">— Il Bosco Parlante · Montasola, Sabina</span>
+
+  <div class="incluso-lista r">
+    <span>Giornata intera 10:00–17:00</span>
+    <span>Pranzo condiviso nel bosco</span>
+    <span>1 Lombrisacco</span>
+    <span>Richiamo di Vacuna</span>
+    <span>Pratiche guidate da Raffaele</span>
+    <span>12 persone al massimo</span>
+  </div>
+
+  <span class="cta-prezzo r">49,99€</span>
+  <span class="cta-inc r">Tutto incluso · Sabato 13 giugno 2026 · Montasola, Sabina</span>
+
+  <a href="[SHOPIFY_URL]" class="btn-cta btn-cta-grande r">Prenota il mio posto — 49,99€</a>
+
+  <div class="cta-note r">
+    <p>Dopo il pagamento ricevi una mail con tutti i dettagli logistici e le indicazioni per arrivare.</p>
+    <p>I posti sono limitati a 12 — se la data è già piena ti avvisiamo subito e ti proponiamo la prossima.</p>
+    <p style="margin-top:0.8rem;">Puoi venire con qualcuno. Anzi — spesso è più facile così.</p>
+  </div>
+
+</div>
+
+
+<footer class="footer">
+  <span>Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://lombricaiomatto.com">lombricaiomatto.com</a>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*60);obs.unobserve(e.target);}})},{threshold:0.08});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
