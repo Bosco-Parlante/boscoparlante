@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi Siamo — Il Bosco Parlante</title>
+<meta name="description" content="Raffaele e Vivien. Lui dà la struttura — mostra come fermarsi. Lei dà il permesso — mostra che vale la pena. Siamo a Montasola, in Sabina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET & BASE ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:18px;}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#111;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* ── TOPBAR ── */
+.topbar{background:#1A3A15;color:rgba(255,255,255,0.75);text-align:center;padding:0.6em 1rem;font-size:0.72rem;letter-spacing:0.1em;font-weight:400;}
+
+/* ── NAVBAR ── */
+.navbar{border-bottom:1px solid #e8e8e8;padding:1rem 6vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:100;}
+.navbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.navbar-logo-text{display:flex;flex-direction:column;}
+.navbar-logo-name{font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#1A3A15;line-height:1.2;}
+.navbar-logo-sub{font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#888;font-weight:400;}
+.navbar-nav{display:flex;align-items:center;gap:2rem;}
+.navbar-nav a{font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#555;text-decoration:none;transition:color 0.2s;font-weight:400;}
+.navbar-nav a:hover{color:#1A3A15;}
+.navbar-nav a.attiva{color:#1A3A15;border-bottom:1px solid #1A3A15;padding-bottom:1px;}
+.navbar-cta{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:#1A3A15;text-decoration:none;padding:0.65em 1.4em;transition:background 0.2s;margin-left:1rem;}
+.navbar-cta:hover{background:#2D5A27;}
+.navbar-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.navbar-mobile-toggle span{display:block;width:22px;height:1.5px;background:#1A3A15;transition:all 0.3s;}
+
+/* ── TIPOGRAFIA ── */
+.occhiello{display:block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#2D5A27;font-weight:400;margin-bottom:1rem;border-left:2px solid #2D5A27;padding-left:0.7em;}
+h1,h2{font-family:'Lora',Georgia,serif;font-weight:400;line-height:1.2;}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);}
+.corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+.corpo strong{font-weight:500;color:#222;}
+.corpo-scuro{font-size:1rem;line-height:1.85;color:rgba(255,255,255,0.6);margin-bottom:1.1em;}
+.corpo-scuro strong{color:rgba(255,255,255,0.9);font-weight:500;}
+
+/* ── HERO ── */
+.hero{border-bottom:1px solid #e8e8e8;}
+.hero-foto{width:100%;height:460px;background:#d6cfc4;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero-foto img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-foto-placeholder{display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
+.hero-foto-placeholder span{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:rgba(0,0,0,0.3);letter-spacing:0.04em;text-align:center;padding:0 2rem;}
+.hero-testo{padding:4rem 6vw 4.5rem;max-width:700px;}
+.hero-testo h1{margin-bottom:0.5em;}
+.hero-testo h1 em{font-style:italic;color:#2D5A27;}
+.hero-testo .claim{font-family:'Lora',Georgia,serif;font-size:clamp(1.05rem,2.3vw,1.3rem);font-style:italic;line-height:1.7;color:#555;max-width:560px;}
+
+/* ── SEZIONI CORPO ── */
+.s{padding:5rem 6vw;}
+.s-alt{background:#f9f8f5;}
+.s-scura{background:#111;color:#fff;}
+.inner{max-width:660px;margin:0 auto;}
+
+/* ── CITAZIONE ── */
+.citazione-wrap{border-left:3px solid #1A3A15;padding-left:1.5rem;margin:2.5rem 0;}
+.citazione-wrap p{font-family:'Lora',Georgia,serif;font-size:clamp(1.05rem,2.2vw,1.35rem);font-style:italic;line-height:1.65;color:#222;}
+
+/* ── SEZIONE FONDATORI ── */
+.fondatori{padding:5rem 6vw;}
+.fondatori-inner{max-width:660px;margin:0 auto;}
+.fondatore-blocco{margin-bottom:3.5rem;}
+.fondatore-blocco:last-child{margin-bottom:0;}
+.fondatore-ruolo{display:inline-flex;align-items:center;gap:0.4em;background:#f0f5ee;border:1px solid #d8e4d4;padding:0.35em 0.8em;font-size:0.72rem;color:#2D5A27;font-weight:400;margin-bottom:1.2rem;}
+
+/* ── SEZIONE INSIEME ── */
+.insieme{padding:5rem 6vw;background:#f9f8f5;}
+.insieme-inner{max-width:660px;margin:0 auto;}
+
+/* ── SEZIONE OGGI ── */
+.oggi{padding:5rem 6vw;}
+.oggi-inner{max-width:660px;margin:0 auto;}
+.oggi-lista{margin:1.5rem 0 0;display:flex;flex-direction:column;gap:0.8rem;}
+.oggi-voce{font-size:0.9rem;line-height:1.7;color:#555;padding-left:1.2rem;border-left:2px solid #d8e4d4;}
+
+/* ── CHIUSURA SCURA ── */
+.chiusura-scura{padding:6rem 6vw;}
+.chiusura-scura-inner{max-width:620px;margin:0 auto;}
+.chiusura-citazione{font-family:'Lora',Georgia,serif;font-size:clamp(1.2rem,2.8vw,1.7rem);font-style:italic;line-height:1.7;color:#fff;margin-bottom:2rem;}
+
+/* ── BTN ── */
+.btn-primario{font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:#fff;background:#1A3A15;text-decoration:none;padding:1em 2.2em;transition:background 0.2s,transform 0.15s;display:inline-block;}
+.btn-primario:hover{background:#2D5A27;transform:translateY(-1px);}
+.btn-scroll{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:rgba(255,255,255,0.5);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:1px;transition:color 0.2s,border-color 0.2s;display:inline-block;margin-top:1rem;}
+.btn-scroll:hover{color:#fff;border-color:rgba(255,255,255,0.6);}
+
+/* ── FOOTER ── */
+.footer{background:#f9f8f5;border-top:1px solid #e8e8e8;padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+.footer a{color:#aaa;text-decoration:none;}
+.footer a:hover{color:#1A3A15;}
+
+/* ── ANIMAZIONI ── */
+.r{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.r.vis{opacity:1;transform:none;}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  html{font-size:16px;}
+  .hero-foto{height:280px;}
+  .hero-testo{padding:3rem 5vw 3.5rem;}
+  .fondatori{padding:3.5rem 5vw;}
+  .insieme{padding:3.5rem 5vw;}
+  .oggi{padding:3.5rem 5vw;}
+  .chiusura-scura{padding:4rem 5vw;}
+  .footer{flex-direction:column;gap:0.5rem;text-align:center;}
+  .navbar-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid #e8e8e8;flex-direction:column;gap:0;padding:1rem 6vw 1.5rem;}
+  .navbar-nav.aperto{display:flex;}
+  .navbar-nav a{padding:0.6rem 0;border-bottom:1px solid #f0f0f0;width:100%;}
+  .navbar-nav a.attiva{border-bottom:1px solid #f0f0f0;padding-bottom:0.6rem;}
+  .navbar-nav a:last-child{border-bottom:none;}
+  .navbar-mobile-toggle{display:flex;}
+  .navbar-cta{display:none;}
+  .navbar{position:relative;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">Spedizione gratuita · Prodotto a Montasola, Sabina</div>
+
+<nav class="navbar">
+  <a href="/" class="navbar-logo">
+    <img src="logo bosco parlante.png" alt="Il Bosco Parlante" style="width:36px;height:36px;object-fit:contain;">
+    <span class="navbar-logo-text">
+      <span class="navbar-logo-name">Il Bosco Parlante</span>
+      <span class="navbar-logo-sub">Montasola · Sabina</span>
+    </span>
+  </a>
+  <div class="navbar-nav" id="navMenu">
+    <a href="/">Home</a>
+    <a href="/kit-del-bosco">Kit del Bosco</a>
+    <a href="/le-tasche">Le Tasche</a>
+    <a href="/giornata-lenta">Giornata Lenta</a>
+    <a href="/manifesto">Manifesto</a>
+    <a href="/chi-siamo" class="attiva">Chi Siamo</a>
+  </div>
+  <a href="https://lombricaiomatto.com/collections/frontpage/products/offerta-lombrisacchi" class="navbar-cta">Kit del Bosco — 39,99€</a>
+  <div class="navbar-mobile-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+
+<!-- ── HERO — foto + titolo ── -->
+<section class="hero">
+  <div class="hero-foto r">
+    <!-- Sostituire con: <img src="chi-siamo-hero.jpg" alt="Vivien e Raffaele nel bosco di Montasola — una mattina ordinaria, luce naturale"> -->
+    <div class="hero-foto-placeholder">
+      <span>Foto orizzontale · Vivien e Raffaele nel bosco di Montasola<br>Momento ordinario · Luce naturale · Toni caldi</span>
+    </div>
+  </div>
+  <div class="hero-testo">
+    <span class="occhiello r">Chi Siamo · Montasola, Sabina</span>
+    <h1 class="r">Lui dà la struttura.<br><em>Lei dà il permesso.</em></h1>
+    <p class="claim r">Qui a Montasola le mattine iniziano con il bosco. Prima che ci sia altro — prima del telefono, delle notifiche, delle cose da fare — c'è il suono delle foglie, la luce che cambia, qualcosa che non ha fretta.</p>
+  </div>
+</section>
+
+
+<!-- ── INTRO ── -->
+<section class="s">
+  <div class="inner">
+    <p class="corpo r">Non è qualcosa che si impara una volta. È qualcosa che si sceglie, ogni mattina.</p>
+  </div>
+</section>
+
+
+<!-- ── FONDATORI ── -->
+<section class="fondatori s-alt">
+  <div class="fondatori-inner">
+
+    <div class="fondatore-blocco">
+      <span class="fondatore-ruolo r">&#9675;&nbsp; Raffaele — dà la struttura</span>
+      <p class="corpo r"><strong>Raffaele ha passato vent'anni a cercare come stare fermo.</strong> Non è una metafora — ha attraversato pratiche, discipline, silenzi, notti in cui il corpo sapeva qualcosa che la testa non riusciva ancora ad ascoltare. Ha imparato che fermarsi non è una tecnica. È una disponibilità. E che quella disponibilità si può coltivare — in tre minuti, con un gesto semplice, esattamente dove sei.</p>
+      <p class="corpo r">Raffaele dà la struttura. Mostra come fermarsi.</p>
+    </div>
+
+    <div class="fondatore-blocco">
+      <span class="fondatore-ruolo r">&#9675;&nbsp; Vivien — dà il permesso</span>
+      <p class="corpo r"><strong>Vivien viene dal cinema.</strong> Per anni ha costruito mondi sullo schermo — scenografie, atmosfere, la materia visiva dei film. Poi ha smesso. Non per stanchezza — per coerenza. Continuare significava mettere sé stessa per ultima, ancora, come aveva sempre fatto. Lasciare il set è stato il primo gesto concreto in direzione di quello che sapeva già.</p>
+      <p class="corpo r">Vivien dà il permesso. Mostra che vale la pena fermarsi.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── INSIEME ── -->
+<section class="insieme">
+  <div class="insieme-inner">
+    <span class="occhiello r">Insieme</span>
+    <div class="citazione-wrap r">
+      <p>Insieme fanno una cosa sola. Lui mostra come. Lei mostra perché vale la pena. Nessuno dei due, da solo, sarebbe Il Bosco Parlante.</p>
+    </div>
+    <p class="corpo r">È la tensione tra loro — tra chi si ferma e chi si apre — che genera qualcosa che non si spiega, solo si riconosce.</p>
+  </div>
+</section>
+
+
+<!-- ── OGGI ── -->
+<section class="oggi s-alt">
+  <div class="oggi-inner">
+    <span class="occhiello r">Oggi</span>
+    <p class="corpo r"><strong>Oggi viviamo a Montasola e la abitiamo.</strong> Ci occupiamo di lombrichi, raccogliamo foglie, ascoltiamo il bosco. Organizziamo giornate lente per chi vuole fermarsi davvero.</p>
+    <div class="oggi-lista r">
+      <div class="oggi-voce">Le Tasche di Stregufa — piccoli rituali da tre minuti con le foglie di mora, olivo e alloro, raccolte a mano nel bosco di notte.</div>
+      <div class="oggi-voce">Il Kit del Bosco — humus di lombrico prodotto a Montasola, tre guide digitali, una lettera scritta a mano.</div>
+      <div class="oggi-voce">Il Richiamo di Vacuna — sette foglie, sette carte, un percorso per imparare a fermarsi un giorno alla volta.</div>
+      <div class="oggi-voce">La Giornata Lenta — un giorno nel bosco, dodici persone al massimo, nessun programma da completare.</div>
+    </div>
+    <p class="corpo r" style="margin-top:2rem;">Non è un'azienda con una visione da realizzare. È un'azienda che ci porta a vedere.</p>
+  </div>
+</section>
+
+
+<!-- ── CHIUSURA SCURA ── -->
+<section class="s s-scura chiusura-scura">
+  <div class="chiusura-scura-inner">
+    <span class="occhiello" style="color:rgba(255,255,255,0.4);border-left-color:rgba(255,255,255,0.2);">Montasola, Sabina</span>
+    <p class="chiusura-citazione r">Se sei qui, qualcosa ti ha fermato.<br>Non serve sapere cos'è.</p>
+    <p class="corpo-scuro r">Siamo Vivien e Raffaele. Ti diamo il benvenuto al Bosco Parlante.</p>
+    <div style="margin-top:2.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:1rem;" class="r">
+      <a href="https://lombricaiomatto.com/collections/frontpage/products/offerta-lombrisacchi" class="btn-primario">Kit del Bosco — 39,99€</a>
+      <a href="/manifesto" class="btn-scroll">Leggi il Manifesto</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <span>Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://lombricaiomatto.com">lombricaiomatto.com</a>
+</footer>
+
+
+<script>
+/* Menu mobile */
+function toggleMenu() {
+  document.getElementById('navMenu').classList.toggle('aperto');
+}
+
+/* Animazioni scroll */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
