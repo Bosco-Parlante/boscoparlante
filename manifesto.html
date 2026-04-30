@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manifesto — Il Bosco Parlante</title>
+<meta name="description" content="C'è qualcosa che sai già. Lo sai da anni, forse da sempre. Da quella voce è nato Il Bosco Parlante — Montasola, Sabina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET & BASE ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:18px;}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#111;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* ── TOPBAR ── */
+.topbar{background:#1A3A15;color:rgba(255,255,255,0.75);text-align:center;padding:0.6em 1rem;font-size:0.72rem;letter-spacing:0.1em;font-weight:400;}
+
+/* ── NAVBAR ── */
+.navbar{border-bottom:1px solid #e8e8e8;padding:1rem 6vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:100;}
+.navbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.navbar-logo-text{display:flex;flex-direction:column;}
+.navbar-logo-name{font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#1A3A15;line-height:1.2;}
+.navbar-logo-sub{font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#888;font-weight:400;}
+.navbar-nav{display:flex;align-items:center;gap:2rem;}
+.navbar-nav a{font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#555;text-decoration:none;transition:color 0.2s;font-weight:400;}
+.navbar-nav a:hover{color:#1A3A15;}
+.navbar-nav a.attiva{color:#1A3A15;border-bottom:1px solid #1A3A15;padding-bottom:1px;}
+.navbar-cta{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:#1A3A15;text-decoration:none;padding:0.65em 1.4em;transition:background 0.2s;margin-left:1rem;}
+.navbar-cta:hover{background:#2D5A27;}
+.navbar-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.navbar-mobile-toggle span{display:block;width:22px;height:1.5px;background:#1A3A15;transition:all 0.3s;}
+
+/* ── SEZIONI ── */
+.s{padding:5rem 6vw;}
+.s-alt{background:#f9f8f5;}
+.s-scura{background:#111;color:#fff;}
+.inner{max-width:660px;margin:0 auto;}
+
+/* ── TIPOGRAFIA ── */
+.occhiello{display:block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#2D5A27;font-weight:400;margin-bottom:1rem;border-left:2px solid #2D5A27;padding-left:0.7em;}
+h1,h2{font-family:'Lora',Georgia,serif;font-weight:400;line-height:1.2;}
+h1{font-size:clamp(2.6rem,6vw,4.2rem);}
+.corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+.corpo-chiaro{color:rgba(255,255,255,0.6);}
+.corpo strong{font-weight:500;color:#222;}
+.corpo-scuro{font-size:1rem;line-height:1.85;color:rgba(255,255,255,0.6);margin-bottom:1.1em;}
+.corpo-scuro strong{color:rgba(255,255,255,0.9);font-weight:500;}
+
+/* ── HERO MANIFESTO ── */
+.hero-manifesto{padding:7rem 6vw 5rem;background:#fff;border-bottom:1px solid #e8e8e8;}
+.hero-manifesto-inner{max-width:700px;}
+.hero-manifesto h1{margin-bottom:0.6em;}
+.hero-manifesto h1 em{font-style:italic;color:#2D5A27;}
+.hero-manifesto .claim{font-family:'Lora',Georgia,serif;font-size:clamp(1.1rem,2.5vw,1.4rem);font-style:italic;line-height:1.7;color:#555;margin-bottom:2rem;max-width:580px;}
+
+/* ── CORPO MANIFESTO ── */
+.manifesto-corpo{padding:5rem 6vw;}
+.manifesto-inner{max-width:660px;margin:0 auto;}
+
+/* ── BLOCCO CITAZIONE ── */
+.citazione-wrap{border-left:3px solid #1A3A15;padding-left:1.5rem;margin:2.5rem 0;}
+.citazione-wrap p{font-family:'Lora',Georgia,serif;font-size:clamp(1.05rem,2.2vw,1.35rem);font-style:italic;line-height:1.65;color:#222;}
+
+/* ── SEZIONE PRODOTTI (dal manifesto) ── */
+.manifesto-prodotti{padding:4rem 6vw;}
+.manifesto-prodotti-inner{max-width:660px;margin:0 auto;}
+.manifesto-prodotti .corpo strong{display:block;margin-bottom:0.3em;}
+.prodotti-link-griglia{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem;}
+.prodotto-link-item{font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#1A3A15;text-decoration:none;border-bottom:1px solid #d8e4d4;padding-bottom:2px;transition:border-color 0.2s;}
+.prodotto-link-item:hover{border-color:#1A3A15;}
+
+/* ── SEZIONE SCURA CHIUSURA ── */
+.chiusura-scura{padding:6rem 6vw;}
+.chiusura-scura-inner{max-width:620px;margin:0 auto;}
+.chiusura-citazione{font-family:'Lora',Georgia,serif;font-size:clamp(1.2rem,2.8vw,1.7rem);font-style:italic;line-height:1.7;color:#fff;margin-bottom:2rem;}
+
+/* ── BTN ── */
+.btn-primario{font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:#fff;background:#1A3A15;text-decoration:none;padding:1em 2.2em;transition:background 0.2s,transform 0.15s;display:inline-block;}
+.btn-primario:hover{background:#2D5A27;transform:translateY(-1px);}
+.btn-scroll{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:rgba(255,255,255,0.5);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:1px;transition:color 0.2s,border-color 0.2s;display:inline-block;margin-top:1rem;}
+.btn-scroll:hover{color:#fff;border-color:rgba(255,255,255,0.6);}
+
+/* ── FOOTER ── */
+.footer{background:#f9f8f5;border-top:1px solid #e8e8e8;padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+.footer a{color:#aaa;text-decoration:none;}
+.footer a:hover{color:#1A3A15;}
+
+/* ── ANIMAZIONI ── */
+.r{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.r.vis{opacity:1;transform:none;}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  html{font-size:16px;}
+  .hero-manifesto{padding:4rem 5vw 3.5rem;}
+  .manifesto-corpo{padding:3.5rem 5vw;}
+  .manifesto-prodotti{padding:3rem 5vw;}
+  .chiusura-scura{padding:4rem 5vw;}
+  .footer{flex-direction:column;gap:0.5rem;text-align:center;}
+  .prodotti-link-griglia{flex-direction:column;gap:1rem;}
+  .navbar-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid #e8e8e8;flex-direction:column;gap:0;padding:1rem 6vw 1.5rem;}
+  .navbar-nav.aperto{display:flex;}
+  .navbar-nav a{padding:0.6rem 0;border-bottom:1px solid #f0f0f0;width:100%;}
+  .navbar-nav a.attiva{border-bottom:1px solid #f0f0f0;padding-bottom:0.6rem;}
+  .navbar-nav a:last-child{border-bottom:none;}
+  .navbar-mobile-toggle{display:flex;}
+  .navbar-cta{display:none;}
+  .navbar{position:relative;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">Spedizione gratuita · Prodotto a Montasola, Sabina</div>
+
+<nav class="navbar">
+  <a href="/" class="navbar-logo">
+    <img src="logo bosco parlante.png" alt="Il Bosco Parlante" style="width:36px;height:36px;object-fit:contain;">
+    <span class="navbar-logo-text">
+      <span class="navbar-logo-name">Il Bosco Parlante</span>
+      <span class="navbar-logo-sub">Montasola · Sabina</span>
+    </span>
+  </a>
+  <div class="navbar-nav" id="navMenu">
+    <a href="/">Home</a>
+    <a href="/kit-del-bosco">Kit del Bosco</a>
+    <a href="/le-tasche">Le Tasche</a>
+    <a href="/giornata-lenta">Giornata Lenta</a>
+    <a href="/manifesto" class="attiva">Manifesto</a>
+    <a href="/chi-siamo">Chi Siamo</a>
+  </div>
+  <a href="https://lombricaiomatto.com/collections/frontpage/products/offerta-lombrisacchi" class="navbar-cta">Kit del Bosco — 39,99€</a>
+  <div class="navbar-mobile-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+
+<!-- ── HERO ── -->
+<section class="hero-manifesto">
+  <div class="hero-manifesto-inner">
+    <span class="occhiello r">Manifesto · Il Bosco Parlante</span>
+    <h1 class="r">
+      C'è qualcosa<br>
+      che <em>sai già.</em>
+    </h1>
+    <p class="claim r">
+      Lo sai da anni, forse da sempre. Lo senti la sera, quando il rumore finisce e resti solo con te stesso per un momento — prima di riempire anche quello spazio con qualcos'altro.
+    </p>
+  </div>
+</section>
+
+
+<!-- ── CORPO DEL MANIFESTO ── -->
+<section class="manifesto-corpo">
+  <div class="manifesto-inner">
+
+    <p class="corpo r">Non è un problema da risolvere. È una voce da smettere di ignorare.</p>
+
+    <p class="corpo r"><strong>Quella voce l'abbiamo sentita anche noi.</strong> Raffaele l'ha tenuta nascosta per decenni — il costo di mostrarsi intero sembrava troppo alto. Vivien ha continuato a mettere sé stessa per ultima — per gli altri, per il ruolo, per non deludere nessuno. Forme diverse dello stesso silenzio.</p>
+
+    <p class="corpo r">A un certo punto abbiamo scelto di smettere. Non è stato un momento solo. È una scelta che rifacciamo ogni giorno.</p>
+
+    <p class="corpo r">Da quella scelta è nato Il Bosco Parlante.</p>
+
+    <div class="citazione-wrap r">
+      <p>Siamo a Montasola, in Sabina. Sei ettari di terreno, per lo più bosco, un casale, una terra che abitiamo. Qui in Sabina esiste una dea antica — Vacuna, dea del vuoto, della pausa, del tempo libero da ogni obbligo. Vacare, in latino, non significa non fare niente. Significa essere disponibili. Presenti. Liberi da quello che ti viene chiesto di essere.</p>
+    </div>
+
+    <p class="corpo r"><strong>Il bosco ci ha insegnato qualcosa che non ci aspettavamo.</strong> Non guarisce, non risponde, non consola. È. Radici profonde, silenzio, ogni albero con la sua chioma che non assomiglia a nessun'altra. E in quell'essere qui, fermo eppure vivissimo, c'è più saggezza di qualunque cosa abbiamo letto o studiato. Il bosco parla con la stessa voce che per anni non abbiamo avuto il coraggio di sentire fino in fondo.</p>
+
+    <p class="corpo r">Allora abbiamo capito che anche noi avevamo bisogno di imparare a fermarci.</p>
+
+    <p class="corpo r"><strong>Non siamo un luogo di guarigione.</strong> Non abbiamo un programma da completare, un metodo in dodici passi, una promessa di chiarezza alla fine del percorso. Se cerchi qualcuno che ti dica cosa fare, non siamo noi.</p>
+
+    <p class="corpo r">Quello che facciamo è più semplice e più difficile insieme: creiamo le condizioni perché tu possa sentirti — davvero, senza filtri, senza dover essere all'altezza di niente.</p>
+
+    <div class="citazione-wrap r">
+      <p>Parliamo a chi sente che qualcosa non torna — e continua lo stesso. A chi sa già quello che vorrebbe fare ma trova sempre una ragione per rimandare. A chi ha costruito una vita che funziona e si chiede perché non basta.</p>
+    </div>
+
+    <p class="corpo r">Basta che quella voce, da qualche parte, sai che ti chiama.</p>
+
+  </div>
+</section>
+
+
+<!-- ── PRODOTTI — transizione v1.1 ── -->
+<section class="manifesto-prodotti s-alt">
+  <div class="manifesto-prodotti-inner">
+    <span class="occhiello r">Quello che trovi qui</span>
+    <p class="corpo r"><strong>Quello che facciamo si tocca con le mani.</strong></p>
+    <p class="corpo r">Quello che trovi qui ha forme concrete. Humus di lombrico per chi vuole le mani nella terra. Foglie essiccate del nostro bosco e tre minuti di rituale — mora, olivo, alloro. Un percorso di sette giorni. Una giornata lenta in un bosco che semplicemente è.</p>
+    <p class="corpo r">Niente di questo fa qualcosa per te. Tutto questo ti restituisce l'attenzione a quello che c'è già.</p>
+    <div class="prodotti-link-griglia r">
+      <a href="https://lombricaiomatto.com/collections/frontpage/products/offerta-lombrisacchi" class="prodotto-link-item">Kit del Bosco →</a>
+      <a href="/le-tasche" class="prodotto-link-item">Le Tasche di Stregufa →</a>
+      <a href="/giornata-lenta" class="prodotto-link-item">Giornata Lenta →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SEZIONE FINALE ── -->
+<section class="manifesto-corpo">
+  <div class="manifesto-inner">
+
+    <p class="corpo r"><strong>Non siamo di passaggio.</strong> Questa terra non è uno sfondo — è il corpo di quello che facciamo. La ascoltiamo, la osserviamo. Siamo natura anche noi — arrivati un po' dopo, ospiti come tutti gli altri.</p>
+
+    <p class="corpo r">Ogni persona che arriva porta qualcosa. Ogni incontro lascia un segno — senza che nessuno l'abbia cercato.</p>
+
+    <p class="corpo r">Il Bosco Parlante non è un prodotto. È un organismo vivo — e come tutti gli organismi vivi, impara mentre cresce.</p>
+
+    <div class="citazione-wrap r">
+      <p>Sei tu che decidi se ora è il momento. Se questa è l'occasione di smettere di passarci davanti e iniziare ad ascoltarlo.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── CHIUSURA SCURA ── -->
+<section class="s s-scura chiusura-scura">
+  <div class="chiusura-scura-inner">
+    <span class="occhiello" style="color:rgba(255,255,255,0.4);border-left-color:rgba(255,255,255,0.2);">Montasola, Sabina</span>
+    <p class="chiusura-citazione r">Il bosco è qui,<br>come sempre.</p>
+    <p class="corpo-scuro r">Siamo Raffaele e Vivien. Se vuoi sapere chi siamo davvero — non come brand, ma come persone — trovi la nostra storia nella pagina Chi Siamo.</p>
+    <div style="margin-top:2.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:1rem;" class="r">
+      <a href="/chi-siamo" class="btn-primario">Chi siamo →</a>
+      <a href="https://lombricaiomatto.com/collections/frontpage/products/offerta-lombrisacchi" class="btn-scroll">Kit del Bosco — 39,99€</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── */
+<footer class="footer">
+  <span>Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://lombricaiomatto.com">lombricaiomatto.com</a>
+</footer>
+
+
+<script>
+/* Menu mobile */
+function toggleMenu() {
+  document.getElementById('navMenu').classList.toggle('aperto');
+}
+
+/* Animazioni scroll */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
