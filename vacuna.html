@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il Richiamo di Vacuna — Il Bosco Parlante</title>
+<meta name="description" content="Sette foglie raccolte a mano nel bosco di Montasola. Sette carte. Una mappa. Un percorso — un gesto al giorno. In arrivo 13 giugno 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:18px;}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#111;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+.topbar{background:#1A3A15;color:rgba(255,255,255,0.75);text-align:center;padding:0.6em 1rem;font-size:0.72rem;letter-spacing:0.1em;font-weight:400;}
+.navbar{border-bottom:1px solid #e8e8e8;padding:1.1rem 6vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:100;}
+.navbar-cta{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:#1A3A15;text-decoration:none;padding:0.65em 1.4em;transition:background 0.2s;}
+.navbar-cta:hover{background:#2D5A27;}
+.s{padding:5rem 6vw;}
+.s-alt{background:#f9f8f5;}
+.s-scura{background:#111;color:#fff;}
+.inner{max-width:660px;margin:0 auto;}
+.occhiello{display:block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#2D5A27;font-weight:400;margin-bottom:1rem;border-left:2px solid #2D5A27;padding-left:0.7em;}
+.occhiello-chiaro{color:rgba(255,255,255,0.4);border-left-color:rgba(255,255,255,0.2);}
+h1,h2,h3{font-family:'Lora','Georgia','Times New Roman',serif;font-weight:400;line-height:1.2;}
+h1{font-size:clamp(2.4rem,6vw,4rem);}
+h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
+.corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+.corpo-chiaro{color:rgba(255,255,255,0.55);}
+/* ── HERO ── */
+.hero{padding:7rem 6vw 5rem;border-bottom:1px solid #e8e8e8;background:#f9f8f5;}
+.hero-inner{max-width:700px;}
+.hero h1{margin-bottom:0.6em;}
+.hero h1 em{font-style:italic;color:#2D5A27;}
+.hero-claim{font-family:'Lora',Georgia,serif;font-size:clamp(1.1rem,2.5vw,1.4rem);font-style:italic;color:#555;line-height:1.65;margin-bottom:2.5rem;max-width:540px;}
+.arrivo-badge{display:inline-flex;align-items:center;gap:0.6em;background:#fff;border:1px solid #d8e4d4;padding:0.6em 1.2em;font-size:0.8rem;color:#1A3A15;font-weight:400;margin-bottom:2rem;letter-spacing:0.04em;}
+.arrivo-badge strong{font-weight:400;color:#2D5A27;}
+/* ── NARRATIVA ── */
+.narrativa p{font-family:'Lora',Georgia,serif;font-size:clamp(1.05rem,2.3vw,1.3rem);line-height:1.78;color:#222;margin-bottom:1.4rem;}
+.narrativa p em{font-style:italic;color:#2D5A27;}
+/* ── VACUNA CITAZIONE ── */
+.vacuna-citazione{font-family:'Lora',Georgia,serif;font-size:clamp(1.15rem,2.5vw,1.5rem);font-style:italic;line-height:1.7;color:#fff;margin-bottom:2rem;}
+.vacuna-citazione strong{font-style:normal;font-weight:500;color:rgba(255,255,255,0.9);}
+/* ── SETTE FOGLIE ── */
+.foglie-griglia{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:#e8e8e8;margin-top:2rem;}
+.foglia{background:#fff;padding:1.8rem;}
+.foglia-num{font-family:'Lora',Georgia,serif;font-size:0.75rem;color:#ccc;font-style:italic;display:block;margin-bottom:0.4em;}
+.foglia h3{font-family:'Lora',Georgia,serif;font-size:1.1rem;font-weight:400;margin-bottom:0.2em;}
+.foglia h3 em{font-style:italic;color:#2D5A27;}
+.foglia p{font-size:0.82rem;color:#888;line-height:1.6;margin-top:0.4em;}
+/* ── CONTENUTO ── */
+.conf-lista{margin-top:1.2rem;}
+.conf-lista li{list-style:none;display:flex;gap:0.8em;padding:0.8em 0;border-bottom:1px solid #ebebeb;font-size:0.95rem;color:#333;align-items:baseline;}
+.conf-lista li:first-child{border-top:1px solid #ebebeb;}
+.conf-lista li::before{content:"·";color:#2D5A27;font-size:1.3em;flex-shrink:0;line-height:1;}
+.conf-lista li em{font-family:'Lora',Georgia,serif;font-style:italic;color:#999;font-size:0.88em;margin-left:0.2em;}
+/* ── LISTA ATTESA ── */
+.lista-attesa{background:#f9f8f5;padding:4rem 6vw;border-top:1px solid #e8e8e8;}
+.lista-attesa-inner{max-width:540px;margin:0 auto;text-align:center;}
+.lista-attesa h2{margin-bottom:1rem;}
+.lista-attesa p{font-family:'Lora',Georgia,serif;font-style:italic;color:#666;font-size:1rem;line-height:1.7;margin-bottom:2rem;}
+.form-email{display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;}
+.form-email input[type="email"]{font-family:'DM Sans',sans-serif;font-size:0.85rem;padding:0.9em 1.2em;border:1px solid #d0d0d0;background:#fff;color:#111;width:260px;outline:none;transition:border-color 0.2s;}
+.form-email input[type="email"]:focus{border-color:#1A3A15;}
+.form-email button{font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:#1A3A15;border:none;cursor:pointer;padding:0.9em 1.6em;transition:background 0.2s;}
+.form-email button:hover{background:#2D5A27;}
+.lista-mailto{display:inline-block;margin-top:1.2rem;font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.9rem;color:#888;text-decoration:none;border-bottom:1px solid #ddd;padding-bottom:1px;transition:color 0.2s;}
+.lista-mailto:hover{color:#1A3A15;}
+.form-nota{font-size:0.72rem;color:#bbb;margin-top:0.8rem;letter-spacing:0.04em;}
+/* ── PREZZO ── */
+.prezzo-wrap{text-align:center;padding:3rem 0 1rem;}
+.prezzo-numero{font-family:'Lora',Georgia,serif;font-size:3rem;font-weight:400;color:#111;display:block;line-height:1;}
+.prezzo-inc{font-size:0.78rem;color:#aaa;letter-spacing:0.08em;display:block;margin-top:0.3rem;}
+/* ── FOOTER ── */
+.footer{background:#f9f8f5;border-top:1px solid #e8e8e8;padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+.footer a{color:#aaa;text-decoration:none;}
+.footer a:hover{color:#1A3A15;}
+/* ── ANIMAZIONI ── */
+.r{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.r.vis{opacity:1;transform:none;}
+@media(max-width:600px){
+  html{font-size:16px;}
+  .s{padding:3.5rem 5vw;}
+  .hero{padding:4rem 5vw 3rem;}
+  .lista-attesa{padding:3rem 5vw;}
+  .foglie-griglia{grid-template-columns:1fr;}
+  .footer{flex-direction:column;gap:0.5rem;text-align:center;}
+  .form-email{flex-direction:column;align-items:stretch;}
+  .form-email input[type="email"]{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">In arrivo · 13 giugno 2026 · Evento a Montasola</div>
+
+<nav class="navbar">
+  <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <span style="display:flex;flex-direction:column;">
+      <span style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#1A3A15;line-height:1.2;">Il Bosco Parlante</span>
+      <span style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#888;font-weight:400;">Montasola · Sabina</span>
+    </span>
+  </a>
+  <a href="#lista-attesa" class="navbar-cta">Lista d'attesa</a>
+</nav>
+
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="occhiello">Il Richiamo di Vacuna</span>
+    <h1>Sette foglie.<br><em>Un percorso.</em></h1>
+    <p class="hero-claim">Sette piante raccolte a mano nel bosco di Montasola. Sette carte. Una mappa. Un gesto al giorno — per imparare a fermarsi davvero.</p>
+    <div class="arrivo-badge">&#9675;&nbsp; In arrivo — <strong>13 giugno 2026</strong> · Evento fisico a Montasola</div>
+  </div>
+</section>
+
+
+<!-- ── NARRATIVA VACUNA ── -->
+<section class="s r">
+  <div class="inner narrativa">
+    <p class="r">Vacuna non è un'idea. È una dea — quella dei Sabini antichi, del tempo libero da ogni obbligo. <em>Vacare</em> non significa non fare niente. Significa essere disponibili. Presenti. Liberi da quello che ti viene chiesto di essere.</p>
+    <p class="r">Ovidio la cita. Orazio le dedicò un'ode scritta qui, in Sabina, vicino a questi luoghi. Noi non l'abbiamo inventata. L'abbiamo ritrovata.</p>
+  </div>
+</section>
+
+
+<!-- ── DARK SECTION ── -->
+<section class="s s-scura r">
+  <div class="inner">
+    <span class="occhiello occhiello-chiaro r">Il percorso</span>
+    <p class="vacuna-citazione r"><strong>Il Richiamo di Vacuna è un percorso fisico in sette tappe.</strong> Sette foglie raccolte a mano nel bosco di Montasola. Ognuna con la sua carta: il nome, il richiamo, il micro-rituale, la frase guida. Una Carta Mappa: i sette richiami come percorso circolare — non una sequenza da completare, un ritorno.</p>
+    <p class="corpo corpo-chiaro r">Non c'è un ordine giusto. Non c'è un risultato promesso. C'è un gesto al giorno — tre minuti, una foglia tra le mani, l'attenzione che si sposta da dove era a dove è.</p>
+    <p class="corpo corpo-chiaro r">Tutto arriva in una busta kraft, chiusa con uno spago di cotone grezzo. Spedito direttamente da Montasola.</p>
+  </div>
+</section>
+
+
+<!-- ── SETTE FOGLIE ── -->
+<section class="s s-alt r">
+  <div class="inner">
+    <span class="occhiello r">Le sette piante</span>
+    <h2 class="r">Un bosco intero<br>in sette tasche.</h2>
+    <div class="foglie-griglia r">
+      <div class="foglia"><span class="foglia-num">I</span><h3><em>Mora</em></h3><p>Radicamento — per tornare al corpo</p></div>
+      <div class="foglia"><span class="foglia-num">II</span><h3><em>Mentuccia</em></h3><p>Apertura — per fare spazio</p></div>
+      <div class="foglia"><span class="foglia-num">III</span><h3><em>Olivo</em></h3><p>Pace — per ammorbidire il ritmo</p></div>
+      <div class="foglia"><span class="foglia-num">IV</span><h3><em>Menta</em></h3><p>Presenza — per stare dove si è</p></div>
+      <div class="foglia"><span class="foglia-num">V</span><h3><em>Melissa</em></h3><p>Ascolto — per sentire prima di capire</p></div>
+      <div class="foglia"><span class="foglia-num">VI</span><h3><em>Alloro</em></h3><p>Chiarezza — per abbassare il rumore</p></div>
+      <div class="foglia"><span class="foglia-num">VII</span><h3><em>Piantaggine</em></h3><p>Continuità — per restare</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── COSA CONTIENE ── -->
+<section class="s r">
+  <div class="inner">
+    <span class="occhiello r">Cosa contiene</span>
+    <h2 class="r">Sette buste kraft.<br>Sette carte. Una mappa.</h2>
+    <ul class="conf-lista r">
+      <li>Sette buste kraft singole <em>una per pianta, con la foglia essiccata raccolta a mano</em></li>
+      <li>Sette carte A6 fronte/retro <em>nome · richiamo · micro-rituale · frase guida</em></li>
+      <li>Una Carta Mappa <em>i sette richiami come percorso circolare</em></li>
+      <li>Busta kraft madre chiusa con spago di cotone grezzo</li>
+      <li>Call mensile di gruppo con Raffaele <em>45 minuti, aperta a tutti gli acquirenti Vacuna</em></li>
+      <li>Voucher 15€ sulla Giornata Lenta al bosco <em>34,99€ invece di 49,99€</em></li>
+    </ul>
+    <div class="prezzo-wrap r">
+      <span class="prezzo-numero">69€</span>
+      <span class="prezzo-inc">Spedizione gratuita · Prezzo lancio evento: 59€</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── LISTA D'ATTESA ── -->
+<div class="lista-attesa" id="lista-attesa">
+  <div class="lista-attesa-inner r">
+    <span class="occhiello r" style="justify-content:center;border-left:none;text-align:center;border-bottom:2px solid #2D5A27;padding-left:0;padding-bottom:0.4em;display:inline-block;">In arrivo — 13 giugno 2026</span>
+    <h2 class="r" style="margin-top:1.2rem;">Vuoi essere tra i primi<br>a riceverlo?</h2>
+    <p class="r">Il Richiamo di Vacuna viene lanciato il 13 giugno 2026 durante l'evento fisico a Montasola. Chi è nella lista d'attesa lo riceve in anteprima e al prezzo di lancio — 59€ invece di 69€.</p>
+
+    <form class="form-email r" onsubmit="handleSubmit(event)">
+      <input type="email" placeholder="La tua email" required aria-label="Inserisci la tua email">
+      <button type="submit">Iscriviti</button>
+    </form>
+    <span class="form-nota r">Nessuna pubblicità. Solo un avviso quando è disponibile.</span>
+
+    <br>
+    <a href="mailto:info@ilboscoparlante.com?subject=Lista%20d%27attesa%20Vacuna&body=Ciao%2C%20vorrei%20essere%20avvisato%20quando%20il%20Richiamo%20di%20Vacuna%20è%20disponibile." class="lista-mailto r">Preferisci scrivere via email? info@ilboscoparlante.com</a>
+  </div>
+</div>
+
+
+<footer class="footer">
+  <span>Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://lombricaiomatto.com">lombricaiomatto.com</a>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*60);obs.unobserve(e.target);}})},{threshold:0.08});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+function handleSubmit(e){
+  e.preventDefault();
+  const email = e.target.querySelector('input[type="email"]').value;
+  const btn = e.target.querySelector('button');
+  btn.textContent = 'Iscritto ✓';
+  btn.style.background = '#2D5A27';
+  e.target.querySelector('input').disabled = true;
+  btn.disabled = true;
+  // Se hai Klaviyo o un form handler, aggiungi qui la chiamata API
+  window.location.href = 'mailto:info@ilboscoparlante.com?subject=Lista%20d%27attesa%20Vacuna&body=Email:%20' + encodeURIComponent(email);
+}
+</script>
+</body>
+</html>
