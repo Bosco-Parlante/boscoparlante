@@ -485,8 +485,9 @@
       const esito = await aggiungiALista(emailRilevata);
 
       if (esito.ok) {
-        log('ok', 'API risposta: HTTP ' + esito.status + ' — profilo aggiunto alla lista.');
-        log('ok', 'Lista "test-mora-pratica" (ID: ' + LISTA_ID + ') aggiornata ✓');
+        log('ok', 'API risposta: HTTP ' + esito.status + ' · success: true');
+        log('ok', 'Profilo aggiunto alla lista "test-mora-pratica" (ID: ' + LISTA_ID + ') ✓');
+        log('info', 'Body risposta: ' + esito.testo);
         btn.classList.remove('loading');
         btn.classList.add('success');
         btn.textContent = '✓ Klaviyo aggiornato — pratica avviata';
@@ -521,37 +522,47 @@
 
   // ============================================================
   // CHIAMATA API KLAVIYO — aggiunge profilo a lista
-  // Endpoint: /client/subscriptions/ (API pubblica, no segreto)
-  // Revision: 2024-02-15
+  // Endpoint: manage.kmail-lists.com/ajax/subscriptions/subscribe
+  // Questo è l'unico endpoint Klaviyo che accetta richieste CORS
+  // dal browser. Usa application/x-www-form-urlencoded, non JSON.
   // ============================================================
   async function aggiungiALista(email) {
-    log('info', 'POST → https://a.klaviyo.com/client/subscriptions/?company_id=' + KLAVIYO_PUBLIC_KEY);
-    log('info', 'Payload: email=' + email + ' · list_id=' + LISTA_ID);
+    const endpoint = 'https://manage.kmail-lists.com/ajax/subscriptions/subscribe';
+    log('info', 'POST → ' + endpoint);
+    log('info', 'Payload: email=' + email + ' · g=' + LISTA_ID);
 
-    const response = await fetch(
-      'https://a.klaviyo.com/client/subscriptions/?company_id=' + KLAVIYO_PUBLIC_KEY,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'revision': '2024-02-15'
-        },
-        body: JSON.stringify({
-          data: {
-            type: 'subscription',
-            attributes: {
-              list_id: LISTA_ID,
-              email: email
-            }
-          }
-        })
-      }
-    );
+    // Costruisce il body come form-urlencoded
+    const body = new URLSearchParams({
+      g: LISTA_ID,
+      email: email,
+      '$fields': '$source',
+      '$source': 'Bosco Parlante — Mora Pratica'
+    });
+
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'cache-control': 'no-cache'
+      },
+      body: body.toString()
+    });
 
     let testo = '';
     try { testo = await response.text(); } catch(e) { testo = '(nessun body)'; }
 
-    return { ok: response.ok, status: response.status, testo };
+    // Questo endpoint risponde 200 anche in caso di errore logico —
+    // bisogna leggere il JSON nel body per vedere se ha funzionato
+    let successo = response.ok;
+    try {
+      const json = JSON.parse(testo);
+      successo = json.success === true;
+      if (json.errors && json.errors.length > 0) {
+        log('err', 'Errori Klaviyo: ' + JSON.stringify(json.errors));
+      }
+    } catch(e) { /* body non è JSON — ok */ }
+
+    return { ok: successo, status: response.status, testo };
   }
 </script>
 
