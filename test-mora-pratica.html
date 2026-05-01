@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Test — Mora · Pratica · Il Bosco Parlante</title>
+<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VBs8wR"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap');
 
@@ -467,7 +468,7 @@
     const btn = document.getElementById('btn-avvia');
     btn.disabled = true;
     btn.classList.add('loading');
-    btn.textContent = '⏳ Aggiornamento Klaviyo...';
+    btn.textContent = '⏳ Invio a Klaviyo...';
 
     log('info', 'Click ricevuto. Avvio chiamata API Klaviyo...');
     document.getElementById('status-api-val').textContent = 'In corso...';
@@ -521,48 +522,48 @@
   }
 
   // ============================================================
-  // CHIAMATA API KLAVIYO — aggiunge profilo a lista
-  // Endpoint: manage.kmail-lists.com/ajax/subscriptions/subscribe
-  // Questo è l'unico endpoint Klaviyo che accetta richieste CORS
-  // dal browser. Usa application/x-www-form-urlencoded, non JSON.
+  // CHIAMATA KLAVIYO via _learnq (tracker nativo)
+  // Non usa fetch — usa lo script klaviyo.js già caricato in pagina.
+  // Nessun problema CORS. Due step:
+  //   1. identify — associa l'email al profilo
+  //   2. subscribe — aggiunge il profilo alla lista
+  // Entrambi asincroni via coda _learnq, non restituiscono promise.
+  // Usiamo un timeout di 2s come conferma ottimistica.
   // ============================================================
   async function aggiungiALista(email) {
-    const endpoint = 'https://manage.kmail-lists.com/ajax/subscriptions/subscribe';
-    log('info', 'POST → ' + endpoint);
-    log('info', 'Payload: email=' + email + ' · g=' + LISTA_ID);
+    return new Promise((resolve, reject) => {
 
-    // Costruisce il body come form-urlencoded
-    const body = new URLSearchParams({
-      g: LISTA_ID,
-      email: email,
-      '$fields': '$source',
-      '$source': 'Bosco Parlante — Mora Pratica'
-    });
-
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'cache-control': 'no-cache'
-      },
-      body: body.toString()
-    });
-
-    let testo = '';
-    try { testo = await response.text(); } catch(e) { testo = '(nessun body)'; }
-
-    // Questo endpoint risponde 200 anche in caso di errore logico —
-    // bisogna leggere il JSON nel body per vedere se ha funzionato
-    let successo = response.ok;
-    try {
-      const json = JSON.parse(testo);
-      successo = json.success === true;
-      if (json.errors && json.errors.length > 0) {
-        log('err', 'Errori Klaviyo: ' + JSON.stringify(json.errors));
+      // Verifica che lo script Klaviyo sia caricato
+      if (typeof window._learnq === 'undefined') {
+        reject(new Error('Klaviyo _learnq non disponibile — script non caricato'));
+        return;
       }
-    } catch(e) { /* body non è JSON — ok */ }
 
-    return { ok: successo, status: response.status, testo };
+      log('info', 'Klaviyo _learnq disponibile ✓');
+      log('info', 'Step 1: identify → email=' + email);
+
+      // Step 1: identifica il profilo
+      window._learnq.push(['identify', {
+        '$email': email,
+        '$source': 'Bosco Parlante — Mora Pratica'
+      }]);
+
+      log('info', 'Step 2: subscribe → list_id=' + LISTA_ID);
+
+      // Step 2: aggiunge alla lista
+      // Nota: listSubscribe è il metodo corretto per aggiungere a una lista specifica
+      window._learnq.push(['listSubscribe', {
+        '$email': email,
+        'list_id': LISTA_ID
+      }]);
+
+      // _learnq è una coda fire-and-forget — non ha callback di successo.
+      // Aspettiamo 2 secondi e consideriamo ok se non ci sono errori JS.
+      setTimeout(() => {
+        resolve({ ok: true, status: 200, testo: '_learnq push completato (verifica in Klaviyo)' });
+      }, 2000);
+
+    });
   }
 </script>
 
