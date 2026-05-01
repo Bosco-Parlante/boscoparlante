@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Test — Mora · Pratica · Il Bosco Parlante</title>
-<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VBs8wR"></script>
+<script type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VBs8wR"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap');
 
@@ -533,35 +533,39 @@
   async function aggiungiALista(email) {
     return new Promise((resolve, reject) => {
 
-      // Verifica che lo script Klaviyo sia caricato
-      if (typeof window._learnq === 'undefined') {
-        reject(new Error('Klaviyo _learnq non disponibile — script non caricato'));
-        return;
-      }
+      // Aspetta fino a 5 secondi che _learnq sia disponibile
+      let tentativi = 0;
+      const attendi = setInterval(() => {
+        tentativi++;
+        if (typeof window._learnq !== 'undefined') {
+          clearInterval(attendi);
 
-      log('info', 'Klaviyo _learnq disponibile ✓');
-      log('info', 'Step 1: identify → email=' + email);
+          log('info', 'Klaviyo _learnq disponibile ✓ (tentativo ' + tentativi + ')');
+          log('info', 'Step 1: identify → email=' + email);
 
-      // Step 1: identifica il profilo
-      window._learnq.push(['identify', {
-        '$email': email,
-        '$source': 'Bosco Parlante — Mora Pratica'
-      }]);
+          window._learnq.push(['identify', {
+            '$email': email,
+            '$source': 'Bosco Parlante — Mora Pratica'
+          }]);
 
-      log('info', 'Step 2: subscribe → list_id=' + LISTA_ID);
+          log('info', 'Step 2: subscribe → list_id=' + LISTA_ID);
 
-      // Step 2: aggiunge alla lista
-      // Nota: listSubscribe è il metodo corretto per aggiungere a una lista specifica
-      window._learnq.push(['listSubscribe', {
-        '$email': email,
-        'list_id': LISTA_ID
-      }]);
+          window._learnq.push(['listSubscribe', {
+            '$email': email,
+            'list_id': LISTA_ID
+          }]);
 
-      // _learnq è una coda fire-and-forget — non ha callback di successo.
-      // Aspettiamo 2 secondi e consideriamo ok se non ci sono errori JS.
-      setTimeout(() => {
-        resolve({ ok: true, status: 200, testo: '_learnq push completato (verifica in Klaviyo)' });
-      }, 2000);
+          setTimeout(() => {
+            resolve({ ok: true, status: 200, testo: '_learnq push completato (verifica in Klaviyo)' });
+          }, 2000);
+
+        } else if (tentativi >= 50) {
+          clearInterval(attendi);
+          reject(new Error('Klaviyo _learnq non disponibile dopo 5s — script bloccato o non caricato'));
+        } else {
+          log('info', 'Attendo _learnq... tentativo ' + tentativi);
+        }
+      }, 100);
 
     });
   }
