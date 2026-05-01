@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Tasca di Stregufa · Mora — Inizia la pratica</title>
+  <meta name="description" content="Hai la tasca di mora tra le mani. Inizia qui — la pratica ti aspetta.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
+
+  <!-- Script Klaviyo — NON async -->
+  <script type="text/javascript"
+    src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VBs8wR">
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;font-size:18px;}
+    body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#111;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+    .topbar{background:#1A3A15;color:rgba(255,255,255,0.75);text-align:center;padding:0.6em 1rem;font-size:0.72rem;letter-spacing:0.1em;font-weight:400;}
+    .navbar{border-bottom:1px solid #e8e8e8;padding:1.1rem 6vw;display:flex;justify-content:space-between;align-items:center;}
+    .navbar a{text-decoration:none;}
+    .navbar-logo{display:flex;align-items:center;gap:10px;}
+    .navbar-logo-text{font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#1A3A15;line-height:1.2;}
+    .navbar-logo-sub{font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#888;font-weight:400;}
+
+    .hero{padding:5rem 6vw 4rem;border-bottom:1px solid #e8e8e8;}
+    .hero-inner{max-width:660px;margin:0 auto;}
+    .occhiello{display:block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#2D5A27;font-weight:400;margin-bottom:1rem;border-left:2px solid #2D5A27;padding-left:0.7em;}
+    h1,h2,h3{font-family:'Lora','Georgia','Times New Roman',serif;font-weight:400;line-height:1.2;}
+    h1{font-size:clamp(2.4rem,6vw,4rem);}
+    h1 em{font-style:italic;color:#2D5A27;}
+    .hero-claim{font-family:'Lora',Georgia,serif;font-size:clamp(1.1rem,2.5vw,1.4rem);font-style:italic;font-weight:400;color:#555;line-height:1.65;margin-bottom:2.5rem;max-width:520px;margin-top:0.5em;}
+
+    /* Sezione form */
+    .s{padding:5rem 6vw;}
+    .s-alt{background:#f9f8f5;}
+    .inner{max-width:660px;margin:0 auto;}
+    h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
+    .corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+
+    /* Form custom — avvolge il form embed Klaviyo */
+    .form-wrap{background:#f9f8f5;border:1px solid #e8e8e8;padding:2.5rem;margin-top:2rem;}
+    .form-label{display:block;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:#555;font-weight:400;margin-bottom:0.5em;}
+    .form-input{width:100%;padding:0.9em 1.1em;border:1px solid #d0d0d0;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:300;color:#111;outline:none;transition:border-color 0.2s;margin-bottom:1.2rem;}
+    .form-input:focus{border-color:#1A3A15;}
+    .form-input-nome{margin-bottom:1.2rem;}
+    .btn-primario{font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:#fff;background:#1A3A15;border:none;cursor:pointer;padding:1em 2.2em;transition:background 0.2s;display:inline-block;width:100%;}
+    .btn-primario:hover{background:#2D5A27;}
+    .btn-primario:disabled{background:#9ab09a;cursor:not-allowed;}
+    .form-note{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.82rem;color:#aaa;margin-top:1rem;line-height:1.6;}
+
+    /* Stato post-invio */
+    .stato-ok{display:none;text-align:center;padding:2rem 0;}
+    .stato-ok h3{font-family:'Lora',Georgia,serif;font-size:1.5rem;font-weight:400;color:#1A3A15;margin-bottom:0.5em;}
+    .stato-ok p{font-family:'Lora',Georgia,serif;font-style:italic;color:#666;line-height:1.65;}
+    .stato-errore{display:none;background:#fdf2f2;border:1px solid #e8c0c0;padding:0.8em 1em;margin-top:1rem;font-size:0.85rem;color:#a00;font-family:'DM Sans',sans-serif;}
+
+    /* Quote laterale */
+    .soluzione-wrap{border-left:3px solid #1A3A15;padding-left:1.5rem;margin:2.5rem 0;}
+    .soluzione-wrap p{font-family:'Lora',Georgia,serif;font-size:clamp(1.1rem,2.5vw,1.45rem);font-style:italic;line-height:1.65;color:#222;}
+
+    .footer{background:#f9f8f5;border-top:1px solid #e8e8e8;padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+    .footer a{color:#aaa;text-decoration:none;}
+    .footer a:hover{color:#1A3A15;}
+
+    /* Animazione entrata */
+    .r{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .r.vis{opacity:1;transform:none;}
+
+    @media(max-width:600px){
+      html{font-size:16px;}
+      .s{padding:3.5rem 5vw;}
+      .hero{padding:3.5rem 5vw 3rem;}
+      .footer{flex-direction:column;gap:0.5rem;text-align:center;}
+      .form-wrap{padding:1.8rem;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">Foglie raccolte a mano a Montasola, Sabina · Il Bosco Parlante</div>
+
+<nav class="navbar">
+  <a href="https://ilboscoparlante.com" class="navbar-logo">
+    <div class="navbar-logo-text">Il Bosco Parlante</div>
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="occhiello r">La Tasca di Stregufa · Mora · Radicamento</span>
+    <h1 class="r"><em>Mora.</em><br>Radicamento.</h1>
+    <p class="hero-claim r">Hai la tasca tra le mani. La pratica ti aspetta — tre minuti, adesso.</p>
+  </div>
+</section>
+
+<!-- CORPO -->
+<section class="s r">
+  <div class="inner">
+    <p class="corpo r">Inserisci la tua email per accedere alla pratica guidata. Riceverai un link con l'audio — voce di Raffaele, registrato nel bosco di Montasola.</p>
+
+    <div class="soluzione-wrap r">
+      <p>Non serve fare nulla di speciale. Solo tenere la foglia tra le mani e lasciare che l'attenzione faccia il suo lavoro.</p>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-wrap r" id="formWrap">
+      <div id="formContenuto">
+        <label class="form-label" for="campo-email">La tua email</label>
+        <input class="form-input" type="email" id="campo-email" name="email" placeholder="nome@email.com" required>
+
+        <button class="btn-primario" id="btnInvia" onclick="inviaForm()">Inizia la pratica</button>
+
+        <p class="form-note">Riceverai un'unica email con il link alla tua pratica. Nessuna newsletter, nessuna promozione — solo questo.</p>
+      </div>
+
+      <div class="stato-ok" id="statoOk">
+        <h3>Fatto.</h3>
+        <p>Guarda la tua casella di posta — l'email con il link alla pratica è in arrivo.<br>Nel frattempo, tieni la foglia a portata di mano.</p>
+      </div>
+
+      <div class="stato-errore" id="statoErrore">
+        Qualcosa non ha funzionato. Riprova tra un momento.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTA FINALE -->
+<section class="s s-alt r">
+  <div class="inner">
+    <span class="occhiello r">Cos'è questa tasca</span>
+    <h2 class="r">Una pratica di tre minuti.<br>Con una foglia di mora.</h2>
+    <p class="corpo r">Le foglie di mora vengono raccolte a mano nel bosco di Montasola, in Sabina. La mora lavora sul radicamento — quella sensazione di essere presenti nel corpo, fermi, ancorati.</p>
+    <p class="corpo r">L'audio ti guida attraverso tre minuti di attenzione. Non è meditazione nel senso convenzionale — è più semplice di così. Si tratta solo di sentire.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>© Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://ilboscoparlante.com">ilboscoparlante.com</a>
+</footer>
+
+<script>
+  // ── Costanti Klaviyo ──────────────────────────────────────────────
+  const LISTA_ID = 'Vf8yiV'; // inizia-mora
+
+  // ── Invio form ────────────────────────────────────────────────────
+  async function inviaForm() {
+    const emailInput = document.getElementById('campo-email');
+    const btn        = document.getElementById('btnInvia');
+    const statoOk    = document.getElementById('statoOk');
+    const statoErr   = document.getElementById('statoErrore');
+    const formCont   = document.getElementById('formContenuto');
+
+    const email = emailInput.value.trim();
+
+    // Validazione base
+    if (!email || !email.includes('@')) {
+      emailInput.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Un momento…';
+    statoErr.style.display = 'none';
+
+    try {
+      window._learnq.push(['identify', { '$email': email }]);
+
+      const body = new URLSearchParams({
+        g:        LISTA_ID,
+        email:    email,
+        '$fields': '$source',
+        '$source': 'Bosco Parlante — Mora Inizia'
+      });
+
+      const response = await fetch(
+        'https://manage.kmail-lists.com/ajax/subscriptions/subscribe',
+        {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body:    body.toString()
+        }
+      );
+
+      const data = await response.json();
+      // success: true = ok (is_subscribed: true significa già esistente, non è un errore)
+      if (data.success) {
+        formCont.style.display = 'none';
+        statoOk.style.display  = 'block';
+      } else {
+        throw new Error('Risposta non success');
+      }
+    } catch (err) {
+      console.error('Klaviyo subscribe error:', err);
+      statoErr.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Inizia la pratica';
+    }
+  }
+
+  // ── Animazioni entrata ────────────────────────────────────────────
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.r').forEach(el => observer.observe(el));
+
+  // ── Enter su campo email ──────────────────────────────────────────
+  document.getElementById('campo-email').addEventListener('keydown', e => {
+    if (e.key === 'Enter') inviaForm();
+  });
+</script>
+
+</body>
+</html>
