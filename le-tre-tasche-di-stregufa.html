@@ -36,6 +36,20 @@ h1{font-size:clamp(2.4rem,6vw,4rem);}
 h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
 .corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
 .corpo-chiaro{color:rgba(255,255,255,0.55);}
+/* ── LAYOUT PRODOTTO ── */
+.prodotto-wrap{display:block;}
+.galleria{width:100%;background:#f9f8f5;}
+.galleria-hero{width:100%;aspect-ratio:4/5;overflow:hidden;background:#ede8dc;}
+.galleria-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.galleria-thumb{display:flex;gap:4px;padding:4px;background:#fff;}
+.galleria-thumb img{width:calc(25% - 3px);aspect-ratio:1/1;object-fit:cover;cursor:pointer;opacity:0.65;transition:opacity 0.2s;border:1.5px solid transparent;}
+.galleria-thumb img.attiva{opacity:1;border-color:#1A3A15;}
+@media(min-width:900px){
+  .prodotto-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:90vh;align-items:start;}
+  .galleria{position:sticky;top:60px;}
+  .galleria-hero{aspect-ratio:unset;min-height:70vh;}
+  .hero{border-bottom:none;border-left:1px solid #e8e8e8;}
+}
 /* ── HERO ── */
 .hero{padding:6rem 6vw 5rem;border-bottom:1px solid #e8e8e8;}
 .hero-inner{max-width:700px;}
@@ -116,6 +130,7 @@ h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
 
 <nav class="navbar">
   <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <img src="logo bosco parlante.png" alt="Il Bosco Parlante" style="width:36px;height:36px;object-fit:contain;">
     <span style="display:flex;flex-direction:column;">
       <span style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#1A3A15;line-height:1.2;">Il Bosco Parlante</span>
       <span style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#888;font-weight:400;">Montasola · Sabina</span>
@@ -124,6 +139,23 @@ h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
   <a href="#acquista" class="navbar-cta">Acquista — 34.99€</a>
 </nav>
 
+
+<!-- ── GALLERIA + HERO (layout a due colonne su desktop) ── -->
+<div class="prodotto-wrap">
+
+  <div class="galleria">
+    <div class="galleria-hero" id="imgHero">
+      <img src="Stregufa-1.png"
+           alt="Le Tre Tasche di Stregufa — Mora, Olivo, Alloro"
+           onerror="this.parentElement.style.background='#ede8dc'">
+    </div>
+    <div class="galleria-thumb">
+      <img src="Stregufa-1.png" alt="Le tre tasche" class="attiva" onclick="cambia(this)">
+      <img src="Stregufa-2.png" alt="Foglie del bosco" onclick="cambia(this)">
+      <img src="Stregufa-3.png" alt="Rituale" onclick="cambia(this)">
+      <img src="Stregufa-4.png" alt="Bosco di Montasola" onclick="cambia(this)">
+    </div>
+  </div>
 
 <!-- ── HERO ── -->
 <section class="hero">
@@ -138,6 +170,8 @@ h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
     </div>
   </div>
 </section>
+
+</div><!-- fine .prodotto-wrap -->
 
 
 <!-- ── APERTURA NARRATIVA ── -->
@@ -259,6 +293,14 @@ h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
 </footer>
 
 <script>
+/* Galleria: click sulle miniature cambia immagine principale */
+function cambia(thumb) {
+  const hero = document.getElementById('imgHero');
+  hero.innerHTML = '<img src="' + thumb.src + '" alt="' + thumb.alt + '" style="width:100%;height:100%;object-fit:cover;display:block;">';
+  document.querySelectorAll('.galleria-thumb img').forEach(i => i.classList.remove('attiva'));
+  thumb.classList.add('attiva');
+}
+
 const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*60);obs.unobserve(e.target);}})},{threshold:0.08});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 </script>
