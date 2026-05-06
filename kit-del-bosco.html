@@ -52,8 +52,8 @@
     .galleria-hero-placeholder svg{opacity:0.18;width:80px;height:80px;}
     .galleria-hero-placeholder span{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.85rem;color:rgba(0,0,0,0.3);letter-spacing:0.06em;}
     .galleria-thumb{display:flex;gap:4px;padding:4px;background:#fff;}
-    .galleria-thumb-item{width:calc(25% - 3px);aspect-ratio:1/1;background:linear-gradient(135deg,#ede8dc,#d8cdb5);opacity:0.5;border:1.5px solid transparent;cursor:default;}
-    .galleria-thumb-item.attiva{opacity:1;border-color:#1A3A15;}
+    .galleria-thumb img{width:calc(25% - 3px);aspect-ratio:1/1;object-fit:cover;cursor:pointer;opacity:0.65;transition:opacity 0.2s;border:1.5px solid transparent;}
+    .galleria-thumb img.attiva{opacity:1;border-color:#1A3A15;}
 
     @media(min-width:900px){
       .prodotto-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:90vh;align-items:start;}
@@ -178,21 +178,13 @@
 
   <div class="galleria">
     <div class="galleria-hero" id="imgHero">
-      <div class="galleria-hero-placeholder">
-        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="30" width="24" height="34" rx="3" stroke="#1A3A15" stroke-width="2"/>
-          <rect x="28" y="26" width="24" height="34" rx="3" stroke="#1A3A15" stroke-width="2"/>
-          <rect x="46" y="22" width="24" height="34" rx="3" stroke="#1A3A15" stroke-width="2"/>
-          <path d="M22 30c0-6 4-12 4-12s4 6 4 12" stroke="#1A3A15" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <span>Kit del Bosco · Tre Lombrisacchi</span>
-      </div>
+      <img src="KIT-IMMAGINE-1.jpg" alt="Kit del Bosco — Tre Lombrisacchi" style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>
     <div class="galleria-thumb">
-      <div class="galleria-thumb-item attiva"></div>
-      <div class="galleria-thumb-item"></div>
-      <div class="galleria-thumb-item"></div>
-      <div class="galleria-thumb-item"></div>
+      <img src="KIT-IMMAGINE-1.jpg" alt="Kit del Bosco" class="attiva" onclick="cambia(this)">
+      <img src="KIT-IMMAGINE-2.jpg" alt="Kit del Bosco — dettaglio" onclick="cambia(this)">
+      <img src="KIT-IMMAGINE-3.jpg" alt="Kit del Bosco — contenuto" onclick="cambia(this)">
+      <img src="KIT-IMMAGINE-4.jpg" alt="Kit del Bosco — Lombrisacco" onclick="cambia(this)">
     </div>
   </div>
 
@@ -341,6 +333,13 @@
 </footer>
 
 <script>
+function cambia(thumb) {
+  const hero = document.getElementById('imgHero');
+  hero.innerHTML = '<img src="' + thumb.src + '" alt="' + thumb.alt + '" style="width:100%;height:100%;object-fit:cover;display:block;">';
+  document.querySelectorAll('.galleria-thumb img').forEach(i => i.classList.remove('attiva'));
+  thumb.classList.add('attiva');
+}
+
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
