@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESPNMH4WYD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESPNMH4WYD');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit del Bosco — Il Bosco Parlante</title>
+  <meta name="description" content="Tre Lombrisacchi di humus vivo, tre guide digitali, un gesto prima di iniziare. Prodotto a Montasola, Sabina. Per chi vuole rimettere le mani nella terra.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;font-size:18px;}
+    body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#111;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+    /* ── TOPBAR ── */
+    .topbar{background:#1A3A15;color:rgba(255,255,255,0.75);text-align:center;padding:0.6em 1rem;font-size:0.72rem;letter-spacing:0.1em;font-weight:400;}
+
+    /* ── NAVBAR ── */
+    .navbar{border-bottom:1px solid #e8e8e8;padding:1.1rem 6vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:100;}
+    .navbar-logo{text-decoration:none;display:flex;align-items:center;gap:10px;}
+    .navbar-logo svg{width:28px;height:28px;}
+    .navbar-nome{font-family:'Lora',Georgia,serif;font-size:0.95rem;color:#111;letter-spacing:0.02em;}
+    .navbar-cta{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:#1A3A15;text-decoration:none;padding:0.65em 1.4em;transition:background 0.2s;}
+    .navbar-cta:hover{background:#2D5A27;}
+
+    /* ── UTILITIES ── */
+    .s{padding:5rem 6vw;}
+    .s-alt{background:#f9f8f5;}
+    .s-scura{background:#111;color:#fff;}
+    .inner{max-width:660px;margin:0 auto;}
+    .occhiello{display:block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#2D5A27;font-weight:400;margin-bottom:1rem;border-left:2px solid #2D5A27;padding-left:0.7em;}
+    .occhiello-chiaro{color:rgba(255,255,255,0.4);border-left-color:rgba(255,255,255,0.2);}
+    h1,h2,h3{font-family:'Lora','Georgia','Times New Roman',serif;font-weight:400;line-height:1.2;}
+    h1{font-size:clamp(2.4rem,6vw,4rem);}
+    h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
+    .corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+
+    /* ── LAYOUT PRODOTTO ── */
+    .prodotto-wrap{display:block;}
+    .galleria{width:100%;background:#f9f8f5;}
+    .galleria-hero{width:100%;aspect-ratio:4/5;overflow:hidden;background:#ede8dc;position:relative;}
+    .galleria-hero-placeholder{width:100%;height:100%;background:linear-gradient(160deg,#e8e0d0 0%,#d4c9b0 40%,#c2b89a 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;}
+    .galleria-hero-placeholder svg{opacity:0.18;width:80px;height:80px;}
+    .galleria-hero-placeholder span{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.85rem;color:rgba(0,0,0,0.3);letter-spacing:0.06em;}
+    .galleria-thumb{display:flex;gap:4px;padding:4px;background:#fff;}
+    .galleria-thumb-item{width:calc(25% - 3px);aspect-ratio:1/1;background:linear-gradient(135deg,#ede8dc,#d8cdb5);opacity:0.5;border:1.5px solid transparent;cursor:default;}
+    .galleria-thumb-item.attiva{opacity:1;border-color:#1A3A15;}
+
+    @media(min-width:900px){
+      .prodotto-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:90vh;align-items:start;}
+      .galleria{position:sticky;top:60px;}
+      .galleria-hero{aspect-ratio:unset;min-height:70vh;}
+      .hero{border-bottom:none;border-left:1px solid #e8e8e8;}
+    }
+
+    /* ── HERO ── */
+    .hero{padding:6rem 6vw 5rem;border-bottom:1px solid #e8e8e8;}
+    .hero-inner{max-width:700px;}
+    .hero h1{margin-bottom:0.6em;}
+    .hero h1 em{font-style:italic;color:#2D5A27;}
+    .hero-claim{font-family:'Lora',Georgia,serif;font-size:clamp(1.1rem,2.5vw,1.4rem);font-style:italic;color:#555;line-height:1.65;margin-bottom:2.5rem;max-width:540px;}
+    .hero-badge{display:inline-flex;align-items:center;gap:0.5em;background:#f0f5ee;border:1px solid #d8e4d4;padding:0.5em 1em;font-size:0.8rem;color:#2D5A27;font-weight:400;margin-bottom:2rem;}
+    .hero-cta-wrap{display:flex;flex-direction:column;gap:0.9rem;align-items:flex-start;}
+    .btn-primario{font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:#fff;background:#1A3A15;text-decoration:none;padding:1em 2.2em;transition:background 0.2s,transform 0.15s;display:inline-block;}
+    .btn-primario:hover{background:#2D5A27;transform:translateY(-1px);}
+    .btn-scroll{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:#888;text-decoration:none;border-bottom:1px solid #ddd;padding-bottom:1px;transition:color 0.2s,border-color 0.2s;}
+    .btn-scroll:hover{color:#1A3A15;border-color:#1A3A15;}
+
+    /* ── APERTURA NARRATIVA ── */
+    .narrativa{max-width:660px;margin:0 auto;}
+    .narrativa p{font-family:'Lora',Georgia,serif;font-size:clamp(1.1rem,2.5vw,1.35rem);line-height:1.75;color:#222;margin-bottom:1.4rem;}
+    .narrativa p em{font-style:italic;color:#2D5A27;}
+
+
+
+    /* ── COSA RICEVI ── */
+    .conf-lista{margin-top:1.2rem;}
+    .conf-lista li{list-style:none;display:flex;gap:0.8em;padding:0.9em 0;border-bottom:1px solid #ebebeb;font-size:0.95rem;color:#333;align-items:baseline;}
+    .conf-lista li:first-child{border-top:1px solid #ebebeb;}
+    .conf-lista li::before{content:"·";color:#2D5A27;font-size:1.3em;flex-shrink:0;line-height:1;}
+    .conf-lista li em{font-family:'Lora',Georgia,serif;font-style:italic;color:#999;font-size:0.88em;margin-left:0.2em;}
+    .conf-lista li strong{font-weight:400;color:#1A3A15;}
+
+    /* ── RICHIAMO DELLA TERRA ── */
+    .richiamo-wrap{background:#111;color:#fff;padding:5rem 6vw;}
+    .richiamo-inner{max-width:660px;margin:0 auto;}
+    .richiamo-fasi{margin-top:2.5rem;}
+    .richiamo-fase{display:grid;grid-template-columns:52px 1fr;gap:1.4rem;padding:1.6rem 0;border-bottom:1px solid rgba(255,255,255,0.1);align-items:start;}
+    .richiamo-fase:first-child{border-top:1px solid rgba(255,255,255,0.1);}
+    .richiamo-num{font-family:'Lora',Georgia,serif;font-size:2.2rem;font-weight:400;color:rgba(255,255,255,0.18);line-height:1;}
+    .richiamo-testo strong{display:block;font-family:'DM Sans',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);font-weight:400;margin-bottom:0.5em;}
+    .richiamo-testo p{font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,0.65);line-height:1.7;}
+
+    /* ── GARANZIA ── */
+    .garanzia{display:flex;gap:1rem;align-items:flex-start;border:1px solid #e8e8e8;padding:1.3rem 1.5rem;margin-top:2rem;}
+    .garanzia-ico{font-size:1.3rem;flex-shrink:0;line-height:1.3;}
+    .garanzia-testo strong{display:block;font-size:0.82rem;font-weight:400;letter-spacing:0.05em;color:#1A3A15;margin-bottom:0.3em;}
+    .garanzia-testo span{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.9rem;color:#888;line-height:1.6;}
+
+    /* ── CITAZIONE DARK ── */
+    .citazione-dark{background:#1A3A15;padding:4rem 6vw;text-align:center;}
+    .citazione-dark blockquote{font-family:'Lora',Georgia,serif;font-size:clamp(1.15rem,2.8vw,1.6rem);font-style:italic;color:rgba(255,255,255,0.85);line-height:1.65;max-width:600px;margin:0 auto;}
+    .citazione-dark cite{display:block;margin-top:1.2rem;font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);}
+
+    /* ── GUIDE DIGITALI ── */
+    .guide-griglia{display:grid;grid-template-columns:1fr;gap:1px;background:#e8e8e8;margin-top:2rem;}
+    @media(min-width:600px){.guide-griglia{grid-template-columns:1fr 1fr 1fr;}}
+    .guida-card{background:#fff;padding:2rem 1.8rem;}
+    .guida-card-ico{font-size:1.5rem;margin-bottom:1rem;display:block;}
+    .guida-card h4{font-family:'Lora',Georgia,serif;font-size:1.05rem;font-weight:400;margin-bottom:0.5em;color:#111;}
+    .guida-card p{font-size:0.85rem;line-height:1.7;color:#666;}
+
+    /* ── ACCESSO BONUS ── */
+    .bonus-strip{background:#f0f5ee;border:1px solid #d8e4d4;padding:2rem;margin-top:2rem;display:flex;gap:1.5rem;align-items:flex-start;}
+    .bonus-ico{font-size:1.4rem;flex-shrink:0;line-height:1;}
+    .bonus-testo h4{font-family:'DM Sans',sans-serif;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#1A3A15;margin-bottom:0.4em;}
+    .bonus-testo p{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.92rem;color:#555;line-height:1.65;}
+
+    /* ── CTA FINALE ── */
+    .cta-finale{padding:6rem 6vw;border-top:3px solid #1A3A15;text-align:center;}
+    .cta-frase{font-family:'Lora',Georgia,serif;font-size:clamp(1.3rem,3vw,2rem);font-style:italic;line-height:1.6;color:#111;max-width:540px;margin:0 auto 0.5em;}
+    .cta-attrib{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:2.5rem;}
+    .cta-prezzo{font-family:'Lora',Georgia,serif;font-size:2.8rem;font-weight:400;color:#111;display:block;line-height:1;margin-bottom:0.15em;}
+    .cta-inc{font-size:0.78rem;color:#aaa;letter-spacing:0.08em;display:block;margin-bottom:2rem;}
+    .btn-cta-grande{font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:#fff;background:#1A3A15;text-decoration:none;padding:1.2em 3em;display:inline-block;transition:background 0.2s,transform 0.15s;}
+    .btn-cta-grande:hover{background:#2D5A27;transform:translateY(-2px);}
+    .cta-nota{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.85rem;color:#bbb;display:block;margin-top:1.2rem;}
+
+    /* ── FOOTER ── */
+    .footer{background:#f9f8f5;border-top:1px solid #e8e8e8;padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+    .footer a{color:#aaa;text-decoration:none;}
+    .footer a:hover{color:#1A3A15;}
+
+    /* ── ANIMAZIONI ── */
+    .r{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .r.vis{opacity:1;transform:none;}
+
+    @media(max-width:600px){
+      html{font-size:16px;}
+      .s{padding:3.5rem 5vw;}
+      .hero{padding:3.5rem 5vw 3rem;}
+      .sacco{padding:2.5rem 5vw;}
+      .richiamo-wrap{padding:3rem 5vw;}
+      .citazione-dark{padding:3rem 5vw;}
+      .cta-finale{padding:4rem 5vw;}
+      .footer{flex-direction:column;gap:0.5rem;text-align:center;}
+      .bonus-strip{flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">Confezionato a mano · Humus di lombrico prodotto a Montasola, Sabina</div>
+
+<nav class="navbar">
+  <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <img src="logo bosco parlante.png" alt="Il Bosco Parlante" style="width:36px;height:36px;object-fit:contain;">
+    <span style="display:flex;flex-direction:column;">
+      <span style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#1A3A15;line-height:1.2;">Il Bosco Parlante</span>
+      <span style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#888;font-weight:400;">Montasola · Sabina</span>
+    </span>
+  </a>
+  <a href="[SHOPIFY_URL_KIT]" class="navbar-cta">Porta il bosco a casa tua</a>
+</nav>
+
+
+<!-- ── PRODOTTO HERO + GALLERIA ── -->
+<div class="prodotto-wrap">
+
+  <div class="galleria">
+    <div class="galleria-hero" id="imgHero">
+      <div class="galleria-hero-placeholder">
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="30" width="24" height="34" rx="3" stroke="#1A3A15" stroke-width="2"/>
+          <rect x="28" y="26" width="24" height="34" rx="3" stroke="#1A3A15" stroke-width="2"/>
+          <rect x="46" y="22" width="24" height="34" rx="3" stroke="#1A3A15" stroke-width="2"/>
+          <path d="M22 30c0-6 4-12 4-12s4 6 4 12" stroke="#1A3A15" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>Kit del Bosco · Tre Lombrisacchi</span>
+      </div>
+    </div>
+    <div class="galleria-thumb">
+      <div class="galleria-thumb-item attiva"></div>
+      <div class="galleria-thumb-item"></div>
+      <div class="galleria-thumb-item"></div>
+      <div class="galleria-thumb-item"></div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <span class="occhiello r">Kit del Bosco · Lombricaio Matto</span>
+      <h1 class="r">La terra<br>non ha <em>fretta</em>.</h1>
+      <p class="hero-claim r">Humus di lombrico prodotto a Montasola, in Sabina. Per chi vuole rimettere le mani nella terra — e farlo nel modo giusto.</p>
+      <div class="hero-badge r">🌱 Prodotto a mano · Montasola, Sabina</div>
+      <div class="hero-cta-wrap">
+        <a href="[SHOPIFY_URL_KIT]" class="btn-primario r">Porta il bosco a casa tua</a>
+        <a href="#cosa-contiene" class="btn-scroll r">Scopri cosa contiene ↓</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ── APERTURA NARRATIVA ── -->
+<section class="s r">
+  <div class="narrativa r">
+    <p>C'è un lavoro che avviene nel buio, in silenzio, senza che nessuno lo veda. I lombrichi trasformano quello che era morto in quello che nutre. Non hanno fretta. Non hanno bisogno di istruzioni. Fanno esattamente quello che la terra ha sempre fatto, prima che noi decidessimo di saperne di più.</p>
+    <p>È una follia, in un certo senso. <em>Una follia sana.</em></p>
+    <p>Il Lombricaio Matto nasce da questa logica. Nutrire davvero la terra non è qualcosa di tecnico — è qualcosa di naturale. Un bosco non ha bisogno di istruzioni: cadono le foglie, arrivano i lombrichi, la materia torna terra, la terra torna vita. Da sempre. Noi abbiamo solo smesso di interferire — e abbiamo iniziato ad ascoltare.</p>
+  </div>
+</section>
+
+
+
+
+
+<!-- ── RICHIAMO DELLA TERRA ── -->
+<div class="richiamo-wrap r">
+  <div class="richiamo-inner">
+    <span class="occhiello occhiello-chiaro r">Nella scatola — Il Richiamo della Terra</span>
+    <h2 class="r" style="color:#fff;">Prima di iniziare,<br>fermati un momento.</h2>
+    <p class="corpo r" style="color:rgba(255,255,255,0.5);">Non c'è fretta. La terra non ce l'ha mai avuta. Ogni Kit del Bosco include un foglio — un gesto, tre minuti, prima di mettere le mani nell'humus.</p>
+    <div class="richiamo-fasi">
+      <div class="richiamo-fase r">
+        <div class="richiamo-num">1</div>
+        <div class="richiamo-testo">
+          <strong>Apri il sacco</strong>
+          <p>Porta le mani dentro. Senti il peso, la consistenza, il fresco. Materia viva, finemente lavorata nel buio, senza che nessuno lo vedesse. Fermati lì anche solo 30 secondi.</p>
+        </div>
+      </div>
+      <div class="richiamo-fase r">
+        <div class="richiamo-num">2</div>
+        <div class="richiamo-testo">
+          <strong>Avvicina le mani al naso</strong>
+          <p>Respira. Lascia che l'odore arrivi senza cercarlo — terra di bosco, qualcosa di antico, qualcosa che riconosci anche se non sai da dove. È l'odore di quello che nutre. Di quello che tiene in vita.</p>
+        </div>
+      </div>
+      <div class="richiamo-fase r">
+        <div class="richiamo-num">3</div>
+        <div class="richiamo-testo">
+          <strong>Adesso porta nutrimento</strong>
+          <p>Aggiungi l'humus, mescolalo al terriccio, porta le mani dove serve. Tieni l'attenzione lì — nel gesto, nel contatto. Nutrire è un atto di presenza. Vale per la terra. Vale per tutto.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── CITAZIONE ── -->
+<div class="citazione-dark r">
+  <blockquote>La stessa cosa che proviamo a fare con Il Bosco Parlante. Su scale diverse, con gesti diversi. Ma con la stessa direzione.</blockquote>
+  <cite>— Vivien e Raffaele · Montasola, Sabina</cite>
+</div>
+
+
+<!-- ── GUIDE DIGITALI ── -->
+<section class="s r" id="cosa-contiene">
+  <div class="inner">
+    <span class="occhiello r">Tre guide digitali — in stile quaderno erboristico</span>
+    <h2 class="r">Quello che ti serve sapere,<br>già nella tua mail.</h2>
+    <p class="corpo r">Le guide arrivano prima del pacco. Se non le trovi, il QR sul cartoncino di ogni Lombrisacco ti porta direttamente alla pagina di download.</p>
+    <div class="guide-griglia r">
+      <div class="guida-card">
+        <span class="guida-card-ico">🌱</span>
+        <h4>Come usare i Lombrisacchi</h4>
+        <p>Per il rinvaso, per il nutrimento periodico, per ortaggi, aromatiche, piante da interno e piccoli alberi in vaso.</p>
+      </div>
+      <div class="guida-card">
+        <span class="guida-card-ico">💧</span>
+        <h4>Come ricavare humus liquido</h4>
+        <p>Il fertilizzante più ricco che puoi preparare a casa. Metodo semplice, risultati immediati.</p>
+      </div>
+      <div class="guida-card">
+        <span class="guida-card-ico">🌿</span>
+        <h4>Nove piante officinali da zero</h4>
+        <p>Come coltivarle partendo dall'humus di lombrico — anche se non hai mai piantato niente in vita tua.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── COSA RICEVI ── -->
+<section class="s s-alt r" id="acquista">
+  <div class="inner">
+    <span class="occhiello r">Cosa ricevi</span>
+    <h2 class="r">Una scatola<br>da Montasola.</h2>
+    <p class="corpo r">Confezioniamo a mano e spediamo direttamente dal Bosco Parlante. Ogni pacco parte da Montasola — non da un magazzino.</p>
+    <ul class="conf-lista r">
+      <li><strong>3 Lombrisacchi</strong> in juta · humus di lombrico finemente vagliato a mano <em>prodotto a Montasola</em></li>
+      <li><strong>3 guide digitali</strong> in stile quaderno erboristico <em>inviate per mail prima del pacco</em></li>
+      <li><strong>Il Richiamo della Terra</strong> · foglio con il gesto da fare prima di iniziare</li>
+      <li><strong>Una lettera scritta a mano</strong> con il tuo nome <em>da Raffaele o Vivien</em></li>
+      <li>Accesso alla pagina bonus <em>lombricaiomatto.com/pages/bonus-lombrisacco</em></li>
+      <li>Spedizione gratuita in Italia <em>2-5 giorni lavorativi</em></li>
+    </ul>
+    <div class="bonus-strip r">
+      <span class="bonus-ico">🔑</span>
+      <div class="bonus-testo">
+        <h4>Pagina bonus inclusa</h4>
+        <p>Con il Kit del Bosco accedi alla pagina bonus riservata agli acquirenti — contenuti aggiuntivi, approfondimenti, aggiornamenti diretti da Montasola.</p>
+      </div>
+    </div>
+    <div class="garanzia r">
+      <span class="garanzia-ico">🌿</span>
+      <div class="garanzia-testo">
+        <strong>30 giorni — soddisfatto o rimborsato</strong>
+        <span>Se qualcosa non va, rimborso completo senza storie.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CTA FINALE ── -->
+<div class="cta-finale">
+  <p class="cta-frase r">Nutrire è un atto di presenza. Vale per la terra. Vale per tutto.</p>
+  <span class="cta-attrib r">— Il Bosco Parlante, Montasola, Sabina</span>
+  <span class="cta-prezzo r">39,99€</span>
+  <span class="cta-inc r">3 Lombrisacchi · 3 guide digitali · Richiamo della Terra · Spedizione gratuita</span>
+  <a href="[SHOPIFY_URL_KIT]" class="btn-cta-grande r">Porta il bosco a casa tua</a>
+  <span class="cta-nota r">Confezionato a mano a Montasola · Produzione propria del Bosco Parlante</span>
+</div>
+
+
+<footer class="footer">
+  <span>Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://lombricaiomatto.com">lombricaiomatto.com</a>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 60);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
