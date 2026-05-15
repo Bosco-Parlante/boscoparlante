@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESPNMH4WYD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESPNMH4WYD');
+  </script>
+
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Tre Tasche · Giorno 1 · Mora · Radicamento — Il Bosco Parlante</title>
+  <meta name="description" content="Primo giorno del percorso. La mora e il radicamento — tre minuti.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
+
+  <!-- Script Klaviyo — NON async -->
+  <script type="text/javascript"
+    src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VBs8wR">
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;font-size:18px;}
+    body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#111;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+    .topbar{background:#1A3A15;color:rgba(255,255,255,0.75);text-align:center;padding:0.6em 1rem;font-size:0.72rem;letter-spacing:0.1em;font-weight:400;}
+    .navbar{border-bottom:1px solid #e8e8e8;padding:1.1rem 6vw;display:flex;justify-content:space-between;align-items:center;}
+    .navbar a{text-decoration:none;}
+    .navbar-logo-text{font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#1A3A15;line-height:1.2;}
+
+    .s{padding:5rem 6vw;}
+    .s-alt{background:#f9f8f5;}
+    .s-scura{background:#111;color:#fff;}
+    .inner{max-width:660px;margin:0 auto;}
+    h1,h2,h3{font-family:'Lora','Georgia','Times New Roman',serif;font-weight:400;line-height:1.2;}
+    h1{font-size:clamp(2.4rem,6vw,4rem);}
+    h1 em{font-style:italic;color:#2D5A27;}
+    h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
+    .occhiello{display:block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#2D5A27;font-weight:400;margin-bottom:1rem;border-left:2px solid #2D5A27;padding-left:0.7em;}
+    .occhiello-chiaro{color:rgba(255,255,255,0.4);border-left-color:rgba(255,255,255,0.2);}
+    .corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+
+    /* Indicatore giorno */
+    .giorno-badge{display:inline-flex;align-items:center;gap:0.6rem;margin-bottom:1.5rem;}
+    .giorno-numero{font-family:'Lora',Georgia,serif;font-size:3rem;font-weight:400;color:#e8e8e8;line-height:1;}
+    .giorno-info{display:flex;flex-direction:column;}
+    .giorno-label{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:#bbb;font-weight:400;}
+    .giorno-pianta{font-family:'Lora',Georgia,serif;font-style:italic;font-size:1.1rem;color:#2D5A27;}
+
+    .hero{padding:5rem 6vw 3rem;border-bottom:1px solid #e8e8e8;}
+    .hero-inner{max-width:660px;margin:0 auto;}
+    .hero-claim{font-family:'Lora',Georgia,serif;font-size:clamp(1.05rem,2.5vw,1.3rem);font-style:italic;font-weight:400;color:#666;line-height:1.7;margin-bottom:2.5rem;max-width:520px;}
+
+    .player-wrap{background:#f9f8f5;border:1px solid #e8e8e8;padding:2rem 2.5rem;margin-top:2.5rem;}
+    .player-prep{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:#666;line-height:1.65;margin-bottom:1.8rem;}
+    .player-prep strong{font-style:normal;font-weight:500;color:#222;}
+
+    .btn-avvia{display:flex;align-items:center;gap:1rem;background:#1A3A15;color:#fff;border:none;cursor:pointer;padding:1.1em 2em;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;transition:background 0.2s;width:100%;}
+    .btn-avvia:hover{background:#2D5A27;}
+    .btn-avvia .play-ico{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .btn-avvia .play-ico svg{fill:#fff;margin-left:2px;}
+    .btn-avvia.in-corso .play-ico svg{display:none;}
+    .btn-avvia.in-corso .pause-ico{display:block;}
+    .pause-ico{display:none;width:12px;height:12px;border-left:3px solid #fff;border-right:3px solid #fff;flex-shrink:0;}
+    .btn-avvia.completato{background:#2D5A27;cursor:default;}
+    .btn-avvia.completato:hover{background:#2D5A27;}
+
+    #audioElement{display:none;}
+
+    .progress-wrap{margin-top:1.2rem;display:none;}
+    .progress-wrap.vis{display:block;}
+    .progress-bar-bg{background:#e0e0e0;height:3px;position:relative;cursor:pointer;}
+    .progress-bar-fill{background:#1A3A15;height:3px;width:0%;transition:width 0.5s linear;}
+    .progress-tempo{display:flex;justify-content:space-between;font-size:0.7rem;color:#aaa;margin-top:0.4em;letter-spacing:0.05em;}
+
+    .tracking-note{font-size:0.75rem;color:#bbb;margin-top:1rem;font-family:'DM Sans',sans-serif;display:none;}
+    .tracking-note.vis{display:block;}
+
+    .email-mancante{background:#fff8e8;border:1px solid #e8d8a0;padding:1.2rem 1.5rem;margin-top:1.5rem;display:none;}
+    .email-mancante.vis{display:block;}
+    .email-mancante p{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.9rem;color:#666;line-height:1.6;}
+
+    /* Nav giorni */
+    .giorni-nav{display:flex;justify-content:space-between;margin-top:2rem;padding-top:1.5rem;border-top:1px solid #e8e8e8;}
+    .nav-giorno{font-family:'DM Sans',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:#1A3A15;text-decoration:none;font-weight:400;transition:color 0.2s;}
+    .nav-giorno:hover{color:#2D5A27;}
+    .nav-prev{margin-right:auto;}
+    .nav-next{margin-left:auto;}
+
+    /* Fasi */
+    .fasi-lista{margin-top:1.5rem;}
+    .fase{display:grid;grid-template-columns:56px 1fr;gap:1.2rem;padding:1.4rem 0;border-bottom:1px solid #ebebeb;align-items:start;}
+    .fase:first-child{border-top:1px solid #ebebeb;}
+    .fase-min{font-family:'Lora',Georgia,serif;font-size:2rem;font-weight:400;color:#2D5A27;line-height:1;padding-top:2px;}
+    .fase-nome{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#2D5A27;font-weight:400;display:block;margin-bottom:0.4em;}
+    .fase-desc{font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#555;line-height:1.65;}
+
+    /* Sezione scura */
+    .vacuna-citazione{font-family:'Lora',Georgia,serif;font-size:clamp(1.15rem,2.5vw,1.5rem);font-style:italic;line-height:1.7;color:#fff;margin-bottom:2rem;}
+    .vacuna-citazione strong{font-style:normal;font-weight:500;color:rgba(255,255,255,0.9);}
+
+    .footer{background:#f9f8f5;border-top:1px solid #e8e8e8;padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+    .footer a{color:#aaa;text-decoration:none;}
+    .footer a:hover{color:#1A3A15;}
+
+    .r{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .r.vis{opacity:1;transform:none;}
+
+    @media(max-width:600px){
+      html{font-size:16px;}
+      .s{padding:3.5rem 5vw;}
+      .hero{padding:3.5rem 5vw 3rem;}
+      .player-wrap{padding:1.5rem;}
+      .footer{flex-direction:column;gap:0.5rem;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">Foglie raccolte a mano a Montasola, Sabina · Il Bosco Parlante</div>
+
+<nav class="navbar">
+  <a href="https://ilboscoparlante.com" class="navbar-logo">
+    <span class="navbar-logo-text">Il Bosco Parlante</span>
+  </a>
+</nav>
+
+<!-- HERO + PLAYER -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="giorno-badge r">
+      <div class="giorno-numero">1</div>
+      <div class="giorno-info">
+        <span class="giorno-label">Le Tre Tasche · Giorno</span>
+        <span class="giorno-pianta">Mora · Radicamento</span>
+      </div>
+    </div>
+
+    <h1 class="r"><em>La tua pratica</em><br>è qui.</h1>
+    <p class="hero-claim r">Tre minuti. Tieni la foglia della mora a portata di mano. Siediti — non serve altro.</p>
+
+    <!-- ── PLAYER ── -->
+    <div class="player-wrap r">
+      <p class="player-prep">
+        <strong>Prima di iniziare:</strong> tieni la foglia della mora vicina — puoi tenerla tra le dita, oppure prepara una tisana e lasciala in infusione. L'importante è avere l'odore accessibile quando l'audio te lo chiederà.
+      </p>
+
+      <!-- NOTA: sostituisci /audio/bundle-giorno-1-mora.mp3 con il percorso reale dell'audio -->
+      <audio id="audioElement" preload="none">
+        <source src="/audio/bundle-giorno-1-mora.mp3" type="audio/mpeg">
+      </audio>
+
+      <button class="btn-avvia" id="btnAvvia" onclick="avviaETraccia()">
+        <span class="play-ico">
+          <svg width="10" height="12" viewBox="0 0 10 12">
+            <polygon points="0,0 10,6 0,12"/>
+          </svg>
+          <span class="pause-ico"></span>
+        </span>
+        <span id="btnLabel">Avvia la pratica</span>
+      </button>
+
+      <div class="progress-wrap" id="progressWrap">
+        <div class="progress-bar-bg" id="progressBg">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-tempo">
+          <span id="tempoCorrente">0:00</span>
+          <span id="tempoDurata">–:––</span>
+        </div>
+      </div>
+
+      <p class="tracking-note" id="trackingNote">
+        ✓ Giorno 1 registrato — continua così.
+      </p>
+    </div>
+
+    <div class="email-mancante" id="emailMancante">
+      <p>Hai raggiunto questa pagina direttamente. L'audio è disponibile, ma il giorno non verrà registrato nel percorso — usa il link nell'email che hai ricevuto.</p>
+    </div>
+    
+    <!-- Navigazione giorni -->
+    <div class="giorni-nav r">
+      <a href="/3-tasche-giorno-2" class="nav-giorno nav-next">Giorno 2 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FASI DELLA PRATICA -->
+<section class="s r">
+  <div class="inner">
+    <span class="occhiello r">La struttura dell'audio</span>
+    <h2 class="r">Tre minuti,<br>tre movimenti.</h2>
+    <div class="fasi-lista">
+      <div class="fase r">
+        <div><div class="fase-min">1'</div></div>
+        <div>
+          <span class="fase-nome">Attenzione</span>
+          <p class="fase-desc">Il corpo parla per primo. L'audio ti guida a sentire dove l'attenzione viene chiamata. Poi porta l'attenzione al/alla piedi — Dove sono adesso. Il peso, il contatto con quello che c'è sotto.</p>
+        </div>
+      </div>
+      <div class="fase r">
+        <div><div class="fase-min">1'</div></div>
+        <div>
+          <span class="fase-nome">La foglia</span>
+          <p class="fase-desc">Prendi la foglia. Tienila tra le dita — senti la consistenza, il bordo, il peso. Avvicinala al naso. Lascia che l'odore arrivi. Tieni insieme: l'odore della mora e la sensazione nel corpo.</p>
+        </div>
+      </div>
+      <div class="fase r">
+        <div><div class="fase-min">1'</div></div>
+        <div>
+          <span class="fase-nome">Espansione</span>
+          <p class="fase-desc">Senza lasciare quello che stai sentendo — allarga. Aggiungi quello che chiama. Tutto insieme, senza scegliere. Questo è.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s s-scura r">
+  <div class="inner">
+    <span class="occhiello occhiello-chiaro r">Dopo la pratica</span>
+    <p class="vacuna-citazione r">
+      La foglia puoi tenerla con te, rimetterla nella tasca — o usarla. Aggiungerla a un piatto, a una tisana.<br>
+      <strong>Non è un gesto rituale separato. È solo continuare a stare con quella pianta, in un altro modo.</strong>
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>© Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://ilboscoparlante.com">ilboscoparlante.com</a>
+</footer>
+
+<script>
+  // ── Giorno corrente ───────────────────────────────────────────────
+  const GIORNO_N = 1;
+
+  // ── Leggi email dal parametro URL ────────────────────────────────
+  const params = new URLSearchParams(window.location.search);
+  const emailParam = params.get('email');
+
+  if (!emailParam) {
+    document.getElementById('emailMancante').classList.add('vis');
+  }
+
+  // ── Stato audio ───────────────────────────────────────────────────
+  let audio = document.getElementById('audioElement');
+  let trackingFatto = false;
+  let inRiproduzione = false;
+
+  // ── Avvia audio + traccia in Klaviyo ─────────────────────────────
+  async function avviaETraccia() {
+    if (inRiproduzione) {
+      audio.pause();
+      inRiproduzione = false;
+      document.getElementById('btnAvvia').classList.remove('in-corso');
+      document.getElementById('btnLabel').textContent = 'Riprendi la pratica';
+      return;
+    }
+
+    try {
+      await audio.play();
+      inRiproduzione = true;
+      document.getElementById('btnAvvia').classList.add('in-corso');
+      document.getElementById('btnLabel').textContent = 'In ascolto…';
+      document.getElementById('progressWrap').classList.add('vis');
+    } catch (e) {
+      console.warn('Autoplay blocked:', e);
+    }
+
+    if (!trackingFatto && emailParam) {
+      trackingFatto = true;
+      await registraGiorno(emailParam);
+    }
+  }
+
+  // ── Registra giorno completato in Klaviyo ─────────────────────────
+  async function registraGiorno(email) {
+    try {
+      // Aggiorna proprietà custom sul profilo via _learnq.identify
+      // Klaviyo scrive le proprietà custom al profilo identificato
+      window._learnq.push(['identify', {
+        '$email': email,
+        '3-tasche_giorno_completato': GIORNO_N,
+        '3-tasche_data_ultimo_giorno': new Date().toISOString()
+      }]);
+
+      // Piccola attesa per dare tempo a _learnq di processare
+      await new Promise(r => setTimeout(r, 600));
+
+      document.getElementById('trackingNote').classList.add('vis');
+    } catch (err) {
+      console.error('Klaviyo tracking error:', err);
+      // Non bloccare l'esperienza — l'audio continua
+    }
+  }
+
+  // ── Aggiorna barra progresso ──────────────────────────────────────
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+      const pct = (audio.currentTime / audio.duration) * 100;
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('tempoCorrente').textContent = formatTempo(audio.currentTime);
+    }
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    document.getElementById('tempoDurata').textContent = formatTempo(audio.duration);
+  });
+
+  audio.addEventListener('ended', () => {
+    inRiproduzione = false;
+    document.getElementById('btnAvvia').classList.remove('in-corso');
+    document.getElementById('btnAvvia').classList.add('completato');
+    document.getElementById('btnLabel').textContent = 'Pratica completata';
+  });
+
+  document.getElementById('progressBg').addEventListener('click', e => {
+    if (!audio.duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pct * audio.duration;
+  });
+
+  function formatTempo(sec) {
+    if (!sec || isNaN(sec)) return '0:00';
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60);
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  // ── Animazioni entrata ────────────────────────────────────────────
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.r').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
