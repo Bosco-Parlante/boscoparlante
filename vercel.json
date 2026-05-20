@@ -1,5 +1,12 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/bonus",
+      "destination": "https://lombricaiomatto.com/pages/ricevi-le-guide-del-lombricaio-matto",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
