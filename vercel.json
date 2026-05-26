@@ -5,6 +5,11 @@
       "source": "/bonus",
       "destination": "https://lombricaiomatto.com/pages/ricevi-le-guide-del-lombricaio-matto",
       "permanent": true
+    },
+    {
+      "source": "/le-tasche",
+      "destination": "https://www.ilboscoparlante.com/le-tre-tasche-di-stregufa",
+      "permanent": true
     }
   ],
   "headers": [
