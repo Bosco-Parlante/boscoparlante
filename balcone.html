@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Guida Balcone Vivo — Lombricaio Matto</title>
+  <meta name="description" content="Le tue piante non stanno bene? Probabilmente non è colpa tua. Ricevi gratis la Mini Guida Balcone Vivo.">
+  <meta name="robots" content="noindex">
+
+  <!-- Klaviyo — sostituisci XXXXXX con il tuo Public API Key -->
+  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XXXXXX"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background-color: #1a1a14;
+      color: #e8e2d4;
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 72px 32px 96px;
+    }
+
+    /* ---- Eyebrow ---- */
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #7a7060;
+      margin-bottom: 36px;
+    }
+
+    /* ---- Headline ---- */
+    .headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 8vw, 54px);
+      font-weight: 400;
+      line-height: 1.12;
+      color: #e8e2d4;
+    }
+
+    .headline em {
+      font-style: italic;
+      color: #c8b98a;
+    }
+
+    /* ---- Divider ---- */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: #4a4535;
+      margin: 32px 0;
+    }
+
+    /* ---- Body ---- */
+    .body {
+      font-size: 16px;
+      color: #b0a890;
+      margin-bottom: 20px;
+      line-height: 1.75;
+    }
+
+    .body strong {
+      color: #e8e2d4;
+      font-weight: 400;
+    }
+
+    /* ---- Blockquote ---- */
+    .pullquote {
+      border-left: 2px solid #4a4535;
+      padding: 4px 0 4px 22px;
+      margin: 32px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 19px;
+      color: #c8b98a;
+      line-height: 1.6;
+    }
+
+    /* ---- Promise box ---- */
+    .promise {
+      margin: 36px 0;
+      padding: 24px;
+      border: 1px solid #2e2c1e;
+      background: #1e1d14;
+    }
+
+    .promise-title {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #7a7060;
+      margin-bottom: 16px;
+    }
+
+    .promise-item {
+      font-size: 15px;
+      color: #b0a890;
+      padding: 9px 0;
+      border-bottom: 1px solid #2e2c1e;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .promise-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .promise-item::before {
+      content: '—';
+      color: #4a4535;
+      flex-shrink: 0;
+    }
+
+    /* ---- Form section ---- */
+    .form-section {
+      margin-top: 44px;
+      padding-top: 44px;
+      border-top: 1px solid #2e2c1e;
+    }
+
+    .form-label {
+      font-size: 16px;
+      color: #e8e2d4;
+      margin-bottom: 24px;
+      display: block;
+      line-height: 1.6;
+    }
+
+    .form-label strong {
+      font-weight: 400;
+      color: #c8b98a;
+    }
+
+    /*
+      Klaviyo form placeholder.
+      Quando incollate il div klaviyo-form-XXXXXX,
+      questo blocco sparisce automaticamente.
+    */
+    .form-placeholder {
+      border: 1px dashed #4a4535;
+      padding: 36px 24px;
+      text-align: center;
+    }
+
+    .form-placeholder p {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #4a4535;
+    }
+
+    /*
+      Override stili Klaviyo per integrarsi col dark bg.
+      Klaviyo inietta .klaviyo-form — questi override
+      vanno messi DOPO il loro script se necessario.
+    */
+    .klaviyo-form input[type="email"] {
+      background: #2a2920 !important;
+      border: 1px solid #4a4535 !important;
+      color: #e8e2d4 !important;
+      border-radius: 0 !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-weight: 300 !important;
+    }
+
+    .klaviyo-form input[type="email"]::placeholder {
+      color: #7a7060 !important;
+    }
+
+    .klaviyo-form button[type="submit"] {
+      background: #c8b98a !important;
+      color: #1a1a14 !important;
+      border: none !important;
+      border-radius: 0 !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-weight: 400 !important;
+      letter-spacing: 0.05em !important;
+      cursor: pointer !important;
+    }
+
+    .klaviyo-form button[type="submit"]:hover {
+      background: #d4c89a !important;
+    }
+
+    /* ---- Privacy ---- */
+    .privacy {
+      font-size: 12px;
+      color: #4a4535;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    /* ---- Footer ---- */
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background: #2e2c1e;
+      margin: 56px 0 36px;
+    }
+
+    .outro {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: #7a7060;
+      line-height: 1.7;
+    }
+
+    .firma {
+      font-size: 12px;
+      color: #4a4535;
+      margin-top: 16px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ---- Mobile ---- */
+    @media (max-width: 480px) {
+      .page {
+        padding: 48px 24px 72px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <p class="eyebrow">Guida Balcone Vivo · Lombricaio Matto</p>
+
+    <h1 class="headline">
+      Le tue piante<br>
+      non stanno bene?<br>
+      <em>Probabilmente<br>non è colpa tua.</em>
+    </h1>
+
+    <div class="divider"></div>
+
+    <p class="body">
+      Il problema, nella maggior parte dei casi, è il terreno — non tu.<br>
+      Un terreno povero, inerte, trattato come supporto invece che come qualcosa di vivo.
+    </p>
+
+    <blockquote class="pullquote">
+      L'humus di lombrico è il fertilizzante più naturale che esiste: prodotto nel buio del suolo, ricco di microrganismi, enzimi e sostanze nutritive. Non brucia le radici, non richiede dosi o calcoli. In 3–4 giorni le piante ritrovano vigore.
+    </blockquote>
+
+    <p class="body">
+      Siamo <strong>Vivien e Raffaele</strong>. Viviamo a Montasola, in Sabina — sei ettari di terreno, gran parte bosco. Da qui produciamo humus di lombrico lavorato a mano, quello che la terra conosce già.
+    </p>
+
+    <div class="promise">
+      <p class="promise-title">Cosa trovi nella guida</p>
+      <div class="promise-item">Perché il terreno conta più di qualsiasi cura</div>
+      <div class="promise-item">I tre errori più comuni con le piante in vaso</div>
+      <div class="promise-item">Come iniziare da una base già viva</div>
+    </div>
+
+    <div class="form-section">
+
+      <span class="form-label">
+        Lascia la tua mail.<br>
+        <strong>Ricevi subito la Mini Guida Balcone Vivo — gratuita.</strong>
+      </span>
+
+      <!--
+        SOSTITUISCI QUESTO BLOCCO con il div Klaviyo:
+        <div class="klaviyo-form-XXXXXX"></div>
+
+        Il <script> Klaviyo è già nel <head> sopra —
+        aggiorna solo il company_id=XXXXXX con il tuo Public API Key.
+      -->
+      <div class="form-placeholder">
+        <p>[ Form Klaviyo — klaviyo-form-XXXXXX ]</p>
+      </div>
+
+      <p class="privacy">Niente spam. Solo cose che hanno senso.</p>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <p class="outro">
+      Non serve avere il pollice verde.<br>
+      Serve partire da qualcosa di vivo.
+    </p>
+
+    <p class="firma">Vivien &amp; Raffaele · Il Bosco Parlante · Montasola, Sabina</p>
+
+  </main>
+</body>
+</html>
