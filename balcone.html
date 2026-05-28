@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESPNMH4WYD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESPNMH4WYD');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mini Guida Balcone Vivo — Lombricaio Matto</title>
@@ -12,303 +22,204 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;font-size:18px;}
+    body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#111;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 
-    html {
-      font-size: 16px;
-      -webkit-text-size-adjust: 100%;
-    }
+    /* ── TOPBAR ── */
+    .topbar{background:#1A3A15;color:rgba(255,255,255,0.75);text-align:center;padding:0.6em 1rem;font-size:0.72rem;letter-spacing:0.1em;font-weight:400;}
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      background-color: #1a1a14;
-      color: #e8e2d4;
-      min-height: 100vh;
-      line-height: 1.7;
-    }
+    /* ── NAVBAR ── */
+    .navbar{border-bottom:1px solid #e8e8e8;padding:1.1rem 6vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:100;}
+    .navbar-logo{text-decoration:none;display:flex;align-items:center;gap:10px;}
+    .navbar-cta{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:#1A3A15;text-decoration:none;padding:0.65em 1.4em;transition:background 0.2s;}
+    .navbar-cta:hover{background:#2D5A27;}
 
-    .page {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 72px 32px 96px;
-    }
+    /* ── UTILITIES ── */
+    .s{padding:5rem 6vw;}
+    .s-alt{background:#f9f8f5;}
+    .inner{max-width:600px;margin:0 auto;}
+    .occhiello{display:block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#2D5A27;font-weight:400;margin-bottom:1rem;border-left:2px solid #2D5A27;padding-left:0.7em;}
+    h1,h2{font-family:'Lora','Georgia','Times New Roman',serif;font-weight:400;line-height:1.2;}
+    h1{font-size:clamp(2.2rem,6vw,3.6rem);}
+    .corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
 
-    /* ---- Eyebrow ---- */
-    .eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #7a7060;
-      margin-bottom: 36px;
-    }
+    /* ── HERO ── */
+    .hero{padding:6rem 6vw 5rem;border-bottom:1px solid #e8e8e8;}
+    .hero-inner{max-width:600px;}
+    .hero h1{margin-bottom:0.6em;}
+    .hero h1 em{font-style:italic;color:#2D5A27;}
+    .hero-claim{font-family:'Lora',Georgia,serif;font-size:clamp(1rem,2.5vw,1.25rem);font-style:italic;color:#555;line-height:1.7;margin-bottom:2rem;max-width:520px;}
 
-    /* ---- Headline ---- */
-    .headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(38px, 8vw, 54px);
-      font-weight: 400;
-      line-height: 1.12;
-      color: #e8e2d4;
-    }
+    /* ── PULLQUOTE ── */
+    .pullquote{border-left:2px solid #d8e4d4;padding:0.4rem 0 0.4rem 1.4rem;margin:2rem 0;font-family:'Lora',Georgia,serif;font-style:italic;font-size:1.05rem;color:#2D5A27;line-height:1.65;}
 
-    .headline em {
-      font-style: italic;
-      color: #c8b98a;
-    }
+    /* ── PROMISE BOX ── */
+    .promise{margin:2rem 0;border:1px solid #e8e8e8;background:#f9f8f5;}
+    .promise-title{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:#aaa;padding:1rem 1.4rem 0.6rem;border-bottom:1px solid #e8e8e8;}
+    .promise-item{font-size:0.92rem;color:#444;padding:0.85rem 1.4rem;border-bottom:1px solid #e8e8e8;display:flex;align-items:baseline;gap:0.9rem;line-height:1.6;}
+    .promise-item:last-child{border-bottom:none;}
+    .promise-item::before{content:'·';color:#2D5A27;font-size:1.2em;flex-shrink:0;line-height:1;}
 
-    /* ---- Divider ---- */
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: #4a4535;
-      margin: 32px 0;
-    }
+    /* ── FORM SECTION ── */
+    .form-section{padding:4rem 6vw;background:#1A3A15;}
+    .form-inner{max-width:600px;margin:0 auto;}
+    .form-label{font-family:'Lora',Georgia,serif;font-size:clamp(1.1rem,2.5vw,1.4rem);font-style:italic;color:rgba(255,255,255,0.85);line-height:1.65;margin-bottom:1.6rem;display:block;}
+    .form-label strong{font-style:normal;font-weight:400;color:#fff;}
 
-    /* ---- Body ---- */
-    .body {
-      font-size: 16px;
-      color: #b0a890;
-      margin-bottom: 20px;
-      line-height: 1.75;
+    /* Klaviyo dark overrides */
+    .form-section input[type="email"]{
+      background:#fff !important;
+      border:none !important;
+      color:#111 !important;
+      border-radius:0 !important;
+      font-family:'DM Sans',sans-serif !important;
+      font-weight:300 !important;
+      font-size:1rem !important;
+      padding:0.85em 1.1em !important;
     }
-
-    .body strong {
-      color: #e8e2d4;
-      font-weight: 400;
+    .form-section button[type="submit"]{
+      background:#f0f5ee !important;
+      color:#1A3A15 !important;
+      border:none !important;
+      border-radius:0 !important;
+      font-family:'DM Sans',sans-serif !important;
+      font-weight:400 !important;
+      font-size:0.75rem !important;
+      letter-spacing:0.14em !important;
+      text-transform:uppercase !important;
+      cursor:pointer !important;
+      padding:0.9em 2em !important;
+      transition:background 0.2s !important;
     }
+    .form-section button[type="submit"]:hover{background:#fff !important;}
 
-    /* ---- Blockquote ---- */
-    .pullquote {
-      border-left: 2px solid #4a4535;
-      padding: 4px 0 4px 22px;
-      margin: 32px 0;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 19px;
-      color: #c8b98a;
-      line-height: 1.6;
-    }
+    .form-placeholder{border:1px dashed rgba(255,255,255,0.15);padding:2.5rem;text-align:center;}
+    .form-placeholder p{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.2);}
+    .privacy{font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:1rem;line-height:1.6;}
 
-    /* ---- Promise box ---- */
-    .promise {
-      margin: 36px 0;
-      padding: 24px;
-      border: 1px solid #2e2c1e;
-      background: #1e1d14;
-    }
+    /* ── NARRATIVA CHIUSURA ── */
+    .narrativa-chiusura{max-width:600px;margin:0 auto;}
+    .narrativa-chiusura p{font-family:'Lora',Georgia,serif;font-size:clamp(1rem,2.5vw,1.2rem);line-height:1.75;color:#222;margin-bottom:1.2rem;}
+    .narrativa-chiusura p em{font-style:italic;color:#2D5A27;}
 
-    .promise-title {
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #7a7060;
-      margin-bottom: 16px;
-    }
+    /* ── FOOTER ── */
+    .footer{background:#f9f8f5;border-top:1px solid #e8e8e8;padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+    .footer a{color:#aaa;text-decoration:none;}
+    .footer a:hover{color:#1A3A15;}
 
-    .promise-item {
-      font-size: 15px;
-      color: #b0a890;
-      padding: 9px 0;
-      border-bottom: 1px solid #2e2c1e;
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-    }
+    /* ── ANIMAZIONI ── */
+    .r{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .r.vis{opacity:1;transform:none;}
 
-    .promise-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .promise-item::before {
-      content: '—';
-      color: #4a4535;
-      flex-shrink: 0;
-    }
-
-    /* ---- Form section ---- */
-    .form-section {
-      margin-top: 44px;
-      padding-top: 44px;
-      border-top: 1px solid #2e2c1e;
-    }
-
-    .form-label {
-      font-size: 16px;
-      color: #e8e2d4;
-      margin-bottom: 24px;
-      display: block;
-      line-height: 1.6;
-    }
-
-    .form-label strong {
-      font-weight: 400;
-      color: #c8b98a;
-    }
-
-    /*
-      Klaviyo form placeholder.
-      Quando incollate il div klaviyo-form-XXXXXX,
-      questo blocco sparisce automaticamente.
-    */
-    .form-placeholder {
-      border: 1px dashed #4a4535;
-      padding: 36px 24px;
-      text-align: center;
-    }
-
-    .form-placeholder p {
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #4a4535;
-    }
-
-    /*
-      Override stili Klaviyo per integrarsi col dark bg.
-      Klaviyo inietta .klaviyo-form — questi override
-      vanno messi DOPO il loro script se necessario.
-    */
-    .klaviyo-form input[type="email"] {
-      background: #2a2920 !important;
-      border: 1px solid #4a4535 !important;
-      color: #e8e2d4 !important;
-      border-radius: 0 !important;
-      font-family: 'DM Sans', sans-serif !important;
-      font-weight: 300 !important;
-    }
-
-    .klaviyo-form input[type="email"]::placeholder {
-      color: #7a7060 !important;
-    }
-
-    .klaviyo-form button[type="submit"] {
-      background: #c8b98a !important;
-      color: #1a1a14 !important;
-      border: none !important;
-      border-radius: 0 !important;
-      font-family: 'DM Sans', sans-serif !important;
-      font-weight: 400 !important;
-      letter-spacing: 0.05em !important;
-      cursor: pointer !important;
-    }
-
-    .klaviyo-form button[type="submit"]:hover {
-      background: #d4c89a !important;
-    }
-
-    /* ---- Privacy ---- */
-    .privacy {
-      font-size: 12px;
-      color: #4a4535;
-      margin-top: 16px;
-      line-height: 1.6;
-    }
-
-    /* ---- Footer ---- */
-    .footer-divider {
-      width: 40px;
-      height: 1px;
-      background: #2e2c1e;
-      margin: 56px 0 36px;
-    }
-
-    .outro {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-style: italic;
-      color: #7a7060;
-      line-height: 1.7;
-    }
-
-    .firma {
-      font-size: 12px;
-      color: #4a4535;
-      margin-top: 16px;
-      letter-spacing: 0.06em;
-    }
-
-    /* ---- Mobile ---- */
-    @media (max-width: 480px) {
-      .page {
-        padding: 48px 24px 72px;
-      }
+    @media(max-width:600px){
+      html{font-size:16px;}
+      .s{padding:3.5rem 5vw;}
+      .hero{padding:3.5rem 5vw 3rem;}
+      .form-section{padding:3rem 5vw;}
+      .footer{flex-direction:column;gap:0.5rem;text-align:center;}
     }
   </style>
 </head>
-
 <body>
-  <main class="page">
 
-    <p class="eyebrow">Guida Balcone Vivo · Lombricaio Matto</p>
+<div class="topbar">Humus di lombrico prodotto a mano · Montasola, Sabina</div>
 
-    <h1 class="headline">
-      Le tue piante<br>
-      non stanno bene?<br>
-      <em>Probabilmente<br>non è colpa tua.</em>
-    </h1>
+<nav class="navbar">
+  <a href="/" class="navbar-logo">
+    <img src="logo bosco parlante.png" alt="Il Bosco Parlante" style="width:36px;height:36px;object-fit:contain;">
+    <span style="display:flex;flex-direction:column;">
+      <span style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#1A3A15;line-height:1.2;">Il Bosco Parlante</span>
+      <span style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#888;font-weight:400;">Montasola · Sabina</span>
+    </span>
+  </a>
+  <a href="https://lombricaiomatto.com/products/offerta-lombrisacchi" class="navbar-cta">Vai allo shop</a>
+</nav>
 
-    <div class="divider"></div>
 
-    <p class="body">
-      Il problema, nella maggior parte dei casi, è il terreno — non tu.<br>
-      Un terreno povero, inerte, trattato come supporto invece che come qualcosa di vivo.
-    </p>
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="occhiello r">Guida Balcone Vivo · Lombricaio Matto</span>
+    <h1 class="r">Le tue piante<br>non stanno bene?<br><em>Probabilmente<br>non è colpa tua.</em></h1>
+    <p class="hero-claim r">Il problema, nella maggior parte dei casi, è il terreno — non tu. Un terreno povero, inerte, trattato come supporto invece che come qualcosa di vivo.</p>
+  </div>
+</div>
 
-    <blockquote class="pullquote">
+
+<!-- ── CORPO ── -->
+<section class="s">
+  <div class="inner">
+
+    <blockquote class="pullquote r">
       L'humus di lombrico è il fertilizzante più naturale che esiste: prodotto nel buio del suolo, ricco di microrganismi, enzimi e sostanze nutritive. Non brucia le radici, non richiede dosi o calcoli. In 3–4 giorni le piante ritrovano vigore.
     </blockquote>
 
-    <p class="body">
-      Siamo <strong>Vivien e Raffaele</strong>. Viviamo a Montasola, in Sabina — sei ettari di terreno, gran parte bosco. Da qui produciamo humus di lombrico lavorato a mano, quello che la terra conosce già.
-    </p>
+    <p class="corpo r">Siamo <strong style="font-weight:400;color:#1A3A15;">Vivien e Raffaele</strong>. Viviamo a Montasola, in Sabina — sei ettari di terreno, gran parte bosco. Da qui produciamo humus di lombrico lavorato a mano, quello che la terra conosce già.</p>
 
-    <div class="promise">
+    <div class="promise r">
       <p class="promise-title">Cosa trovi nella guida</p>
       <div class="promise-item">Perché il terreno conta più di qualsiasi cura</div>
       <div class="promise-item">I tre errori più comuni con le piante in vaso</div>
       <div class="promise-item">Come iniziare da una base già viva</div>
     </div>
 
-    <div class="form-section">
+  </div>
+</section>
 
-      <span class="form-label">
-        Lascia la tua mail.<br>
-        <strong>Ricevi subito la Mini Guida Balcone Vivo — gratuita.</strong>
-      </span>
 
-      <!--
-        SOSTITUISCI QUESTO BLOCCO con il div Klaviyo:
-        <div class="klaviyo-form-XXXXXX"></div>
+<!-- ── FORM ── -->
+<div class="form-section">
+  <div class="form-inner">
+    <span class="form-label r">
+      Lascia la tua mail.<br>
+      <strong>Ricevi subito la Mini Guida Balcone Vivo — gratuita.</strong>
+    </span>
 
-        Il <script> Klaviyo è già nel <head> sopra —
-        aggiorna solo il company_id=XXXXXX con il tuo Public API Key.
-      -->
-      <div class="form-placeholder">
-        <p>[ Form Klaviyo — klaviyo-form-XXXXXX ]</p>
-      </div>
+    <!--
+      SOSTITUISCI QUESTO BLOCCO con il div Klaviyo:
+      <div class="klaviyo-form-XXXXXX"></div>
 
-      <p class="privacy">Niente spam. Solo cose che hanno senso.</p>
-
+      Nel <head> aggiorna company_id=XXXXXX con il tuo Public API Key.
+    -->
+    <div class="form-placeholder r">
+      <p>[ Form Klaviyo — klaviyo-form-XXXXXX ]</p>
     </div>
 
-    <div class="footer-divider"></div>
+    <p class="privacy r">Niente spam. Solo cose che hanno senso.</p>
+  </div>
+</div>
 
-    <p class="outro">
-      Non serve avere il pollice verde.<br>
-      Serve partire da qualcosa di vivo.
-    </p>
 
-    <p class="firma">Vivien &amp; Raffaele · Il Bosco Parlante · Montasola, Sabina</p>
+<!-- ── CHIUSURA NARRATIVA ── -->
+<section class="s s-alt">
+  <div class="narrativa-chiusura">
+    <p class="r">Non serve avere il pollice verde. Non serve conoscere tutto. Non serve fare le cose perfette.</p>
+    <p class="r">Serve partire da <em>qualcosa di vivo</em>.</p>
+  </div>
+</section>
 
-  </main>
+
+<footer class="footer">
+  <span>Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://lombricaiomatto.com">lombricaiomatto.com</a>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 60);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+
 </body>
+</html>
 </html>
