@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESPNMH4WYD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ESPNMH4WYD');
+</script>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giornata Lenta al Bosco — Il Bosco Parlante · Montasola, Sabina</title>
+<meta name="description" content="Una giornata a Montasola con pratiche guidate, camminate nel bosco, pranzo condiviso. Data in definizione — lascia la tua mail per essere avvisato.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:18px;}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#111;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* ── TOPBAR ── */
+.topbar{background:#3D1F0A;color:rgba(255,255,255,0.75);text-align:center;padding:0.6em 1rem;font-size:0.72rem;letter-spacing:0.1em;font-weight:400;}
+
+/* ── NAVBAR ── */
+.navbar{border-bottom:1px solid #e8e8e8;padding:1.1rem 6vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:100;}
+.navbar a{text-decoration:none;}
+.navbar-logo{display:flex;align-items:center;gap:10px;}
+.navbar-cta{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:#3D1F0A;text-decoration:none;padding:0.65em 1.4em;transition:background 0.2s;}
+.navbar-cta:hover{background:#2a1507;}
+
+/* ── LAYOUT BASE ── */
+.s{padding:5rem 6vw;}
+.s-alt{background:#f9f6f2;}
+.s-scura{background:#1A1008;color:#fff;}
+.inner{max-width:660px;margin:0 auto;}
+.inner-wide{max-width:840px;margin:0 auto;}
+
+/* ── TIPOGRAFIA ── */
+h1,h2,h3{font-family:'Lora','Georgia','Times New Roman',serif;font-weight:400;line-height:1.2;}
+h1{font-size:clamp(2.2rem,5.5vw,3.8rem);}
+h2{font-size:clamp(1.5rem,3.2vw,2.2rem);}
+h3{font-size:clamp(1.1rem,2.2vw,1.4rem);}
+.occhiello{display:block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#8B4513;font-weight:400;margin-bottom:1rem;border-left:2px solid #8B4513;padding-left:0.7em;}
+.occhiello-chiaro{color:rgba(255,255,255,0.4);border-left-color:rgba(255,255,255,0.25);}
+.corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+.nota{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.9rem;color:#888;line-height:1.7;}
+
+/* ── HERO ── */
+.hero{padding:6.5rem 6vw 5rem;background:#f9f6f2;}
+.hero-inner{max-width:720px;}
+.hero h1{margin-bottom:0.7em;line-height:1.18;}
+.hero h1 em{font-style:italic;color:#8B4513;}
+.hero-claim{font-family:'Lora',Georgia,serif;font-size:clamp(1rem,2.2vw,1.2rem);font-style:italic;color:#666;line-height:1.7;margin-bottom:2rem;max-width:540px;}
+.hero-cta-wrap{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;}
+
+/* ── DATA BADGE ── */
+.data-badge{display:inline-flex;align-items:center;gap:0.6em;background:#fff;border:1px solid #ddd3c9;padding:0.6em 1.2em;font-size:0.82rem;color:#8B4513;letter-spacing:0.06em;font-family:'Lora',Georgia,serif;font-style:italic;margin-bottom:2rem;}
+
+/* ── PROGRAMMA ── */
+.programma-lista{margin-top:2rem;display:flex;flex-direction:column;gap:0;}
+.programma-item{display:grid;grid-template-columns:3rem 1fr;gap:1rem;padding:1.5rem 0;border-bottom:1px solid #ebebeb;align-items:start;}
+.programma-item:first-child{border-top:1px solid #ebebeb;}
+.programma-icona{font-size:1.5rem;line-height:1.4;padding-top:2px;}
+.programma-titolo{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#8B4513;font-weight:400;display:block;margin-bottom:0.4em;}
+.programma-testo{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.98rem;color:#444;line-height:1.7;}
+.nota-programma{margin-top:2rem;padding:1.4rem 1.6rem;border-left:3px solid #8B4513;background:#fdf6f0;}
+.nota-programma p{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;line-height:1.7;color:#555;}
+
+/* ── FONDATORI ── */
+.fondatori-testo p{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+.fondatori-griglia{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2rem;}
+.fondatore h3{font-family:'Lora',Georgia,serif;font-weight:400;font-size:1.1rem;margin-bottom:0.2em;}
+.fondatore h3 em{font-style:italic;color:#8B4513;}
+.fondatore-ruolo{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:1rem;}
+.fondatore p{font-size:0.95rem;line-height:1.8;color:#444;}
+.fondatori-unione{margin-top:2.5rem;padding:1.4rem 1.6rem;border-left:3px solid #8B4513;}
+.fondatori-unione p{font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;line-height:1.7;color:#333;}
+
+/* ── FORM SECTION ── */
+.form-section{padding:4rem 6vw;background:#3D1F0A;}
+.form-inner{max-width:600px;margin:0 auto;}
+.form-label{font-family:'Lora',Georgia,serif;font-size:clamp(1.1rem,2.5vw,1.4rem);font-style:italic;color:rgba(255,255,255,0.85);line-height:1.65;margin-bottom:1.6rem;display:block;}
+.form-label strong{font-style:normal;font-weight:400;color:#fff;}
+.form-row{display:flex;gap:0;margin-top:0.5rem;}
+.form-input{flex:1;padding:0.9em 1.1em;border:none;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:300;color:#111;outline:none;}
+.form-input::placeholder{color:#aaa;}
+.btn-invia{font-family:'DM Sans',sans-serif;font-size:0.75rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:#3D1F0A;background:#f5ede6;border:none;cursor:pointer;padding:0.9em 1.8em;transition:background 0.2s;white-space:nowrap;flex-shrink:0;}
+.btn-invia:hover{background:#fff;}
+.btn-invia:disabled{background:#9a8070;color:#fff;cursor:not-allowed;}
+.stato-ok{display:none;padding:1.5rem 0;}
+.stato-ok p{font-family:'Lora',Georgia,serif;font-style:italic;color:rgba(255,255,255,0.85);font-size:1.1rem;line-height:1.65;}
+.stato-ok strong{font-style:normal;color:#fff;font-weight:400;}
+.stato-errore{display:none;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);padding:0.8em 1em;margin-top:1rem;font-size:0.82rem;color:rgba(255,255,255,0.7);font-family:'DM Sans',sans-serif;}
+.privacy{font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:1rem;line-height:1.6;}
+
+/* ── CTA CHIUSURA ── */
+.cta-finale{padding:6rem 6vw;border-top:3px solid #8B4513;text-align:center;}
+.cta-frase{font-family:'Lora',Georgia,serif;font-size:clamp(1.2rem,2.8vw,1.8rem);font-style:italic;line-height:1.65;color:#111;max-width:560px;margin:0 auto 1rem;}
+.cta-attrib{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:2.5rem;}
+
+/* ── FOOTER ── */
+.footer{background:#f9f6f2;border-top:1px solid #e8e8e8;padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+.footer a{color:#aaa;text-decoration:none;}
+.footer a:hover{color:#8B4513;}
+
+/* ── ANIMAZIONI ── */
+.r{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.r.vis{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  html{font-size:16px;}
+  .s{padding:3.5rem 5vw;}
+  .hero{padding:4rem 5vw 3rem;}
+  .cta-finale{padding:4rem 5vw;}
+  .footer{flex-direction:column;gap:0.5rem;text-align:center;}
+  .fondatori-griglia{grid-template-columns:1fr;gap:2rem;}
+  .form-section{padding:3rem 5vw;}
+  .form-row{flex-direction:column;}
+  .btn-invia{width:100%;text-align:center;padding:1em;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">Montasola, Sabina · Il Bosco Parlante</div>
+
+<nav class="navbar">
+  <a href="/" class="navbar-logo">
+    <img src="/logo bosco parlante.png" alt="Il Bosco Parlante" style="height:28px;">
+    <span style="display:flex;flex-direction:column;">
+      <span style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:#1A3A15;line-height:1.1;">Il Bosco Parlante</span>
+      <span style="font-family:'DM Sans',sans-serif;font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:#888;">Montasola · Sabina</span>
+    </span>
+  </a>
+  <a href="https://www.ilboscoparlante.com/le-tre-tasche-di-stregufa" class="navbar-cta">Vai allo shop</a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     SEZIONE 1 — HERO
+════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="occhiello r">Giornata Lenta al Bosco · Montasola, Sabina</span>
+
+    <h1 class="r">
+      Una giornata al bosco<br>
+      a Montasola.<br>
+      <em>Pratiche, silenzio,<br>ascolto.</em>
+    </h1>
+
+    <p class="hero-claim r">Senza dover essere pronti. Per niente.</p>
+
+    <div class="data-badge r">
+      La data è in definizione — lascia la mail, ti avvisiamo.
+    </div>
+
+    <div class="hero-cta-wrap r">
+      <a href="#avvisami" class="btn-invia" style="display:inline-block;padding:1em 2.4em;font-family:'DM Sans',sans-serif;font-size:0.82rem;letter-spacing:0.14em;text-transform:uppercase;color:#fff;background:#8B4513;text-decoration:none;transition:background 0.2s;">Avvisami quando c'è la data</a>
+      <a href="#cosa-succede" style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:#888;text-decoration:none;border-bottom:1px solid #ddd;padding-bottom:1px;">Cosa succede, concretamente ↓</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SEZIONE 2 — COSA SUCCEDE
+════════════════════════════════════════ -->
+<section class="s" id="cosa-succede">
+  <div class="inner-wide">
+    <span class="occhiello r">Il programma</span>
+    <h2 class="r">Cosa succede,<br>concretamente.</h2>
+
+    <div class="programma-lista r">
+
+      <div class="programma-item">
+        <div class="programma-icona">🌲</div>
+        <div>
+          <span class="programma-titolo">Cerchio di accoglienza</span>
+          <p class="programma-testo">Ci si siede. Ognuno dice da dove viene — non il lavoro, il posto da cui viene in quel momento. Bastano tre minuti per capire che non sei l'unico.</p>
+        </div>
+      </div>
+
+      <div class="programma-item">
+        <div class="programma-icona">👣</div>
+        <div>
+          <span class="programma-titolo">Pratiche di propriocezione</span>
+          <p class="programma-testo">Guidate da Raffaele. Non serve esperienza. Non serve credere in niente. Serve stare fermi e sentire il corpo che risponde. Lo fa sempre — aspetta solo che tu smetta di parlargli sopra.</p>
+        </div>
+      </div>
+
+      <div class="programma-item">
+        <div class="programma-icona">🌿</div>
+        <div>
+          <span class="programma-titolo">Passeggiate nel bosco e microrituali</span>
+          <p class="programma-testo">Non guided tour. Camminare, fermarsi, ascoltare. Imparare a stare in un posto senza doverlo attraversare in fretta.</p>
+        </div>
+      </div>
+
+      <div class="programma-item">
+        <div class="programma-icona">👐</div>
+        <div>
+          <span class="programma-titolo">Pratiche di coppia e di gruppo sull'ascolto</span>
+          <p class="programma-testo">Le più difficili. Non si tratta di dire le cose giuste. Si tratta di stare in ascolto quando vorresti già rispondere.</p>
+        </div>
+      </div>
+
+      <div class="programma-item">
+        <div class="programma-icona">🔥</div>
+        <div>
+          <span class="programma-titolo">Cerchio di chiusura</span>
+          <p class="programma-testo">Si porta fuori quello che è emerso. Non per risolverlo — per non perderlo appena si rientra in macchina.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="nota-programma r">
+      <p>Nessun programma da completare. Nessun risultato garantito. Una giornata intera. In cerchio, intorno a un tavolo, liberi in mezzo al bosco — ognuno porta qualcosa, ognuno riparte con qualcosa di diverso.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SEZIONE 3 — RAFFAELE E VIVIEN
+════════════════════════════════════════ -->
+<section class="s s-alt">
+  <div class="inner">
+    <span class="occhiello r">Chi conduce la giornata</span>
+
+    <div class="fondatori-testo r">
+      <p>Siamo Raffaele e Vivien. Abbiamo lasciato lavori che funzionavano, vissuto in ecovillaggi per un anno, investito tutto in sei ettari di bosco in Sabina.</p>
+      <p>Non perché avessimo un piano. Perché avevamo smesso di fingere di non sentire quello che sentivamo da anni.</p>
+      <p>Questa giornata non è un corso. Non insegniamo niente che tu non sappia già. Creiamo lo spazio perché tu possa sentirlo — senza scuse, senza aspettative, senza dover essere all'altezza di niente.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SEZIONE 4 — CHI SIETE
+════════════════════════════════════════ -->
+<section class="s s-scura">
+  <div class="inner">
+    <span class="occhiello occhiello-chiaro r">Raffaele e Vivien</span>
+    <h2 class="r" style="color:#fff;margin-bottom:2.5rem;">Due persone.<br>Un modo di fermarsi.</h2>
+
+    <div class="fondatori-griglia r">
+
+      <div class="fondatore">
+        <h3><em>Raffaele</em></h3>
+        <span class="fondatore-ruolo">Dà la struttura</span>
+        <p style="color:rgba(255,255,255,0.6);">Vent'anni di pratica somatica — Yoga Tantrico Kashmir, Qi Gong, Coerenza Cardiaca, Yoga Nidra. Non li insegna uno per uno. Li ha distillati in qualcosa che chiunque può fare in tre minuti, e che non richiede di credere in niente di particolare. Solo di stare fermi abbastanza a lungo da sentire cosa c'è già.</p>
+      </div>
+
+      <div class="fondatore">
+        <h3><em>Vivien</em></h3>
+        <span class="fondatore-ruolo">Dà il permesso</span>
+        <p style="color:rgba(255,255,255,0.6);">Scenografa cinematografica. Ha costruito spazi per anni — su set che finivano e iniziavano, per storie che non erano sue. A un certo punto ha smesso. Non per stanchezza. Perché aveva capito che lo spazio più difficile da costruire era quello in cui lei poteva finalmente stare.</p>
+      </div>
+
+    </div>
+
+    <div class="fondatori-unione r" style="border-left-color:#8B4513;margin-top:2.5rem;">
+      <p style="color:rgba(255,255,255,0.75);">Lui dà la struttura — mostra come fermarsi. Lei dà il permesso — mostra che vale la pena farlo.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SEZIONE 5 — FORM AVVISAMI
+════════════════════════════════════════ -->
+<div class="form-section" id="avvisami">
+  <div class="form-inner">
+
+    <span class="form-label r">
+      La data non è ancora fissata.<br>
+      <strong>Lascia la tua mail — ti avvisiamo quando apre la prenotazione.</strong>
+    </span>
+
+    <div id="formContenuto">
+      <div class="form-row r">
+        <input class="form-input" type="email" id="campo-email" placeholder="nome@email.com" required>
+        <button class="btn-invia" id="btnInvia" onclick="inviaForm()">Avvisami</button>
+      </div>
+      <div class="stato-errore" id="statoErrore">
+        Qualcosa non ha funzionato. Riprova tra un momento.
+      </div>
+    </div>
+
+    <div class="stato-ok" id="statoOk">
+      <p><strong>Fatto.</strong><br>Ti avvisiamo non appena la data è confermata.</p>
+    </div>
+
+    <p class="privacy r">Niente spam. Solo la data, quando c'è.</p>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     CHIUSURA
+════════════════════════════════════════ -->
+<div class="cta-finale">
+  <p class="cta-frase r">Fermarsi. Sentire. Stare in un posto senza doverlo attraversare in fretta.</p>
+  <span class="cta-attrib r">— Il Bosco Parlante · Montasola, Sabina</span>
+</div>
+
+
+<footer class="footer">
+  <span>Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://lombricaiomatto.com">lombricaiomatto.com</a>
+</footer>
+
+<script>
+  // ── Lista Klaviyo — lista "Giornata Lenta" (aggiornare con ID corretto)
+  const LISTA_ID = 'XXXXXXXX'; // ← sostituire con ID lista Klaviyo dedicata
+
+  async function inviaForm() {
+    const emailInput = document.getElementById('campo-email');
+    const btn        = document.getElementById('btnInvia');
+    const statoOk    = document.getElementById('statoOk');
+    const statoErr   = document.getElementById('statoErrore');
+    const formCont   = document.getElementById('formContenuto');
+
+    const email = emailInput.value.trim();
+
+    if (!email || !email.includes('@')) {
+      emailInput.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Un momento…';
+    statoErr.style.display = 'none';
+
+    try {
+      const body = new URLSearchParams({
+        g:        LISTA_ID,
+        email:    email,
+        '$fields': '$source',
+        '$source': 'IBP — Giornata Lenta'
+      });
+
+      const response = await fetch(
+        'https://manage.kmail-lists.com/ajax/subscriptions/subscribe',
+        {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body:    body.toString()
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        formCont.style.display = 'none';
+        statoOk.style.display  = 'block';
+      } else {
+        throw new Error('Risposta non success');
+      }
+    } catch (err) {
+      console.error('Klaviyo subscribe error:', err);
+      statoErr.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Avvisami';
+    }
+  }
+
+  document.getElementById('campo-email').addEventListener('keydown', e => {
+    if (e.key === 'Enter') inviaForm();
+  });
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('vis'), i * 60);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
