@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Tre Tasche di Stregufa · Le tue guide</title>
+  <meta name="description" content="Scarica le tre guide digitali del bundle — Alloro, Mora, Olivo. Usi, rimedi, tradizione sabina.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde:      #1A3A15;
+      --verde-med:  #2D5A27;
+      --crema:      #F5F2EB;
+      --crema-alt:  #EDEAE0;
+      --testo:      #111;
+      --testo-soft: #555;
+      --bordo:      #E0DDD4;
+      --oro:        #8B6914;
+    }
+
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 300;
+      color: var(--testo);
+      background: var(--crema);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--verde);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 0.55em 1rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      border-bottom: 1px solid var(--bordo);
+      padding: 1.1rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--crema);
+    }
+    .navbar a { text-decoration: none; }
+    .navbar-brand { display: flex; align-items: center; gap: 0.65rem; }
+    .navbar-logo { width: 36px; height: 36px; flex-shrink: 0; }
+    .navbar-logo-text {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--verde);
+    }
+    .navbar-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--testo-soft);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 5rem 6vw 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      border-bottom: 1px solid var(--bordo);
+    }
+    .occhiello {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--verde-med);
+      font-weight: 400;
+      margin-bottom: 1.4rem;
+      border-left: 2px solid var(--verde-med);
+      padding-left: 0.7em;
+      text-align: left;
+    }
+    h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.15;
+      color: var(--verde);
+      margin-bottom: 1rem;
+    }
+    h1 em { font-style: italic; color: var(--oro); }
+    .hero-sub {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--testo-soft);
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    .hero-meta {
+      display: inline-flex;
+      gap: 2.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--testo-soft);
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--bordo);
+    }
+    .hero-meta span { display: flex; flex-direction: column; gap: 0.2em; align-items: center; }
+    .hero-meta strong { color: var(--verde); font-weight: 500; font-size: 0.85rem; letter-spacing: 0; text-transform: none; }
+
+    /* ── TRE GUIDE ── */
+    .tre-guide {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 6vw;
+    }
+    .tre-guide-intro {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      line-height: 1.8;
+      color: #333;
+      max-width: 680px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+
+    /* Griglia 3 guide */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .guida-card {
+      display: flex;
+      flex-direction: column;
+    }
+    .guida-copertina {
+      background: var(--crema-alt);
+      border: 1px solid var(--bordo);
+      padding: 1.5rem 1.5rem 0;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .guida-copertina::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .guida-card:nth-child(1) .guida-copertina::before { background: linear-gradient(90deg, var(--verde), var(--oro)); }
+    .guida-card:nth-child(2) .guida-copertina::before { background: linear-gradient(90deg, var(--verde), #5C2D5A); }
+    .guida-card:nth-child(3) .guida-copertina::before { background: linear-gradient(90deg, var(--verde), #6B6B14); }
+
+    .guida-header-text {
+      font-size: 0.52rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--verde);
+      margin-bottom: 0.4rem;
+    }
+    .guida-titolo {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--verde);
+      line-height: 1;
+      margin-bottom: 0.15rem;
+    }
+    .guida-botanico {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 0.7rem;
+      color: var(--testo-soft);
+      margin-bottom: 0.2rem;
+    }
+    .guida-qualita {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .guida-card:nth-child(1) .guida-qualita { color: var(--oro); }
+    .guida-card:nth-child(2) .guida-qualita { color: #5C2D5A; }
+    .guida-card:nth-child(3) .guida-qualita { color: #6B6B14; }
+
+    .guida-img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .guida-footer-text {
+      font-size: 0.52rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--testo-soft);
+      text-align: right;
+      padding: 0.6rem 0;
+      border-top: 1px solid var(--bordo);
+    }
+    .guida-shadow {
+      position: absolute;
+      bottom: -8px;
+      right: -8px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--bordo);
+      z-index: -1;
+    }
+
+    /* Corpo scheda */
+    .guida-body {
+      padding: 1.5rem 0 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .guida-desc {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 1.2rem;
+      border-left: 2px solid var(--verde);
+      padding-left: 0.8rem;
+    }
+    .btn-download-guida {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--verde);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.9em 1.2em;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+      margin-top: auto;
+    }
+    .btn-download-guida:hover { background: var(--verde-med); }
+
+    /* ── DIVISORE ── */
+    .divisore {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 6vw;
+      border-top: 1px solid var(--bordo);
+    }
+
+    /* ── PERCORSO ── */
+    .percorso-section {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 5rem 6vw;
+      text-align: center;
+    }
+    .percorso-section h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--verde);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+    .percorso-section p {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--testo-soft);
+      margin-bottom: 0.8rem;
+    }
+    .percorso-section p strong {
+      color: var(--testo);
+      font-weight: 400;
+    }
+    .percorso-nota {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 0.82rem;
+      color: #aaa;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+
+    .btn-percorso {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: var(--verde);
+      color: #fff;
+      text-decoration: none;
+      padding: 1.1em 2.5em;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .btn-percorso:hover { background: var(--verde-med); }
+    .btn-percorso svg { flex-shrink: 0; }
+
+    /* ── CITAZIONE ── */
+    .citazione-section {
+      background: var(--verde);
+      padding: 5rem 6vw;
+      text-align: center;
+    }
+    .citazione-section blockquote {
+      max-width: 640px;
+      margin: 0 auto;
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      color: rgba(255,255,255,0.88);
+      line-height: 1.75;
+    }
+    .citazione-section cite {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-style: normal;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-top: 2rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--crema-alt);
+      border-top: 1px solid var(--bordo);
+      padding: 2rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: #aaa;
+    }
+    footer a { color: #aaa; text-decoration: none; }
+    footer a:hover { color: var(--verde); }
+
+    /* ── ANIMAZIONI ── */
+    .r { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .r.vis { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .guide-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .guida-card { max-width: 380px; margin: 0 auto; width: 100%; }
+      html { font-size: 16px; }
+    }
+    @media (max-width: 600px) {
+      .hero-meta { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">Foglie raccolte a mano a Montasola, Sabina · Il Bosco Parlante</div>
+
+<nav class="navbar">
+  <a href="https://ilboscoparlante.com" class="navbar-brand">
+    <img src="logo bosco parlante.png" alt="Il Bosco Parlante" class="navbar-logo">
+    <span class="navbar-logo-text">Il Bosco Parlante</span>
+  </a>
+  <span class="navbar-sub">Le Tasche di Stregufa</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero r">
+  <span class="occhiello">Le Tre Tasche di Stregufa · Bundle</span>
+  <h1>Le tue <em>tre guide</em><br>sono qui.</h1>
+  <p class="hero-sub">
+    Alloro, Mora, Olivo — tre piante, tre qualità, tre strade verso lo stesso gesto. Scaricale tutte. Leggile quando le foglie sono ancora nella busta.
+  </p>
+  <div class="hero-meta">
+    <span><strong>66 pagine</strong>3 guide digitali PDF</span>
+    <span><strong>18 sezioni</strong>+ glossari e bibliografie</span>
+    <span><strong>Montasola</strong>Sabina, Rieti</span>
+  </div>
+</section>
+
+<!-- TRE GUIDE -->
+<section class="tre-guide">
+  <p class="tre-guide-intro r">
+    Ogni guida racconta una pianta: da dove viene, cosa contiene, come la usavano nelle case contadine della Sabina. E cosa significa — per questo territorio, per chi ci vive, per chi la porta con sé.
+  </p>
+
+  <div class="guide-grid">
+
+    <!-- ALLORO -->
+    <div class="guida-card r">
+      <div class="guida-copertina" style="position:relative;">
+        <p class="guida-header-text">Il Bosco Parlante · La Tasca di Stregufa</p>
+        <p class="guida-titolo">Alloro</p>
+        <p class="guida-botanico">Laurus nobilis · La terra dei Lauri</p>
+        <p class="guida-qualita">Chiarezza</p>
+        <img src="Guida Alloro Tasca Stregufa.jpg" alt="Copertina Guida dell'Alloro" class="guida-img">
+        <p class="guida-footer-text">Guida alla foglia · Usi · Rimedi · Tradizione sabina</p>
+        <div class="guida-shadow"></div>
+      </div>
+      <div class="guida-body">
+        <p class="guida-desc">
+          La curtis de Lauri — la terra dei lauri. La pianta che profumava le mani degli imperatori romani. La qualità che arriva quando smetti di filtrare.
+        </p>
+        <a href="/guide/guida-alloro.pdf" class="btn-download-guida" download>
+          Scarica la guida
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2V10M8 10L5 7M8 10L11 7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13H13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- MORA -->
+    <div class="guida-card r" style="transition-delay:0.1s">
+      <div class="guida-copertina" style="position:relative;">
+        <p class="guida-header-text">Il Bosco Parlante · La Tasca di Stregufa</p>
+        <p class="guida-titolo">Mora</p>
+        <p class="guida-botanico">Rubus ulmifolius · La Porta del Bosco</p>
+        <p class="guida-qualita">Radicamento</p>
+        <img src="Guida Mora Tasca Stregufa.jpg" alt="Copertina Guida della Mora" class="guida-img">
+        <p class="guida-footer-text">Guida al frutto · Usi · Rimedi · Tradizione sabina</p>
+        <div class="guida-shadow"></div>
+      </div>
+      <div class="guida-body">
+        <p class="guida-desc">
+          Il rovo che arriva per primo nei posti abbandonati. Non aspetta il permesso di nessuno. La qualità di chi sa stare anche quando il terreno è difficile.
+        </p>
+        <a href="/guide/guida-mora.pdf" class="btn-download-guida" download>
+          Scarica la guida
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2V10M8 10L5 7M8 10L11 7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13H13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- OLIVO -->
+    <div class="guida-card r" style="transition-delay:0.2s">
+      <div class="guida-copertina" style="position:relative;">
+        <p class="guida-header-text">Il Bosco Parlante · La Tasca di Stregufa</p>
+        <p class="guida-titolo">Olivo</p>
+        <p class="guida-botanico">Olea europaea · La Carboncella sabina</p>
+        <p class="guida-qualita">Pace</p>
+        <img src="Guida Olivo Tasca Stregufa.jpg" alt="Copertina Guida dell'Olivo" class="guida-img">
+        <p class="guida-footer-text">Guida all'olivo · Usi · Rimedi · Tradizione sabina</p>
+        <div class="guida-shadow"></div>
+      </div>
+      <div class="guida-body">
+        <p class="guida-desc">
+          Gli oliveti terrazzati di Montasola — costruiti da mani che non ricordiamo. La qualità di chi ha radici abbastanza profonde da non doversi difendere da ogni cosa.
+        </p>
+        <a href="/guide/guida-olivo.pdf" class="btn-download-guida" download>
+          Scarica la guida
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2V10M8 10L5 7M8 10L11 7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13H13" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /guide-grid -->
+</section>
+
+<div class="divisore"></div>
+
+<!-- PERCORSO -->
+<section class="percorso-section r">
+  <h2>Quando il pacco arriva,<br>inizia il percorso.</h2>
+  <p>
+    Dentro la busta trovi tre foglie e un cartoncino con un QR code. Quel QR porta a <strong>/inizia-il-percorso</strong> — il punto di ingresso al percorso guidato di 7 giorni con gli audio di Raffaele.
+  </p>
+  <p>
+    Non serve aspettare. Le guide le hai già. Il percorso comincia quando hai le foglie in mano.
+  </p>
+  <p class="percorso-nota">
+    Se il pacco è già arrivato — sei pronta adesso.
+  </p>
+  <a href="https://ilboscoparlante.com/inizia-il-percorso" class="btn-percorso">
+    Inizia il percorso
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<!-- CITAZIONE -->
+<section class="citazione-section r">
+  <blockquote>
+    Tre piante, tre margini diversi dello stesso bosco. Ognuna porta qualcosa che le altre non portano. Insieme portano quello che il bosco sa fare — stare ferme, e ascoltare.
+  </blockquote>
+  <cite>Vivien e Raffaele · Il Bosco Parlante · Montasola, Sabina</cite>
+</section>
+
+<footer>
+  <span>© Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://ilboscoparlante.com">ilboscoparlante.com</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.r').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
