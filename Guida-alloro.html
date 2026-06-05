@@ -55,6 +55,16 @@
       background: var(--crema);
     }
     .navbar a { text-decoration: none; }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .navbar-logo {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
     .navbar-logo-text {
       font-family: 'Lora', Georgia, serif;
       font-style: italic;
@@ -434,7 +444,8 @@
 <div class="topbar">Foglie raccolte a mano a Montasola, Sabina · Il Bosco Parlante</div>
 
 <nav class="navbar">
-  <a href="https://ilboscoparlante.com">
+  <a href="https://ilboscoparlante.com" class="navbar-brand">
+    <img src="logo bosco parlante.png" alt="Il Bosco Parlante" class="navbar-logo">
     <span class="navbar-logo-text">Il Bosco Parlante</span>
   </a>
   <span class="navbar-sub">La Tasca di Stregufa</span>
@@ -463,60 +474,7 @@
       <p class="copertina-qualita-tag">Chiarezza</p>
 
       <!-- Illustrazione SVG ramo di alloro -->
-      <svg class="copertina-illus" viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <!-- Ramo principale -->
-        <path d="M140 210 C138 180 132 155 128 125 C124 95 126 65 130 40" stroke="#2D5A27" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- Ramo secondario sinistro -->
-        <path d="M130 120 C115 110 98 106 82 100" stroke="#2D5A27" stroke-width="1.8" stroke-linecap="round"/>
-        <!-- Ramo secondario destro -->
-        <path d="M128 95 C143 84 158 80 174 72" stroke="#2D5A27" stroke-width="1.8" stroke-linecap="round"/>
-        <!-- Ramo terzo sinistro -->
-        <path d="M129 68 C115 58 100 52 86 44" stroke="#2D5A27" stroke-width="1.5" stroke-linecap="round"/>
-        <!-- Ramo terzo destro -->
-        <path d="M130 52 C144 44 156 38 168 30" stroke="#2D5A27" stroke-width="1.5" stroke-linecap="round"/>
-
-        <!-- Foglie — lanceolate, opposte -->
-        <!-- Foglie basse sx -->
-        <ellipse cx="72" cy="97" rx="18" ry="7" transform="rotate(-20 72 97)" fill="#2D5A27" opacity="0.85"/>
-        <ellipse cx="72" cy="97" rx="18" ry="7" transform="rotate(-20 72 97)" fill="none" stroke="#1A3A15" stroke-width="0.5"/>
-        <line x1="72" y1="90" x2="72" y2="104" transform="rotate(-20 72 97)" stroke="#1A3A15" stroke-width="0.4" opacity="0.5"/>
-
-        <ellipse cx="88" cy="103" rx="16" ry="6.5" transform="rotate(-15 88 103)" fill="#3A6B33" opacity="0.75"/>
-        <line x1="88" y1="97" x2="88" y2="109" transform="rotate(-15 88 103)" stroke="#1A3A15" stroke-width="0.4" opacity="0.5"/>
-
-        <!-- Foglie basse dx -->
-        <ellipse cx="178" cy="70" rx="18" ry="7" transform="rotate(20 178 70)" fill="#2D5A27" opacity="0.85"/>
-        <line x1="178" y1="63" x2="178" y2="77" transform="rotate(20 178 70)" stroke="#1A3A15" stroke-width="0.4" opacity="0.5"/>
-
-        <ellipse cx="162" cy="75" rx="16" ry="6.5" transform="rotate(15 162 75)" fill="#3A6B33" opacity="0.75"/>
-
-        <!-- Foglie medie sx -->
-        <ellipse cx="80" cy="42" rx="17" ry="6.5" transform="rotate(-25 80 42)" fill="#2D5A27" opacity="0.9"/>
-        <line x1="80" y1="36" x2="80" y2="48" transform="rotate(-25 80 42)" stroke="#1A3A15" stroke-width="0.4" opacity="0.5"/>
-
-        <ellipse cx="96" cy="48" rx="15" ry="6" transform="rotate(-18 96 48)" fill="#3A6B33" opacity="0.8"/>
-
-        <!-- Foglie medie dx -->
-        <ellipse cx="170" cy="28" rx="17" ry="6.5" transform="rotate(22 170 28)" fill="#2D5A27" opacity="0.9"/>
-        <line x1="170" y1="22" x2="170" y2="34" transform="rotate(22 170 28)" stroke="#1A3A15" stroke-width="0.4" opacity="0.5"/>
-
-        <ellipse cx="155" cy="35" rx="15" ry="6" transform="rotate(16 155 35)" fill="#3A6B33" opacity="0.8"/>
-
-        <!-- Foglioline apicali -->
-        <ellipse cx="131" cy="32" rx="14" ry="5.5" transform="rotate(-5 131 32)" fill="#2D5A27" opacity="0.9"/>
-        <ellipse cx="130" cy="18" rx="11" ry="4.5" transform="rotate(3 130 18)" fill="#3A6B33" opacity="0.85"/>
-        <ellipse cx="132" cy="6" rx="8" ry="3.5" transform="rotate(-2 132 6)" fill="#2D5A27" opacity="0.8"/>
-
-        <!-- Bacche — piccole, nere, autunnali -->
-        <circle cx="145" cy="58" r="3.5" fill="#1a1a2e" opacity="0.8"/>
-        <circle cx="153" cy="55" r="3" fill="#1a1a2e" opacity="0.75"/>
-        <circle cx="149" cy="50" r="2.5" fill="#2a2a3e" opacity="0.7"/>
-        <circle cx="141" cy="52" r="2.8" fill="#1a1a2e" opacity="0.75"/>
-
-        <!-- Riflesso argenteo pagina inferiore su alcune foglie -->
-        <ellipse cx="72" cy="97" rx="9" ry="3" transform="rotate(-20 72 97) translate(5, 1)" fill="#c8d4b8" opacity="0.3"/>
-        <ellipse cx="178" cy="70" rx="9" ry="3" transform="rotate(20 178 70) translate(-5, 1)" fill="#c8d4b8" opacity="0.3"/>
-      </svg>
+      <img src="Guida Alloro Tasca Stregufa.jpg" alt="Copertina Guida dell'Alloro" class="copertina-illus" style="display:block;width:100%;object-fit:cover;">
 
       <p class="copertina-footer-text">Guida alla foglia · Usi · Rimedi · Tradizione sabina</p>
     </div>
@@ -569,7 +527,7 @@
     <p class="download-card-titolo">Guida dell'Alloro</p>
     <p class="download-card-sub">La Tasca di Stregufa · Il Bosco Parlante<br>Montasola, Sabina · 22 pagine</p>
 
-    <a href="Guida Alloro.pdf" class="btn-download" download>
+    <a href="/guide/guida-alloro.pdf" class="btn-download" download>
       Scarica la guida PDF
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 2V10M8 10L5 7M8 10L11 7" stroke="#1A3A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
