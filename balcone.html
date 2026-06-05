@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESPNMH4WYD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESPNMH4WYD');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Guida Balcone Vivo — Lombricaio Matto</title>
+  <meta name="description" content="Le tue piante non stanno bene? Probabilmente non è colpa tua. Ricevi gratis la Mini Guida Balcone Vivo e uno sconto del 20% sul Kit del Bosco.">
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;font-size:18px;}
+    body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#111;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+    .topbar{background:#1A3A15;color:rgba(255,255,255,0.75);text-align:center;padding:0.6em 1rem;font-size:0.72rem;letter-spacing:0.1em;font-weight:400;}
+
+    .navbar{border-bottom:1px solid #e8e8e8;padding:1rem 6vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:100;}
+    .navbar a{text-decoration:none;}
+    .navbar-logo{display:flex;align-items:center;gap:10px;}
+    .navbar-cta{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:#1A3A15;text-decoration:none;padding:0.65em 1.4em;transition:background 0.2s;}
+    .navbar-cta:hover{background:#2D5A27;}
+
+    /* ── HERO SPLIT ── */
+    .hero{padding:5rem 6vw 4rem;border-bottom:1px solid #e8e8e8;}
+    .hero-grid{max-width:940px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+    .occhiello{display:block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#2D5A27;font-weight:400;margin-bottom:1rem;border-left:2px solid #2D5A27;padding-left:0.7em;}
+    h1{font-family:'Lora','Georgia','Times New Roman',serif;font-weight:400;line-height:1.2;font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:0.6em;}
+    h1 em{font-style:italic;color:#2D5A27;}
+    h2{font-family:'Lora','Georgia','Times New Roman',serif;font-weight:400;line-height:1.2;}
+    .hero-claim{font-family:'Lora',Georgia,serif;font-size:clamp(0.95rem,2vw,1.1rem);font-style:italic;color:#555;line-height:1.7;margin-bottom:2rem;max-width:460px;}
+
+    /* ── FORM NELL'HERO ── */
+    .hero-form-box{background:#1A3A15;padding:2rem 2rem 1.6rem;}
+    .form-label{font-family:'Lora',Georgia,serif;font-size:1rem;font-style:italic;color:rgba(255,255,255,0.85);line-height:1.65;margin-bottom:0.4rem;display:block;}
+    .form-label strong{font-style:normal;font-weight:400;color:#fff;}
+    .form-bonus{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:1.2rem;display:block;line-height:1.5;}
+    .form-row{display:flex;gap:0;margin-top:0;}
+    .form-input{flex:1;padding:0.85em 1em;border:none;background:#fff;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:300;color:#111;outline:none;min-width:0;}
+    .form-input::placeholder{color:#aaa;}
+    .btn-invia{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:#1A3A15;background:#f0f5ee;border:none;cursor:pointer;padding:0.85em 1.4em;transition:background 0.2s;white-space:nowrap;flex-shrink:0;}
+    .btn-invia:hover{background:#fff;}
+    .btn-invia:disabled{background:#9ab09a;color:#fff;cursor:not-allowed;}
+    .stato-ok{display:none;padding:1.2rem 0 0.4rem;}
+    .stato-ok p{font-family:'Lora',Georgia,serif;font-style:italic;color:rgba(255,255,255,0.85);font-size:1rem;line-height:1.65;}
+    .stato-ok strong{font-style:normal;color:#fff;font-weight:400;}
+    .stato-errore{display:none;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);padding:0.7em 1em;margin-top:0.8rem;font-size:0.8rem;color:rgba(255,255,255,0.7);font-family:'DM Sans',sans-serif;}
+    .privacy{font-size:0.68rem;color:rgba(255,255,255,0.28);margin-top:0.9rem;line-height:1.6;}
+
+    /* ── COPERTINA PLACEHOLDER ── */
+    .copertina-wrap{position:relative;}
+    .copertina{width:100%;aspect-ratio:3/4;background:#f0ede6;border:1px solid #e0dbd2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;position:relative;overflow:hidden;}
+    .copertina::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(44,90,39,0.04) 18px,rgba(44,90,39,0.04) 36px);}
+    .copertina-logo-area{text-align:center;position:relative;}
+    .copertina-leaf{font-size:3rem;opacity:0.35;display:block;margin-bottom:0.4rem;}
+    .copertina-brand{font-family:'DM Sans',sans-serif;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:#2D5A27;opacity:0.7;}
+    .copertina-titolo{font-family:'Lora',Georgia,serif;font-size:1.15rem;font-weight:500;color:#1A3A15;text-align:center;line-height:1.3;position:relative;padding:0 1.2rem;}
+    .copertina-titolo em{display:block;font-style:italic;font-weight:400;font-size:0.9em;color:#2D5A27;margin-top:0.2em;}
+    .copertina-footer{position:absolute;bottom:0;left:0;right:0;background:#1A3A15;padding:0.7rem 1.2rem;text-align:center;}
+    .copertina-footer span{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+    .copertina-badge{position:absolute;top:1rem;right:1rem;background:#2D5A27;color:#fff;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.35em 0.7em;}
+    .placeholder-nota{font-size:0.65rem;color:#bbb;text-align:center;margin-top:0.6rem;font-style:italic;}
+
+    /* ── SEZIONI BODY ── */
+    .s{padding:4.5rem 6vw;}
+    .s-alt{background:#f9f8f5;}
+    .inner{max-width:600px;margin:0 auto;}
+    .corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+
+    .pullquote{border-left:2px solid #d8e4d4;padding:0.4rem 0 0.4rem 1.4rem;margin:2rem 0;font-family:'Lora',Georgia,serif;font-style:italic;font-size:1.05rem;color:#2D5A27;line-height:1.65;}
+
+    .promise{margin:2rem 0;border:1px solid #e8e8e8;background:#f9f8f5;}
+    .promise-title{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:#aaa;padding:1rem 1.4rem 0.6rem;border-bottom:1px solid #e8e8e8;}
+    .promise-item{font-size:0.92rem;color:#444;padding:0.85rem 1.4rem;border-bottom:1px solid #e8e8e8;display:flex;align-items:baseline;gap:0.9rem;line-height:1.6;}
+    .promise-item:last-child{border-bottom:none;}
+    .promise-item::before{content:'·';color:#2D5A27;font-size:1.2em;flex-shrink:0;line-height:1;}
+
+    /* ── KIT DEL BOSCO ── */
+    .kit-box{border:1px solid #d8e4d4;padding:2rem;margin-top:2rem;background:#f4f8f2;}
+    .kit-label{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:#2D5A27;display:block;margin-bottom:0.8rem;}
+    .kit-titolo{font-family:'Lora',Georgia,serif;font-size:1.3rem;font-weight:400;color:#1A3A15;margin-bottom:0.5rem;}
+    .kit-testo{font-size:0.92rem;line-height:1.75;color:#555;margin-bottom:1.2rem;}
+    .kit-link{font-family:'DM Sans',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#2D5A27;text-decoration:none;border-bottom:1px solid #c8dcc4;padding-bottom:2px;}
+    .kit-link:hover{color:#1A3A15;border-color:#1A3A15;}
+    .kit-sconto{display:inline-block;background:#2D5A27;color:#fff;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.3em 0.8em;margin-bottom:0.8rem;}
+
+    .narrativa-chiusura{max-width:600px;margin:0 auto;}
+    .narrativa-chiusura p{font-family:'Lora',Georgia,serif;font-size:clamp(1rem,2.5vw,1.2rem);line-height:1.75;color:#222;margin-bottom:1.2rem;}
+    .narrativa-chiusura p em{font-style:italic;color:#2D5A27;}
+
+    .footer{background:#f9f8f5;border-top:1px solid #e8e8e8;padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+    .footer a{color:#aaa;text-decoration:none;}
+    .footer a:hover{color:#1A3A15;}
+
+    .r{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .r.vis{opacity:1;transform:none;}
+
+    @media(max-width:760px){
+      html{font-size:16px;}
+      .hero{padding:3rem 5vw 3rem;}
+      .hero-grid{grid-template-columns:1fr;gap:2.5rem;}
+      .copertina{aspect-ratio:4/3;max-width:340px;margin:0 auto;}
+      .s{padding:3.5rem 5vw;}
+      .footer{flex-direction:column;gap:0.5rem;text-align:center;}
+      .form-row{flex-direction:column;}
+      .btn-invia{width:100%;text-align:center;padding:1em;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">Humus di lombrico prodotto a mano · Montasola, Sabina</div>
+
+<nav class="navbar">
+  <a href="/" class="navbar-logo">
+    <img src="logo bosco parlante.png" alt="Il Bosco Parlante" style="width:32px;height:32px;object-fit:contain;">
+    <span style="display:flex;flex-direction:column;">
+      <span style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:#1A3A15;line-height:1.2;">Il Bosco Parlante</span>
+      <span style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:#888;font-weight:400;">Montasola · Sabina</span>
+    </span>
+  </a>
+  <a href="https://lombricaiomatto.com/products/offerta-lombrisacchi" class="navbar-cta">Vai allo shop</a>
+</nav>
+
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-grid">
+
+    <!-- colonna sinistra: testo + form -->
+    <div>
+      <span class="occhiello r">Guida gratuita · Lombricaio Matto</span>
+      <h1 class="r">Le tue piante<br>non stanno bene?<br><em>Probabilmente<br>non è colpa tua.</em></h1>
+      <p class="hero-claim r">Il problema, nella maggior parte dei casi, è il terreno — non tu. Un terreno povero, inerte, trattato come supporto invece che come qualcosa di vivo.</p>
+
+      <div class="hero-form-box r">
+        <span class="form-label">
+          Lascia la tua mail.<br>
+          <strong>Ricevi subito la Mini Guida Balcone Vivo — gratuita.</strong>
+        </span>
+        <span class="form-bonus">+ sconto del 20% sul Kit del Bosco</span>
+
+        <div id="formContenuto">
+          <div class="form-row">
+            <input class="form-input" type="email" id="campo-email" placeholder="nome@email.com" required>
+            <button class="btn-invia" id="btnInvia" onclick="inviaForm()">Ricevi la guida</button>
+          </div>
+          <div class="stato-errore" id="statoErrore">
+            Qualcosa non ha funzionato. Riprova tra un momento.
+          </div>
+        </div>
+
+        <div class="stato-ok" id="statoOk">
+          <p><strong>Fatto.</strong><br>Controlla la tua casella — trovi la guida e il codice sconto del 20% per il Kit del Bosco.</p>
+        </div>
+
+        <p class="privacy">Niente spam. Solo cose che hanno senso.</p>
+      </div>
+    </div>
+
+    <!-- colonna destra: copertina -->
+    <div class="copertina-wrap r">
+      <!-- PLACEHOLDER copertina — sostituire con <img src="copertina-balcone-vivo.jpg"> quando disponibile -->
+      <div class="copertina" aria-label="Copertina Mini Guida Balcone Vivo — placeholder">
+        <span class="copertina-badge">Gratuita</span>
+        <div class="copertina-logo-area">
+          <span class="copertina-leaf">🌿</span>
+          <span class="copertina-brand">Lombricaio Matto · Montasola, Sabina</span>
+        </div>
+        <div class="copertina-titolo">
+          Mini Guida<br>Balcone Vivo
+          <em>Come dare un terreno vivo<br>alle tue piante</em>
+        </div>
+        <div class="copertina-footer">
+          <span>Il Bosco Parlante</span>
+        </div>
+      </div>
+      <p class="placeholder-nota">← sostituire con immagine copertina definitiva</p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ── CORPO ── -->
+<section class="s">
+  <div class="inner">
+
+    <blockquote class="pullquote r">
+      L'humus di lombrico è il fertilizzante più naturale che esiste: prodotto nel buio del suolo, ricco di microrganismi, enzimi e sostanze nutritive. Non brucia le radici, non richiede dosi o calcoli. In 3–4 giorni le piante ritrovano vigore.
+    </blockquote>
+
+    <p class="corpo r">Siamo <strong style="font-weight:400;color:#1A3A15;">Vivien e Raffaele</strong>. Viviamo a Montasola, in Sabina — sei ettari di terreno, gran parte bosco. Da qui produciamo humus di lombrico lavorato a mano, quello che la terra conosce già.</p>
+
+    <div class="promise r">
+      <p class="promise-title">Cosa trovi nella guida</p>
+      <div class="promise-item">Perché il terreno conta più di qualsiasi cura</div>
+      <div class="promise-item">I tre errori più comuni con le piante in vaso</div>
+      <div class="promise-item">Come iniziare da una base già viva</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── KIT DEL BOSCO ── -->
+<section class="s s-alt">
+  <div class="inner">
+    <span class="occhiello r">Kit del Bosco · Lombricaio Matto</span>
+    <p class="corpo r">Chi si iscrive riceve anche uno sconto del 20% sul Kit del Bosco — tre sacchi di humus di lombrico prodotto a mano a Montasola, più tre guide digitali su come usarlo.</p>
+
+    <div class="kit-box r">
+      <span class="kit-label">Kit del Bosco</span>
+      <span class="kit-sconto">−20% con la tua mail</span>
+      <div class="kit-titolo">3 Lombrisacchi + 3 Guide digitali</div>
+      <p class="kit-testo">6 litri di humus puro di lombrico. Tre guide: come usarlo in vaso, come ottenere il fertilizzante liquido, come coltivare 9 piante officinali in piccoli spazi. Non serve un giardino. Serve solo partire da qualcosa di vivo.</p>
+      <a href="https://lombricaiomatto.com/products/offerta-lombrisacchi" class="kit-link">Scopri il Kit del Bosco →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CHIUSURA ── -->
+<section class="s">
+  <div class="narrativa-chiusura">
+    <p class="r">Non serve avere il pollice verde. Non serve conoscere tutto. Non serve fare le cose perfette.</p>
+    <p class="r">Serve partire da <em>qualcosa di vivo</em>.</p>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <span>Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://lombricaiomatto.com">lombricaiomatto.com</a>
+</footer>
+
+<script>
+  const LISTA_ID = 'SJPUwg';
+
+  async function inviaForm() {
+    const emailInput = document.getElementById('campo-email');
+    const btn        = document.getElementById('btnInvia');
+    const statoOk    = document.getElementById('statoOk');
+    const statoErr   = document.getElementById('statoErrore');
+    const formCont   = document.getElementById('formContenuto');
+
+    const email = emailInput.value.trim();
+    if (!email || !email.includes('@')) { emailInput.focus(); return; }
+
+    btn.disabled = true;
+    btn.textContent = 'Un momento…';
+    statoErr.style.display = 'none';
+
+    try {
+      const body = new URLSearchParams({
+        g:        LISTA_ID,
+        email:    email,
+        '$fields': '$source',
+        '$source': 'IBP — Balcone Vivo'
+      });
+
+      const response = await fetch(
+        'https://manage.kmail-lists.com/ajax/subscriptions/subscribe',
+        { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        formCont.style.display = 'none';
+        statoOk.style.display  = 'block';
+      } else {
+        throw new Error('non success');
+      }
+    } catch (err) {
+      console.error('Klaviyo error:', err);
+      statoErr.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Ricevi la guida';
+    }
+  }
+
+  document.getElementById('campo-email').addEventListener('keydown', e => {
+    if (e.key === 'Enter') inviaForm();
+  });
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('vis'), i * 60);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
