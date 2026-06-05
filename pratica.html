@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESPNMH4WYD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESPNMH4WYD');
+  </script>
+
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pratica · Tre minuti — Il Bosco Parlante</title>
+  <meta name="description" content="La pratica di tre minuti registrata a Montasola. Per prepararti alla Zoom del 16 giugno.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400&display=swap" rel="stylesheet">
+
+  <!-- Script Klaviyo — NON async -->
+  <script type="text/javascript"
+    src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VBs8wR">
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;font-size:18px;}
+    body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#111;background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+    .topbar{background:#1A3A15;color:rgba(255,255,255,0.75);text-align:center;padding:0.6em 1rem;font-size:0.72rem;letter-spacing:0.1em;font-weight:400;}
+    .navbar{border-bottom:1px solid #e8e8e8;padding:1.1rem 6vw;display:flex;justify-content:space-between;align-items:center;}
+    .navbar a{text-decoration:none;}
+    .navbar-logo-text{font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#1A3A15;line-height:1.2;}
+
+    .s{padding:5rem 6vw;}
+    .s-alt{background:#f9f8f5;}
+    .s-scura{background:#111;color:#fff;}
+    .inner{max-width:660px;margin:0 auto;}
+    h1,h2,h3{font-family:'Lora','Georgia','Times New Roman',serif;font-weight:400;line-height:1.2;}
+    h1{font-size:clamp(2.4rem,6vw,4rem);}
+    h1 em{font-style:italic;color:#2D5A27;}
+    h2{font-size:clamp(1.6rem,3.5vw,2.4rem);}
+    .occhiello{display:block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#2D5A27;font-weight:400;margin-bottom:1rem;border-left:2px solid #2D5A27;padding-left:0.7em;}
+    .occhiello-chiaro{color:rgba(255,255,255,0.4);border-left-color:rgba(255,255,255,0.2);}
+    .corpo{font-size:1rem;line-height:1.85;color:#444;margin-bottom:1.1em;}
+
+    .hero{padding:5rem 6vw 3rem;border-bottom:1px solid #e8e8e8;}
+    .hero-inner{max-width:660px;margin:0 auto;}
+    .hero-claim{font-family:'Lora',Georgia,serif;font-size:clamp(1.05rem,2.5vw,1.3rem);font-style:italic;font-weight:400;color:#666;line-height:1.7;margin-bottom:2.5rem;max-width:520px;}
+
+    /* ── Blocco audio player ── */
+    .player-wrap{background:#f9f8f5;border:1px solid #e8e8e8;padding:2rem 2.5rem;margin-top:2.5rem;}
+    .player-prep{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:#666;line-height:1.65;margin-bottom:1.8rem;}
+    .player-prep strong{font-style:normal;font-weight:500;color:#222;}
+
+    .btn-avvia{display:flex;align-items:center;gap:1rem;background:#1A3A15;color:#fff;border:none;cursor:pointer;padding:1.1em 2em;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;transition:background 0.2s;width:100%;}
+    .btn-avvia:hover{background:#2D5A27;}
+    .btn-avvia .play-ico{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .btn-avvia .play-ico svg{fill:#fff;margin-left:2px;}
+    .btn-avvia.in-corso .play-ico svg{display:none;}
+    .btn-avvia.in-corso .pause-ico{display:block;}
+    .pause-ico{display:none;width:12px;height:12px;border-left:3px solid #fff;border-right:3px solid #fff;flex-shrink:0;}
+    .btn-avvia.completato{background:#2D5A27;cursor:default;}
+    .btn-avvia.completato:hover{background:#2D5A27;}
+
+    #audioElement{display:none;}
+
+    .progress-wrap{margin-top:1.2rem;display:none;}
+    .progress-wrap.vis{display:block;}
+    .progress-bar-bg{background:#e0e0e0;height:3px;position:relative;cursor:pointer;}
+    .progress-bar-fill{background:#1A3A15;height:3px;width:0%;transition:width 0.5s linear;}
+    .progress-tempo{display:flex;justify-content:space-between;font-size:0.7rem;color:#aaa;margin-top:0.4em;letter-spacing:0.05em;}
+
+    .tracking-note{font-size:0.75rem;color:#bbb;margin-top:1rem;font-family:'DM Sans',sans-serif;display:none;}
+    .tracking-note.vis{display:block;}
+
+    .zoom-info{margin-top:1.8rem;padding:1.2rem 1.5rem;border-left:3px solid #2D5A27;background:#f0f5f0;}
+    .zoom-info p{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.9rem;color:#444;line-height:1.65;}
+    .zoom-info strong{font-style:normal;color:#1A3A15;}
+    .zoom-info a{color:#1A3A15;text-decoration:none;border-bottom:1px solid #1A3A15;}
+
+    .email-mancante{background:#fff8e8;border:1px solid #e8d8a0;padding:1.2rem 1.5rem;margin-top:1.5rem;display:none;}
+    .email-mancante.vis{display:block;}
+    .email-mancante p{font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.9rem;color:#666;line-height:1.6;}
+
+    .fasi-lista{margin-top:1.5rem;}
+    .fase{display:grid;grid-template-columns:56px 1fr;gap:1.2rem;padding:1.4rem 0;border-bottom:1px solid #ebebeb;align-items:start;}
+    .fase:first-child{border-top:1px solid #ebebeb;}
+    .fase-min{font-family:'Lora',Georgia,serif;font-size:2rem;font-weight:400;color:#2D5A27;line-height:1;padding-top:2px;}
+    .fase-nome{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#2D5A27;font-weight:400;display:block;margin-bottom:0.4em;}
+    .fase-desc{font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:#555;line-height:1.65;}
+
+    .citazione{font-family:'Lora',Georgia,serif;font-size:clamp(1.15rem,2.5vw,1.5rem);font-style:italic;line-height:1.7;color:#fff;margin-bottom:2rem;}
+    .citazione strong{font-style:normal;font-weight:500;color:rgba(255,255,255,0.9);}
+
+    .footer{background:#f9f8f5;border-top:1px solid #e8e8e8;padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+    .footer a{color:#aaa;text-decoration:none;}
+    .footer a:hover{color:#1A3A15;}
+
+    .r{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .r.vis{opacity:1;transform:none;}
+
+    @media(max-width:600px){
+      html{font-size:16px;}
+      .s{padding:3.5rem 5vw;}
+      .hero{padding:3.5rem 5vw 3rem;}
+      .player-wrap{padding:1.5rem;}
+      .footer{flex-direction:column;gap:0.5rem;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">Registrata a Montasola, Sabina · Il Bosco Parlante</div>
+
+<nav class="navbar">
+  <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <img src="/logo bosco parlante.png" alt="Il Bosco Parlante" style="height:28px;">
+    <span class="navbar-logo-text">Il Bosco Parlante</span>
+  </a>
+</nav>
+
+<!-- HERO + PLAYER -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="occhiello r">Pratica · Tre minuti</span>
+    <h1 class="r">Fermarsi.<br><em>Adesso.</em></h1>
+    <p class="hero-claim r">Questa pratica è stata registrata qui, a Montasola. Tre minuti. Non serve nessuna preparazione — solo sedersi e smettere di fare altro per il tempo che ci vuole.</p>
+
+    <!-- PLAYER -->
+    <div class="player-wrap r">
+      <p class="player-prep">
+        <strong>Prima di iniziare:</strong> siediti dove sei. Non serve un posto speciale. Se puoi, togli il telefono dalla mano — mettilo sul tavolo, schermo verso il basso. Poi premi play.
+      </p>
+
+      <!-- NOTA: sostituire /audio/pratica-tre-minuti.mp3 con il percorso reale su IBP -->
+      <audio id="audioElement" preload="none">
+        <source src="/audio/pratica-tre-minuti.mp3" type="audio/mpeg">
+      </audio>
+
+      <button class="btn-avvia" id="btnAvvia" onclick="avviaETraccia()">
+        <span class="play-ico">
+          <svg width="10" height="12" viewBox="0 0 10 12">
+            <polygon points="0,0 10,6 0,12"/>
+          </svg>
+          <span class="pause-ico"></span>
+        </span>
+        <span id="btnLabel">Avvia la pratica</span>
+      </button>
+
+      <div class="progress-wrap" id="progressWrap">
+        <div class="progress-bar-bg" id="progressBg">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-tempo">
+          <span id="tempoCorrente">0:00</span>
+          <span id="tempoDurata">–:––</span>
+        </div>
+      </div>
+
+      <div class="zoom-info">
+        <p>Questa è la pratica che faremo insieme il <strong>martedì 16 giugno alle 21:00</strong>.<br>
+        Ascoltarla adesso ti aiuterà a riconoscerla — non come qualcosa di nuovo, ma come qualcosa che conosci già.<br><br>
+        Link Zoom: <a href="https://us05web.zoom.us/j/84755742420?pwd=eBaBgbuFiAkbua1eMoK9RLHoADHVaA.1">entra qui</a> &nbsp;·&nbsp; ID: 847 5574 2420 &nbsp;·&nbsp; Passcode: bosco</p>
+      </div>
+
+      <p class="tracking-note" id="trackingNote">
+        ✓ Registrato — ci vediamo il 16 giugno.
+      </p>
+    </div>
+
+    <div class="email-mancante" id="emailMancante">
+      <p>Hai raggiunto questa pagina direttamente. L'audio è disponibile, ma usa il link nell'email di conferma per registrare la tua partecipazione alla Zoom del 16 giugno.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FASI DELLA PRATICA -->
+<section class="s r">
+  <div class="inner">
+    <span class="occhiello r">Come è fatta</span>
+    <h2 class="r">Tre minuti,<br>tre movimenti.</h2>
+    <div class="fasi-lista">
+      <div class="fase r">
+        <div><div class="fase-min">1'</div></div>
+        <div>
+          <span class="fase-nome">Attenzione</span>
+          <p class="fase-desc">Dove si ferma l'attenzione nel corpo? Non scegliere — lascia che arrivi. Un peso, una tensione, un punto caldo. Segui.</p>
+        </div>
+      </div>
+      <div class="fase r">
+        <div><div class="fase-min">1'</div></div>
+        <div>
+          <span class="fase-nome">Qualità</span>
+          <p class="fase-desc">Cosa ha quella sensazione? Non devi descriverla — solo starci. Se arriva una parola, bene. Se non arriva, bene lo stesso.</p>
+        </div>
+      </div>
+      <div class="fase r">
+        <div><div class="fase-min">1'</div></div>
+        <div>
+          <span class="fase-nome">Espansione</span>
+          <p class="fase-desc">Tieni quello che senti. Poi allarga — non muoverti, allarga solo la consapevolezza. Tutto insieme, nello stesso spazio. Poi lascia andare.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEZIONE SCURA -->
+<section class="s s-scura r">
+  <div class="inner">
+    <span class="occhiello occhiello-chiaro r">Il 16 giugno</span>
+    <p class="citazione r">
+      Faremo questa pratica insieme — in diretta.<br>
+      <strong>Poi staremo un po' a parlare di com'è stato: come portarla in una giornata normale, cosa cambia, cosa no.</strong>
+    </p>
+    <p style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.5);letter-spacing:0.06em;">Martedì 16 giugno · ore 21:00 · online · un'ora</p>
+  </div>
+</section>
+
+<!-- NOTA FINALE -->
+<section class="s s-alt r">
+  <div class="inner">
+    <p class="corpo r" style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1.1rem;color:#555;line-height:1.8;">Questa pagina non è pubblica. L'hanno ricevuta solo le persone iscritte alla Zoom. Se hai domande — su cosa aspettarti, su come funziona — rispondi all'email di conferma. Leggo io.</p>
+    <p class="corpo r" style="font-size:0.85rem;color:#888;margin-top:0.5rem;">— Raffaele</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>Il Bosco Parlante · Montasola, Sabina</span>
+  <a href="https://ilboscoparlante.com">ilboscoparlante.com</a>
+</footer>
+
+<script>
+  // ── Lista Klaviyo ──────────────────────────────────────────────────
+  // NOTA: aggiornare LISTA_ID con l'ID reale della lista "lead-zoom-2026" in Klaviyo
+  const LISTA_ID = 'XXXXXXXX'; // ← sostituire con ID lista lead-zoom-2026
+
+  // ── Email dal parametro URL ────────────────────────────────────────
+  const params = new URLSearchParams(window.location.search);
+  const emailParam = params.get('email');
+
+  if (!emailParam) {
+    document.getElementById('emailMancante').classList.add('vis');
+  }
+
+  // ── Stato audio ───────────────────────────────────────────────────
+  let audio = document.getElementById('audioElement');
+  let trackingFatto = false;
+  let inRiproduzione = false;
+
+  async function avviaETraccia() {
+    if (inRiproduzione) {
+      audio.pause();
+      inRiproduzione = false;
+      document.getElementById('btnAvvia').classList.remove('in-corso');
+      document.getElementById('btnLabel').textContent = 'Riprendi la pratica';
+      return;
+    }
+
+    try {
+      await audio.play();
+      inRiproduzione = true;
+      document.getElementById('btnAvvia').classList.add('in-corso');
+      document.getElementById('btnLabel').textContent = 'In ascolto\u2026';
+      document.getElementById('progressWrap').classList.add('vis');
+    } catch (e) {
+      console.warn('Autoplay blocked:', e);
+    }
+
+    if (!trackingFatto && emailParam) {
+      trackingFatto = true;
+      await registraAscolto(emailParam);
+    }
+  }
+
+  async function registraAscolto(email) {
+    try {
+      window._learnq.push(['identify', { '$email': email }]);
+
+      const body = new URLSearchParams({
+        g:        LISTA_ID,
+        email:    email,
+        '$fields': '$source',
+        '$source': 'IBP \u2014 Pratica Audio pre-Zoom'
+      });
+
+      const response = await fetch(
+        'https://manage.kmail-lists.com/ajax/subscriptions/subscribe',
+        {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body:    body.toString()
+        }
+      );
+
+      const data = await response.json();
+      if (data.success) {
+        document.getElementById('trackingNote').classList.add('vis');
+      }
+    } catch (err) {
+      console.error('Klaviyo tracking error:', err);
+    }
+  }
+
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+      const pct = (audio.currentTime / audio.duration) * 100;
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('tempoCorrente').textContent = formatTempo(audio.currentTime);
+    }
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    document.getElementById('tempoDurata').textContent = formatTempo(audio.duration);
+  });
+
+  audio.addEventListener('ended', () => {
+    inRiproduzione = false;
+    document.getElementById('btnAvvia').classList.remove('in-corso');
+    document.getElementById('btnAvvia').classList.add('completato');
+    document.getElementById('btnLabel').textContent = 'Pratica completata';
+  });
+
+  document.getElementById('progressBg').addEventListener('click', e => {
+    if (!audio.duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pct * audio.duration;
+  });
+
+  function formatTempo(sec) {
+    if (!sec || isNaN(sec)) return '0:00';
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60);
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.r').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
